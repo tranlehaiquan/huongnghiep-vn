@@ -112,7 +112,7 @@ const schoolJsonLd = {
               <span class="badge badge-indigo">Mã trường: {school.code}</span>
             )}
           </div>
-          <h1 class="text-2xl lg:text-3xl font-black text-white mb-3" style="font-family:'Outfit',sans-serif;">
+          <h1 class="text-2xl lg:text-3xl font-black text-white mb-3" >
             {school.name}
           </h1>
           <p class="text-slate-400 text-sm">
@@ -172,7 +172,7 @@ const schoolJsonLd = {
 
         <!-- Majors -->
         <div class="card p-6">
-          <h2 class="text-lg font-black text-white mb-5 flex items-center gap-2" style="font-family:'Outfit',sans-serif;">
+          <h2 class="text-lg font-black text-white mb-5 flex items-center gap-2" >
             <span>📚</span> Ngành Đào Tạo
           </h2>
 
@@ -235,7 +235,7 @@ const schoolJsonLd = {
             <div class="flex items-center justify-between mb-5">
               <div>
                 <span class="badge badge-teal text-xs mb-2">🌐 Dữ Liệu TuyểnSinh247</span>
-                <h2 class="text-lg font-black text-white" style="font-family:'Outfit',sans-serif;">
+                <h2 class="text-lg font-black text-white" >
                   📊 Điểm Chuẩn Xét Tuyển THPT ({benchmarkMajors.length} Ngành)
                 </h2>
                 <p class="text-xs text-slate-400 mt-1">Tra cứu điểm chuẩn trúng tuyển theo ngành và tổ hợp khối thi</p>
@@ -280,7 +280,7 @@ const schoolJsonLd = {
         <!-- Related Careers -->
         {relatedCareers.length > 0 && (
           <div class="card p-6">
-            <h2 class="text-lg font-black text-white mb-4" style="font-family:'Outfit',sans-serif;">
+            <h2 class="text-lg font-black text-white mb-4" >
               💼 Ngành Nghề Phù Hợp
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -400,7 +400,7 @@ const schoolJsonLd = {
     <!-- Similar Schools -->
     {similarSchools.length > 0 && (
       <section class="mt-10">
-        <h2 class="text-xl font-black text-white mb-5" style="font-family:'Outfit',sans-serif;">
+        <h2 class="text-xl font-black text-white mb-5" >
           🏛️ Trường Tương Tự Tại {school.regionLabel || school.region}
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

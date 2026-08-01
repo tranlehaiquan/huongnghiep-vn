@@ -38,7 +38,7 @@ const categoryColors: Record<string, string> = {
 
       <!-- Headline -->
       <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-[1.05] tracking-tight animate-fade-up"
-          style="font-family:'Outfit',sans-serif; animation-delay:0.2s; opacity:0; animation-fill-mode:forwards;">
+          style=" animation-delay:0.2s; opacity:0; animation-fill-mode:forwards;">
         Chọn Đúng Ngành,<br/>
         <span class="gradient-text">Chọn Đúng Tương Lai</span>
       </h1>
@@ -126,7 +126,7 @@ const categoryColors: Record<string, string> = {
       <div class="flex items-center justify-between mb-10">
         <div>
           <span class="section-label mb-3 block w-fit">🔥 Xu hướng 2026</span>
-          <h2 class="text-3xl font-black text-white" style="font-family:'Outfit',sans-serif;">
+          <h2 class="text-3xl font-black text-white" >
             Ngành Nghề Hot 2026
           </h2>
           <p class="text-slate-500 text-sm mt-2">Các ngành công nghệ cao, bán dẫn, AI & dịch vụ số có nhu cầu nhân lực lớn nhất tại Việt Nam</p>
@@ -197,12 +197,12 @@ const categoryColors: Record<string, string> = {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <span class="section-label mb-3 block mx-auto w-fit">📚 Khối thi THPT</span>
-        <h2 class="text-3xl font-black text-white" style="font-family:'Outfit',sans-serif;">Chọn Ngành Theo Thế Mạnh Của Bạn</h2>
+        <h2 class="text-3xl font-black text-white" >Chọn Ngành Theo Thế Mạnh Của Bạn</h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         {Object.entries(EXAM_BLOCKS_INFO).map(([block, info]) => (
           <a href={`/careers?block=${block}`} class="card card-hover p-5 text-center group">
-            <div class="text-2xl font-black gradient-text mb-2" style="font-family:'Outfit',sans-serif;">{block}</div>
+            <div class="text-2xl font-black gradient-text mb-2" >{block}</div>
             <div class="text-xs text-slate-400 font-semibold mb-2">{info.subjects.join(' · ')}</div>
             <p class="text-xs text-slate-600 leading-relaxed">{info.desc.split('-')[0].trim()}</p>
           </a>
@@ -217,7 +217,7 @@ const categoryColors: Record<string, string> = {
       <div class="flex items-center justify-between mb-10">
         <div>
           <span class="section-label mb-3 block w-fit">🏛️ Trường học</span>
-          <h2 class="text-3xl font-black text-white" style="font-family:'Outfit',sans-serif;">
+          <h2 class="text-3xl font-black text-white" >
             Các Trường Nổi Bật
           </h2>
         </div>
@@ -249,7 +249,7 @@ const categoryColors: Record<string, string> = {
   <section class="py-16 px-4">
     <div class="max-w-3xl mx-auto text-center card p-12" style="background: linear-gradient(135deg, rgba(79,110,247,0.15), rgba(139,92,246,0.1)); border-color: rgba(79,110,247,0.25);">
       <div class="text-4xl mb-4">🔀</div>
-      <h2 class="text-2xl font-black text-white mb-3" style="font-family:'Outfit',sans-serif;">Chưa chắc chọn ngành nào?</h2>
+      <h2 class="text-2xl font-black text-white mb-3" >Chưa chắc chọn ngành nào?</h2>
       <p class="text-slate-400 text-sm mb-6">Dùng công cụ So Sánh Ngành để xem lương, chi phí học và thời gian hoàn vốn của nhiều ngành cùng một lúc.</p>
       <a href="/careers/compare" class="btn-primary text-base py-3.5 px-8">
         Bắt đầu so sánh ngay →

@@ -149,7 +149,7 @@ export default function FieldComparator({ preselectedId = '' }: { preselectedId?
       {selected.length === 0 && (
         <div className="card p-16 text-center">
           <div className="text-5xl mb-4">🔀</div>
-          <h3 className="text-lg font-black text-white mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
+          <h3 className="text-lg font-black text-white mb-2">
             Bắt đầu So Sánh Ngành Học
           </h3>
           <p className="text-sm text-slate-400 mb-6 max-w-sm mx-auto">
@@ -360,7 +360,7 @@ export default function FieldComparator({ preselectedId = '' }: { preselectedId?
             {/* Modal header */}
             <div className="flex items-center justify-between p-5 border-b border-white/8">
               <div>
-                <h3 className="text-base font-bold text-white" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                <h3 className="text-base font-bold text-white">
                   Chọn Ngành Để So Sánh
                 </h3>
                 <p className="text-xs text-slate-500">{selected.length}/3 đã chọn</p>
