@@ -300,6 +300,9 @@ export default function AICareerAdvisor({
               const isUser = (msg.role as string) === 'user';
               const isAssistant = (msg.role as string) === 'assistant';
 
+              // Skip messages with no text content (tool-call-only messages)
+              if (!textContent && !isLoading) return null;
+
               return (
                 <div
                   key={msg.id || idx}
@@ -326,7 +329,7 @@ export default function AICareerAdvisor({
                       isLoading && idx === messages.length - 1 ? (
                         <span className="flex items-center gap-1.5 text-indigo-300">
                           <Zap className="w-3.5 h-3.5 animate-spin" />
-                          Đang phân tích dữ liệu...
+                          Đang phân tích & tra cứu dữ liệu...
                         </span>
                       ) : null
                     )}

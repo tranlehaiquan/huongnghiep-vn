@@ -7,13 +7,9 @@ interface Props {
 
 const { pageContext = null } = Astro.props;
 
-// Evaluate provider availability strictly on server-side
-const hasGemini = Boolean((process.env.GOOGLE_GENERATIVE_AI_API_KEY || import.meta.env.GOOGLE_GENERATIVE_AI_API_KEY || '').trim());
-const hasGroq = Boolean((process.env.GROQ_API_KEY || import.meta.env.GROQ_API_KEY || '').trim());
-const hasAlibaba = Boolean((process.env.ALIBABA_AI_API_KEY || import.meta.env.ALIBABA_AI_API_KEY || '').trim());
-const enabledFlag = import.meta.env.PUBLIC_ENABLE_AI !== 'false';
-
-const enabled = enabledFlag && (hasGemini || hasGroq || hasAlibaba);
+// Enable island based on PUBLIC_ENABLE_AI setting.
+// Runtime API key verification takes place on the server inside /api/chat.ts.
+const enabled = import.meta.env.PUBLIC_ENABLE_AI !== 'false';
 ---
 
 {enabled && <AICareerAdvisor client:idle enabled={enabled} pageContext={pageContext} />}
