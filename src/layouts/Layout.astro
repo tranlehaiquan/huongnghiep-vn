@@ -80,7 +80,7 @@ const websiteSchema = {
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd || websiteSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd || websiteSchema)} />
 </head>
 <body class="bg-mesh min-h-screen">
 

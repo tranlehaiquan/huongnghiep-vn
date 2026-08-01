@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "check": "astro check",
     "astro": "astro",
     "crawl:schools": "node scripts/crawl-vietnam-schools.js",
     "crawl:benchmarks": "node scripts/crawlers/crawl_all_school_benchmarks.js",
@@ -32,7 +33,9 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "axios": "^1.19.0",
-    "cheerio": "^1.2.0"
+    "cheerio": "^1.2.0",
+    "typescript": "^5.9.3"
   }
 }

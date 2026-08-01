@@ -43,7 +43,9 @@ const matchedBenchmark = benchmarkSchools.find((b: any) =>
 const benchmarkMajors = matchedBenchmark?.majors || [];
 
 const isCollege = school.type === 'college';
-const totalCost = (m: any) => (m.tuitionPerYear || school.avgTuitionPerYearVND) * (m.years || 4);
+const schoolExamBlocks = Array.from(
+  new Set<string>((school.majors || []).flatMap((m: any) => m.blocks || []))
+);
 
 // JSON-LD EducationalOrganization & Breadcrumb schema
 const schoolSlug = slugify(school.name);
@@ -365,25 +367,19 @@ const schoolJsonLd = {
         </div>
 
         <!-- Exam blocks at this school -->
-        {(() => {
-          const allBlocks = new Set<string>();
-          (school.majors || []).forEach((m: any) =>
-            (m.blocks || []).forEach((b: string) => allBlocks.add(b))
-          );
-          return allBlocks.size > 0 ? (
-            <div class="card p-5">
-              <h3 class="text-sm font-bold text-white mb-4">📚 Khối Thi Xét Tuyển</h3>
-              <div class="flex flex-wrap gap-2">
-                {[...allBlocks].map(b => (
-                  <div class="card-deep px-3 py-2">
-                    <div class="text-xs font-black text-indigo-300">{b}</div>
-                    <div class="text-xs text-slate-500">{EXAM_BLOCKS_INFO[b]?.subjects.join(' · ') || b}</div>
-                  </div>
-                ))}
-              </div>
+        {schoolExamBlocks.length > 0 && (
+          <div class="card p-5">
+            <h3 class="text-sm font-bold text-white mb-4">📚 Khối Thi Xét Tuyển</h3>
+            <div class="flex flex-wrap gap-2">
+              {schoolExamBlocks.map(b => (
+                <div class="card-deep px-3 py-2">
+                  <div class="text-xs font-black text-indigo-300">{b}</div>
+                  <div class="text-xs text-slate-500">{EXAM_BLOCKS_INFO[b]?.subjects.join(' · ') || b}</div>
+                </div>
+              ))}
             </div>
-          ) : null;
-        })()}
+          </div>
+        )}
 
         <!-- Compare CTA -->
         <div class="card p-5 text-center" style="border-color: rgba(79,110,247,0.25);">
