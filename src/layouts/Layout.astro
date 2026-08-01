@@ -14,24 +14,24 @@ const {
   title = 'HướngNghiệp VN — Định Hướng Nghề Nghiệp, Mức Lương & Trường Học Việt Nam',
   description = 'Nền tảng tra cứu ngành học, điểm chuẩn, mức lương thực tế và 264+ trường đại học, cao đẳng tại Việt Nam. Định hướng sự nghiệp tối ưu cho học sinh THPT.',
   keywords = 'hướng nghiệp, ngành nghề hot 2026, điểm chuẩn đại học, học phí đại học, khối thi thpt, mức lương lập trình viên, bán dẫn, trí tuệ nhân tạo, trường đại học việt nam',
-  ogImage = 'https://huongnghiep.vn/og-image.png',
+  ogImage = 'https://huongnghiep.jtran.site/og-image.png',
   ogType = 'website',
   jsonLd = null,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://huongnghiep.vn');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://huongnghiep.jtran.site');
 
 // Default WebSite Schema
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   'name': 'HướngNghiệp VN',
-  'url': 'https://huongnghiep.vn',
+  'url': 'https://huongnghiep.jtran.site',
   'description': description,
   'inLanguage': 'vi-VN',
   'potentialAction': {
     '@type': 'SearchAction',
-    'target': 'https://huongnghiep.vn/schools?q={search_term_string}',
+    'target': 'https://huongnghiep.jtran.site/schools?q={search_term_string}',
     'query-input': 'required name=search_term_string'
   }
 };

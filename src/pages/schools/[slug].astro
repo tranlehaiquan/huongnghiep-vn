@@ -53,16 +53,16 @@ const schoolJsonLd = {
     {
       '@type': 'BreadcrumbList',
       'itemListElement': [
-        { '@type': 'ListItem', 'position': 1, 'name': 'Trang Chủ', 'item': 'https://huongnghiep.vn' },
-        { '@type': 'ListItem', 'position': 2, 'name': 'Trường Học', 'item': 'https://huongnghiep.vn/schools' },
-        { '@type': 'ListItem', 'position': 3, 'name': school.name, 'item': `https://huongnghiep.vn/schools/${schoolSlug}` },
+        { '@type': 'ListItem', 'position': 1, 'name': 'Trang Chủ', 'item': 'https://huongnghiep.jtran.site' },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Trường Học', 'item': 'https://huongnghiep.jtran.site/schools' },
+        { '@type': 'ListItem', 'position': 3, 'name': school.name, 'item': `https://huongnghiep.jtran.site/schools/${schoolSlug}` },
       ]
     },
     {
       '@type': 'EducationalOrganization',
       'name': school.name,
       'alternateName': school.shortName || school.name,
-      'url': `https://huongnghiep.vn/schools/${schoolSlug}`,
+      'url': `https://huongnghiep.jtran.site/schools/${schoolSlug}`,
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': school.province,
