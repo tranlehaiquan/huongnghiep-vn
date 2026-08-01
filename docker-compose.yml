@@ -7,6 +7,10 @@ services:
       dockerfile: Dockerfile
     container_name: huongnghiep-vn
     restart: unless-stopped
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - ALIBABA_AI_API_KEY=${ALIBABA_AI_API_KEY}
+      - GOOGLE_GENERATIVE_AI_API_KEY=${GOOGLE_GENERATIVE_AI_API_KEY}
     # Don't bind to host port 80 — Dokploy/Traefik routes internally
     expose:
       - "80"
