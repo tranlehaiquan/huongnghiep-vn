@@ -51118,5 +51118,159 @@
         "tuitionPerYear": 350000000
       }
     ]
+  },
+  {
+    "id": "GH_264_VINUNI",
+    "name": "VinUniversity",
+    "shortName": "VinUni",
+    "type": "university",
+    "typeLabel": "Đại học Tư thục (Phi lợi nhuận)",
+    "region": "North",
+    "regionLabel": "Miền Bắc",
+    "province": "Hà Nội",
+    "website": "https://vinuni.edu.vn",
+    "avgTuitionPerYearVND": 815850000,
+    "code": "VNU",
+    "lat": 20.9893,
+    "lng": 105.9436,
+    "source": "manual-addition",
+    "majors": [
+      {
+        "code": "V1",
+        "name": "Quản trị Kinh doanh (Business Administration)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 815850000
+      },
+      {
+        "code": "V2",
+        "name": "Quản trị Khách sạn và Du lịch (Hospitality Management)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 815850000
+      },
+      {
+        "code": "V3",
+        "name": "Bất động sản (Real Estate)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 815850000
+      },
+      {
+        "code": "V4",
+        "name": "Khoa học Máy tính (Computer Science)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 815850000
+      },
+      {
+        "code": "V5",
+        "name": "Khoa học Dữ liệu (Data Science)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 815850000
+      },
+      {
+        "code": "V6",
+        "name": "Kỹ thuật Cơ khí (Mechanical Engineering)",
+        "blocks": [
+          "A00",
+          "A01",
+          "A02"
+        ],
+        "years": 4,
+        "tuitionPerYear": 815850000
+      },
+      {
+        "code": "V7",
+        "name": "Kỹ thuật Điện và Máy tính (Electrical & Computer Engineering)",
+        "blocks": [
+          "A00",
+          "A01",
+          "A02"
+        ],
+        "years": 4,
+        "tuitionPerYear": 815850000
+      },
+      {
+        "code": "V8",
+        "name": "Tâm lý học (Psychology)",
+        "blocks": [
+          "C00",
+          "D01",
+          "D14"
+        ],
+        "years": 4,
+        "tuitionPerYear": 815850000
+      },
+      {
+        "code": "V9",
+        "name": "Truyền thông Đa phương tiện (Multimedia Communication)",
+        "blocks": [
+          "C00",
+          "D01",
+          "D14"
+        ],
+        "years": 4,
+        "tuitionPerYear": 815850000
+      },
+      {
+        "code": "V10",
+        "name": "Kinh tế (Economics)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 815850000
+      },
+      {
+        "code": "V11",
+        "name": "Điều dưỡng (Nursing)",
+        "blocks": [
+          "B00",
+          "B03",
+          "D01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 349650000
+      },
+      {
+        "code": "V12",
+        "name": "Bác sĩ Y khoa (Doctor of Medicine)",
+        "blocks": [
+          "B00",
+          "A00",
+          "D01"
+        ],
+        "years": 6,
+        "tuitionPerYear": 815850000
+      }
+    ]
   }
 ]
