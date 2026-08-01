@@ -44,7 +44,7 @@ export default function AICareerAdvisor({
 
   const contextTitle = activeContext?.name || activeContext?.title || activeContext?.shortName || '';
 
-  const { messages, sendMessage, status, setMessages } = useChat({
+  const { messages, sendMessage, status, setMessages, error } = useChat({
     transport: new DefaultChatTransport({
       api: '/api/chat',
       body: {
@@ -192,6 +192,15 @@ export default function AICareerAdvisor({
       ];
 
   const isLoading = status === 'submitted' || status === 'streaming';
+  const hasError = !!error;
+
+  // Get last user message text for retry
+  const lastUserText = (() => {
+    const userMsgs = messages.filter(m => (m.role as string) === 'user');
+    const last = userMsgs.at(-1) as any;
+    return last?.parts?.[0]?.text || last?.content || '';
+  })();
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -344,6 +353,28 @@ export default function AICareerAdvisor({
             })}
             <div ref={messagesEndRef} />
           </div>
+
+          {/* Error notification bubble */}
+          {hasError && (
+            <div className="mx-4 mb-2 flex items-start gap-2.5 p-3 bg-red-950/80 border border-red-500/40 rounded-xl shadow-lg animate-in slide-in-from-bottom-2">
+              <div className="w-6 h-6 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-red-400 text-xs font-bold">!</span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-semibold text-red-300 mb-0.5">Có lỗi xảy ra</p>
+                <p className="text-[11px] text-red-400/90 leading-relaxed">
+                  {(error as any)?.message || 'Kết nối AI tạm thời gián đoạn. Vui lòng thử lại.'}
+                </p>
+              </div>
+              <button
+                onClick={() => handleSend(lastUserText)}
+                className="text-[10px] text-red-300 hover:text-white border border-red-500/40 hover:border-red-400 px-2 py-1 rounded-lg transition-colors flex-shrink-0 font-medium"
+                title="Thử lại"
+              >
+                Thử lại
+              </button>
+            </div>
+          )}
 
           {/* Quick Suggestions */}
           {messages.length <= 2 && (
