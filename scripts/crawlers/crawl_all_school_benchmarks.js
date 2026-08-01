@@ -1,6 +1,6 @@
 /**
  * crawl_all_school_benchmarks.js
- * Batch crawls major admission benchmark scores for universities & colleges from Tuyensinh247.
+ * Batch crawls admission benchmark scores for ALL universities & colleges from Tuyensinh247.
  */
 
 import axios from 'axios';
@@ -17,22 +17,18 @@ async function crawlAllSchoolBenchmarks() {
   }
 
   const { schools } = JSON.parse(fs.readFileSync(schoolListFile, 'utf-8'));
-  console.log(`🚀 Batch crawling benchmark scores for ${schools.length} schools...`);
+  console.log(`🚀 Batch crawling benchmark scores for ALL ${schools.length} schools from Tuyensinh247...`);
 
-  // Target top 40 major universities to ensure fast execution
-  const targetSchools = schools.slice(0, 45);
   const benchmarkResults = [];
+  const CONCURRENCY = 6;
 
-  for (let i = 0; i < targetSchools.length; i++) {
-    const school = targetSchools[i];
-    console.log(`[${i + 1}/${targetSchools.length}] Fetching ${school.code} - ${school.name}...`);
-
+  async function fetchSchoolData(school, index) {
     try {
       const { data: html } = await axios.get(school.detailUrl, {
         headers: {
           'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         },
-        timeout: 10000,
+        timeout: 12000,
       });
 
       const $ = cheerio.load(html);
@@ -57,22 +53,36 @@ async function crawlAllSchoolBenchmarks() {
         }
       });
 
-      console.log(`   └─ ✅ Found ${majors.length} majors & scores`);
-      benchmarkResults.push({
+      console.log(`[${index + 1}/${schools.length}] ✅ ${school.code} - ${school.name}: ${majors.length} majors`);
+      return {
         code: school.code,
         name: school.name,
         slug: school.slug,
         detailUrl: school.detailUrl,
         majorsCount: majors.length,
         majors,
-      });
-
-      // Respectful delay
-      await new Promise(r => setTimeout(r, 200));
-
+      };
     } catch (e) {
-      console.warn(`   └─ ⚠️ Failed to fetch ${school.name}: ${e.message}`);
+      console.warn(`[${index + 1}/${schools.length}] ⚠️ Failed to fetch ${school.code} - ${school.name}: ${e.message}`);
+      return {
+        code: school.code,
+        name: school.name,
+        slug: school.slug,
+        detailUrl: school.detailUrl,
+        majorsCount: 0,
+        majors: [],
+      };
     }
+  }
+
+  // Process in concurrent batches
+  for (let i = 0; i < schools.length; i += CONCURRENCY) {
+    const chunk = schools.slice(i, i + CONCURRENCY);
+    const promises = chunk.map((school, idx) => fetchSchoolData(school, i + idx));
+    const results = await Promise.all(promises);
+    benchmarkResults.push(...results);
+    // Small delay between batches to be polite
+    await new Promise(r => setTimeout(r, 100));
   }
 
   const output = {
@@ -85,7 +95,8 @@ async function crawlAllSchoolBenchmarks() {
   const outputPath = path.join(process.cwd(), 'src/data/tuyensinh247_school_benchmarks.json');
   fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf-8');
 
-  console.log(`🎉 SUCCESS! Saved benchmark score dataset for ${benchmarkResults.length} schools to: ${outputPath}`);
+  const totalMajors = benchmarkResults.reduce((acc, s) => acc + s.majorsCount, 0);
+  console.log(`\n🎉 SUCCESS! Crawled ${benchmarkResults.length} schools with ${totalMajors} total majors! Saved to: ${outputPath}`);
 }
 
 crawlAllSchoolBenchmarks();
