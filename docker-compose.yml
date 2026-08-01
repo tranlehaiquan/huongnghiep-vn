@@ -7,16 +7,15 @@ services:
       dockerfile: Dockerfile
     container_name: huongnghiep-vn
     restart: unless-stopped
-    ports:
-      - "80:80"
+    # Don't bind to host port 80 — Dokploy/Traefik routes internally
+    expose:
+      - "80"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:80/health"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 10s
-    # Dokploy will handle Traefik labels automatically,
-    # but you can add custom labels if needed:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.huongnghiep.rule=Host(`huongnghiep.vn`)"
