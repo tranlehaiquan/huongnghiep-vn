@@ -9,7 +9,7 @@ WORKDIR /app
 
 # Install dependencies first (better caching)
 COPY package*.json pnpm-lock.yaml ./
-RUN npm install -g pnpm && pnpm install --prefer-offline --no-audit
+RUN npm install -g pnpm && pnpm install --prefer-offline
 
 # Copy source and build static site
 COPY . .
