@@ -1,0 +1,189 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  ogType?: string;
+  jsonLd?: Record<string, any>;
+}
+
+const {
+  title = 'HướngNghiệp VN — Định Hướng Nghề Nghiệp, Mức Lương & Trường Học Việt Nam',
+  description = 'Nền tảng tra cứu ngành học, điểm chuẩn, mức lương thực tế và 262+ trường đại học, cao đẳng tại Việt Nam. Định hướng sự nghiệp tối ưu cho học sinh THPT.',
+  keywords = 'hướng nghiệp, ngành nghề hot 2026, điểm chuẩn đại học, học phí đại học, khối thi thpt, mức lương lập trình viên, bán dẫn, trí tuệ nhân tạo, trường đại học việt nam',
+  ogImage = 'https://huongnghiep.vn/og-image.png',
+  ogType = 'website',
+  jsonLd = null,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://huongnghiep.vn');
+
+// Default WebSite Schema
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  'name': 'HướngNghiệp VN',
+  'url': 'https://huongnghiep.vn',
+  'description': description,
+  'inLanguage': 'vi-VN',
+  'potentialAction': {
+    '@type': 'SearchAction',
+    'target': 'https://huongnghiep.vn/schools?q={search_term_string}',
+    'query-input': 'required name=search_term_string'
+  }
+};
+---
+
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050811" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Primary Meta Tags -->
+  <title>{title}</title>
+  <meta name="title" content={title} />
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content="HướngNghiệp VN" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:site_name" content="HướngNghiệp VN" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonicalURL} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd || websiteSchema)} />
+</head>
+<body class="bg-mesh min-h-screen">
+
+  <!-- Ambient Background Orbs -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full opacity-20"
+         style="background: radial-gradient(ellipse, #4f6ef7 0%, transparent 70%); filter: blur(80px);"></div>
+    <div class="absolute bottom-1/3 right-0 w-[400px] h-[400px] rounded-full opacity-10"
+         style="background: radial-gradient(ellipse, #8b5cf6 0%, transparent 70%); filter: blur(60px);"></div>
+    <div class="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full opacity-8"
+         style="background: radial-gradient(ellipse, #10d9a8 0%, transparent 70%); filter: blur(70px);"></div>
+  </div>
+
+  <slot />
+
+  <!-- Global footer -->
+  <footer class="relative border-t border-white/5 mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <a href="/" class="flex items-center gap-2.5 mb-4">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg font-black"
+                 style="background: linear-gradient(135deg, #4f6ef7, #8b5cf6);">🎓</div>
+            <span class="text-lg font-bold text-white" style="font-family: 'Outfit', sans-serif;">HướngNghiệp<span class="text-indigo-400">VN</span></span>
+          </a>
+          <p class="text-sm text-slate-500 max-w-xs leading-relaxed mb-4">
+            Công cụ định hướng nghề nghiệp toàn diện cho học sinh THPT Việt Nam. 
+            Dữ liệu từ 262+ trường đại học, cao đẳng trên cả nước.
+          </p>
+          <div class="text-xs text-slate-600">
+            © 2026 HướngNghiệp VN. Nền tảng tra cứu giáo dục mở.
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Khám Phá</h4>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">Trang Chủ</a></li>
+            <li><a href="/careers" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">Ngành Nghề 2026</a></li>
+            <li><a href="/careers/compare" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">So Sánh Ngành</a></li>
+            <li><a href="/schools" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">262+ Trường Học</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Công Cụ</h4>
+          <ul class="space-y-2">
+            <li><a href="/schools?filter=university" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">Đại Học Công Lập</a></li>
+            <li><a href="/schools?filter=college" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">Cao Đẳng & Trường Nghề</a></li>
+            <li><a href="/careers?block=A00" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">Khối A00 (Toán Lý Hóa)</a></li>
+            <li><a href="/careers?block=A01" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">Khối A01 (Toán Lý Anh)</a></li>
+            <li><a href="/careers?block=B00" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">Khối B00 (Toán Hóa Sinh)</a></li>
+          </ul>
+        </div>
+
+        <!-- Data Sources -->
+        <div>
+          <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+            <span>🌐</span> Nguồn Dữ Liệu
+          </h4>
+          <ul class="space-y-2.5 text-xs">
+            <li>
+              <a href="https://diemthi.tuyensinh247.com/nganh-dao-tao.html" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-indigo-300 transition-colors flex items-center gap-1 font-semibold">
+                <span>🎓</span> TuyểnSinh247 2026 ↗
+              </a>
+              <span class="text-[11px] text-slate-600 block">37 Nhóm ngành & 506 Ngành đào tạo</span>
+            </li>
+            <li>
+              <a href="https://github.com/HTNam1710/ADS_Final" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-indigo-300 transition-colors flex items-center gap-1">
+                <span>📦</span> GitHub / HTNam1710 ↗
+              </a>
+              <span class="text-[11px] text-slate-600 block">Dữ liệu 262+ trường & tọa độ</span>
+            </li>
+            <li>
+              <a href="https://vi.wikipedia.org/wiki/Danh_sách_trường_đại_học,_học_viện_và_cao_đẳng_tại_Việt_Nam" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-indigo-300 transition-colors flex items-center gap-1">
+                <span>📚</span> Wikipedia tiếng Việt ↗
+              </a>
+              <span class="text-[11px] text-slate-600 block">Phân loại ĐH/CĐ/Học viện</span>
+            </li>
+            <li>
+              <a href="https://thisinh.thitotnghiepthpt.edu.vn" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-indigo-300 transition-colors flex items-center gap-1">
+                <span>🏛️</span> Bộ Giáo Dục & Đào Tạo ↗
+              </a>
+              <span class="text-[11px] text-slate-600 block">Danh mục tổ hợp khối thi THPT</span>
+            </li>
+            <li>
+              <a href="https://molisa.gov.vn" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-indigo-300 transition-colors flex items-center gap-1">
+                <span>📊</span> Bộ LĐ-TB&XH / MOLISA ↗
+              </a>
+              <span class="text-[11px] text-slate-600 block">Dự báo nhân lực Hot 2026</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-8 mb-6"></div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
+        <p>HướngNghiệp VN — Nền tảng phi thương mại phục vụ học sinh Việt Nam.</p>
+        <p>Mọi thông tin được thu thập & tổng hợp tự động từ các nguồn dữ liệu mở công cộng.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

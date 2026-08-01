@@ -1,0 +1,304 @@
+---
+import schoolsData from '../data/vietnamSchools.json';
+---
+
+<section id="school-directory" class="section-container">
+  <div class="container">
+    <div class="badge badge-emerald center-badge">🏛️ Thống Kê Các Trường Tại Việt Nam</div>
+    <h2 class="section-title">Danh Sách Trường ĐH, Cao Đẳng & Trường Nghề</h2>
+    <p class="section-subtitle">Dữ liệu tự động thu thập (crawled) các trường đào tạo, ngành học, khối thi tuyển sinh & mức học phí tại Việt Nam</p>
+
+    <!-- Search & Filter Controls -->
+    <div class="search-panel glass-card">
+      <div class="search-row">
+        <div class="search-field flex-2">
+          <label class="filter-label">🔍 Tìm tên Trường hoặc Ngành Học:</label>
+          <input type="text" id="school-search-input" placeholder="Ví dụ: Bách Khoa, Y Hà Nội, BKA, Công nghệ thông tin..." class="search-input" />
+        </div>
+
+        <div class="search-field">
+          <label class="filter-label">📍 Khu Vực / Tỉnh Thành:</label>
+          <select id="region-filter" class="custom-select">
+            <option value="ALL">Tất Cả Khu Vực</option>
+            <option value="North">Miền Bắc (Hà Nội...)</option>
+            <option value="Central">Miền Trung (Đà Nẵng...)</option>
+            <option value="South">Miền Nam (TP.HCM...)</option>
+          </select>
+        </div>
+
+        <div class="search-field">
+          <label class="filter-label">🏫 Loại Hình Trường:</label>
+          <select id="type-filter" class="custom-select">
+            <option value="ALL">Tất Cả Loại Hình</option>
+            <option value="university">Đại học Công lập & Tư thục</option>
+            <option value="college">Cao đẳng Thực hành</option>
+            <option value="vocational">Trường Nghề</option>
+          </select>
+        </div>
+
+        <div class="search-field">
+          <label class="filter-label">📝 Khối Thi THPT:</label>
+          <select id="block-filter" class="custom-select">
+            <option value="ALL">Tất Cả Khối Thi</option>
+            <option value="A00">A00 (Toán-Lý-Hóa)</option>
+            <option value="A01">A01 (Toán-Lý-Anh)</option>
+            <option value="B00">B00 (Toán-Hóa-Sinh)</option>
+            <option value="C00">C00 (Văn-Sử-Địa)</option>
+            <option value="D01">D01 (Toán-Văn-Anh)</option>
+            <option value="D07">D07 (Toán-Hóa-Anh)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- School List Grid -->
+    <div id="school-list-grid" class="schools-grid">
+      <!-- Dynamic populated via JS -->
+    </div>
+  </div>
+</section>
+
+<script is:inline define:vars={{ schools: schoolsData }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('school-search-input');
+    const regionFilter = document.getElementById('region-filter');
+    const typeFilter = document.getElementById('type-filter');
+    const blockFilter = document.getElementById('block-filter');
+    const schoolGrid = document.getElementById('school-list-grid');
+
+    function formatVND(amount) {
+      if (!amount) return 'Đang cập nhật';
+      return new Intl.NumberFormat('vi-VN').format(amount) + ' VNĐ / năm';
+    }
+
+    function renderSchools() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      const selectedRegion = regionFilter.value;
+      const selectedType = typeFilter.value;
+      const selectedBlock = blockFilter.value;
+
+      const filtered = schools.filter(school => {
+        // Region
+        if (selectedRegion !== 'ALL' && school.region !== selectedRegion) return false;
+        // Type
+        if (selectedType !== 'ALL' && school.type !== selectedType) return false;
+        // Exam Block
+        if (selectedBlock !== 'ALL') {
+          const hasBlock = school.majors.some(m => m.blocks.includes(selectedBlock));
+          if (!hasBlock) return false;
+        }
+        // Search Term (matches school name, short name, code, province, or major names)
+        if (searchTerm) {
+          const matchSchoolName = school.name.toLowerCase().includes(searchTerm) || school.shortName.toLowerCase().includes(searchTerm);
+          const matchCode = school.code && school.code.toLowerCase().includes(searchTerm);
+          const matchProvince = school.province.toLowerCase().includes(searchTerm);
+          const matchMajor = school.majors.some(m => m.name.toLowerCase().includes(searchTerm));
+          if (!matchSchoolName && !matchCode && !matchProvince && !matchMajor) return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        schoolGrid.innerHTML = `
+          <div class="empty-state glass-card">
+            <span>🔍</span>
+            <h3>Không tìm thấy trường hoặc ngành học phù hợp</h3>
+            <p>Thử tìm kiếm với từ khóa khác hoặc thay đổi bộ lọc khối thi/khu vực.</p>
+          </div>
+        `;
+        return;
+      }
+
+      schoolGrid.innerHTML = filtered.map(school => `
+        <div class="glass-card school-card">
+          <div class="school-card-header">
+            <div class="school-code-badge">${school.code || school.id}</div>
+            <div>
+              <span class="badge ${school.type === 'university' ? 'badge-primary' : (school.type === 'college' ? 'badge-purple' : 'badge-amber')}">${school.typeLabel}</span>
+              <h3 class="school-name">${school.name}</h3>
+              <span class="school-location">📍 ${school.province} (${school.regionLabel})</span>
+            </div>
+          </div>
+
+          <div class="tuition-highlight">
+            <span class="tuition-label">Học phí trung bình:</span>
+            <span class="tuition-val">${formatVND(school.avgTuitionPerYearVND)}</span>
+          </div>
+
+          <div class="majors-section">
+            <h4 class="majors-title">Các Ngành Học Đào Tạo ({school.majors.length}):</h4>
+            <div class="majors-list">
+              ${school.majors.map(m => `
+                <div class="major-item">
+                  <div class="major-name font-semibold">${m.name}</div>
+                  <div class="major-meta">
+                    <span class="meta-item">⏱️ ${m.years} năm</span>
+                    <span class="meta-item">📝 Khối: ${m.blocks.join(', ')}</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="school-card-footer">
+            <a href="${school.website}" target="_blank" rel="noopener noreferrer" class="btn-website">
+              🌐 Trang Chủ Tuyển Sinh ↗
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    searchInput.addEventListener('input', renderSchools);
+    regionFilter.addEventListener('change', renderSchools);
+    typeFilter.addEventListener('change', renderSchools);
+    blockFilter.addEventListener('change', renderSchools);
+
+    renderSchools();
+  });
+</script>
+
+<style>
+  .search-panel {
+    margin-bottom: 2rem;
+  }
+  .search-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(10, 13, 20, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+  }
+  .search-input:focus {
+    border-color: var(--accent-emerald);
+  }
+
+  .schools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 1.5rem;
+  }
+  .school-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .school-card-header {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  .school-code-badge {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+  }
+  .school-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0.2rem 0;
+  }
+  .school-location {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .tuition-highlight {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .tuition-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .tuition-val {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #34d399;
+    font-size: 0.95rem;
+  }
+
+  .majors-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+  .majors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .major-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 0.85rem;
+    border-radius: 6px;
+  }
+  .major-name {
+    font-size: 0.88rem;
+    color: white;
+  }
+  .major-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+  }
+
+  .school-card-footer {
+    margin-top: 1.25rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-color);
+  }
+  .btn-website {
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+  }
+  .btn-website:hover {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+  }
+
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+  }
+  .empty-state span {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 900px) {
+    .search-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

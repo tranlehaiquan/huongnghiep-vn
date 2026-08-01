@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: huongnghiep-vn
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    # Dokploy will handle Traefik labels automatically,
+    # but you can add custom labels if needed:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.huongnghiep.rule=Host(`huongnghiep.vn`)"
+      - "traefik.http.routers.huongnghiep.entrypoints=websecure"
+      - "traefik.http.routers.huongnghiep.tls.certResolver=letsencrypt"
+      - "traefik.http.services.huongnghiep.loadbalancer.server.port=80"

@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FieldComparator from '../../components/react/FieldComparator';
+
+const preselectedId = Astro.url.searchParams.get('a') || '';
+---
+
+<Layout
+  title="So Sánh Ngành Học — HướngNghiệp VN"
+  description="So sánh lương, chi phí và cơ hội nghề nghiệp giữa các ngành học tại Việt Nam với biểu đồ radar và bảng so sánh chi tiết."
+>
+  <Header currentPath="/careers/compare" />
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Header -->
+    <div class="breadcrumb mb-6">
+      <a href="/">Trang Chủ</a>
+      <span>/</span>
+      <a href="/careers">Ngành Nghề</a>
+      <span>/</span>
+      <span class="current">So Sánh Ngành</span>
+    </div>
+
+    <div class="mb-10">
+      <div class="section-label mb-4 inline-flex">🔀 Công cụ so sánh</div>
+      <h1 class="text-4xl font-black text-white mb-3" style="font-family:'Outfit',sans-serif;">
+        So Sánh <span class="gradient-text">Ngành Học</span>
+      </h1>
+      <p class="text-slate-400 max-w-2xl">
+        Chọn tối đa 3 ngành để xem biểu đồ radar đa chiều, bảng so sánh lương theo kinh nghiệm,
+        tổng chi phí đào tạo và thời gian hoàn vốn.
+      </p>
+    </div>
+
+    <!-- Comparator Island -->
+    <FieldComparator
+      client:load
+      preselectedId={preselectedId}
+    />
+  </main>
+</Layout>

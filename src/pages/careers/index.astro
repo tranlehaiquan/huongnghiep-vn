@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { VIETNAM_CAREER_DATA, EXAM_BLOCKS_INFO } from '../../data/vietnamCareerData';
+import Tuyensinh247CatalogBrowser from '../../components/react/Tuyensinh247CatalogBrowser';
+
+const block = Astro.url.searchParams.get('block') || 'ALL';
+const hotFilter = Astro.url.searchParams.get('hot') === '1';
+
+const filtered = VIETNAM_CAREER_DATA.filter(c => {
+  const matchBlock = block === 'ALL' || c.primaryExamBlocks.includes(block);
+  const matchHot = !hotFilter || c.isHot2026;
+  return matchBlock && matchHot;
+});
+
+const categoryColors: Record<string, string> = {
+  'Công nghệ Thông tin': 'badge-primary',
+  'Y Dược & Sức Khỏe': 'badge-teal',
+  'Kinh Tế & Quản Lý': 'badge-gold',
+  'Truyền Thông & Marketing': 'badge-violet',
+  'Nghệ Thuật & Thiết Kế': 'badge-rose',
+  'Cơ Khí & Kỹ Thuật': 'badge-gold',
+  'Công Nghệ Cao & Bán Dẫn': 'badge-rose',
+  'Năng Lượng & Phát Triển Bền Vững': 'badge-teal',
+  'Kinh Tế & Vận Tải': 'badge-primary',
+};
+---
+
+<Layout
+  title="Danh Sách Ngành Nghề — HướngNghiệp VN"
+  description="Khám phá tất cả ngành nghề, mức lương thực tế và lộ trình học tập tại Việt Nam."
+>
+  <Header currentPath="/careers" />
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Page header -->
+    <div class="mb-10">
+      <div class="breadcrumb mb-4">
+        <a href="/">Trang Chủ</a>
+        <span>/</span>
+        <span class="current">Ngành Nghề</span>
+      </div>
+      <h1 class="text-4xl font-black text-white mb-3" style="font-family:'Outfit',sans-serif;">
+        Khám Phá <span class="gradient-text">Ngành Nghề 2026</span>
+      </h1>
+      <p class="text-slate-400">
+        {VIETNAM_CAREER_DATA.length} ngành nghề với dữ liệu lương, khối thi và lộ trình học THPT
+      </p>
+    </div>
+
+    <!-- Block & Hot filter -->
+    <div class="flex flex-wrap gap-2 mb-8">
+      <a href="/careers?hot=1" class={`chip ${hotFilter ? 'active' : ''}`}>
+        🔥 HOT 2026
+      </a>
+      <a href="/careers" class={`chip ${block === 'ALL' && !hotFilter ? 'active' : ''}`}>Tất cả</a>
+      {Object.keys(EXAM_BLOCKS_INFO).map(b => (
+        <a href={`/careers?block=${b}`} class={`chip ${block === b ? 'active' : ''}`}>
+          Khối {b}
+        </a>
+      ))}
+    </div>
+
+    <!-- Showing label -->
+    {block !== 'ALL' && (
+      <div class="mb-6 flex items-center gap-3 p-4 card" style="border-color: rgba(79,110,247,0.3);">
+        <span class="text-xl">{EXAM_BLOCKS_INFO[block]?.subjects.join(' · ')}</span>
+        <div>
+          <div class="text-sm font-bold text-white">Khối {block}</div>
+          <div class="text-xs text-slate-500">{EXAM_BLOCKS_INFO[block]?.desc}</div>
+        </div>
+        <span class="badge badge-primary ml-auto">{filtered.length} ngành</span>
+      </div>
+    )}
+
+    {hotFilter && (
+      <div class="mb-6 flex items-center gap-3 p-4 card" style="border-color: rgba(244,63,94,0.3);">
+        <span class="text-xl">🔥</span>
+        <div>
+          <div class="text-sm font-bold text-white">Xu Hướng Ngành Nghề Hot 2026</div>
+          <div class="text-xs text-slate-500">Bán dẫn, Trí tuệ nhân tạo (AI), ESG, Logistics toàn cầu & Xe điện (EV)</div>
+        </div>
+        <span class="badge badge-rose ml-auto">{filtered.length} ngành</span>
+      </div>
+    )}
+
+    <!-- Career Grid -->
+    {filtered.length === 0 ? (
+      <div class="text-center py-20 text-slate-500">
+        <div class="text-4xl mb-4">🔍</div>
+        <p>Không tìm thấy ngành học phù hợp.</p>
+        <a href="/careers" class="btn-secondary mt-4 inline-flex">Xem tất cả</a>
+      </div>
+    ) : (
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+        {filtered.map((career) => {
+          const badgeClass = categoryColors[career.category] || 'badge-primary';
+          const totalCost = career.avgTuitionPerYearVND * career.durationYears;
+          return (
+            <a
+              href={`/careers/${career.id}`}
+              class="card card-hover group flex flex-col p-6"
+            >
+              <!-- Top -->
+              <div class="flex items-start gap-4 mb-4">
+                <span class="text-4xl shrink-0 mt-1">{career.icon}</span>
+                <div>
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <span class={`badge ${badgeClass}`}>{career.category}</span>
+                    {career.isHot2026 && <span class="badge badge-rose">🔥 HOT 2026</span>}
+                  </div>
+                  <h2 class="text-[15px] font-bold text-white leading-snug group-hover:text-indigo-300 transition-colors">
+                    {career.title}
+                  </h2>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <p class="text-xs text-slate-500 leading-relaxed line-clamp-2 mb-5 flex-1">
+                {career.description}
+              </p>
+
+              <!-- Stats row -->
+              <div class="grid grid-cols-2 gap-3 mb-4">
+                <div class="bg-white/3 rounded-lg p-3">
+                  <div class="text-xs text-slate-500 mb-1">Lương Entry</div>
+                  <div class="text-sm font-bold text-white">{(career.salariesVND.entry / 1000000).toFixed(0)}M</div>
+                </div>
+                <div class="bg-white/3 rounded-lg p-3">
+                  <div class="text-xs text-slate-500 mb-1">Lương Senior</div>
+                  <div class="text-sm font-bold text-emerald-400">{(career.salariesVND.senior / 1000000).toFixed(0)}M</div>
+                </div>
+              </div>
+
+              <!-- Salary bar -->
+              <div class="progress-bar mb-4">
+                <div class="progress-fill" style={`width: ${Math.min(100, (career.salariesVND.senior / 120000000) * 100)}%`}></div>
+              </div>
+
+              <!-- Footer meta -->
+              <div class="flex items-center justify-between text-xs">
+                <div class="flex gap-1.5 flex-wrap">
+                  {career.primaryExamBlocks.slice(0, 3).map(b => (
+                    <span class="badge badge-primary">{b}</span>
+                  ))}
+                </div>
+                <div class="flex gap-2 shrink-0">
+                  <span class="badge badge-teal">{career.durationYears}y</span>
+                  <span class="badge badge-gold">{(totalCost / 1000000).toFixed(0)}M</span>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    )}
+
+    <!-- Tuyensinh247 Crawled Catalog Section -->
+    <section class="mt-20">
+      <Tuyensinh247CatalogBrowser client:load />
+    </section>
+
+    <!-- Compare CTA -->
+    <div class="mt-16 text-center">
+      <div class="card p-8 max-w-xl mx-auto" style="border-color: rgba(79,110,247,0.25);">
+        <div class="text-3xl mb-3">🔀</div>
+        <h3 class="text-lg font-black text-white mb-2" style="font-family:'Outfit',sans-serif;">So sánh nhiều ngành?</h3>
+        <p class="text-sm text-slate-400 mb-4">So sánh lương, chi phí và ROI của tối đa 3 ngành học cùng lúc.</p>
+        <a href="/careers/compare" class="btn-primary">Mở công cụ so sánh →</a>
+      </div>
+    </div>
+  </main>
+</Layout>

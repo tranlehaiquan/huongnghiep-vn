@@ -1,0 +1,614 @@
+---
+import { VIETNAM_CAREER_DATA, EXAM_BLOCKS_INFO } from '../data/vietnamCareerData';
+
+const careers = VIETNAM_CAREER_DATA;
+---
+
+<section id="career-explorer" class="section-container">
+  <div class="container">
+    <div class="badge badge-primary center-badge">💼 Định Hướng Nghề Nghiệp & Thu Nhập Việt Nam</div>
+    <h2 class="section-title">Tra Cứu Mức Lương Theo Ngành & Khối Thi THPT</h2>
+    <p class="section-subtitle">Học sinh chọn Khối thi sở trường hoặc Nghề nghiệp yêu thích để xem mức lương thực tế tại Việt Nam (VNĐ/tháng)</p>
+
+    <!-- Filters Bar -->
+    <div class="filters-panel glass-card">
+      <div class="filter-group">
+        <label class="filter-label">Chọn Khối Thi THPT sở trường:</label>
+        <div class="block-buttons" id="exam-block-filters">
+          <button class="block-btn active" data-block="ALL">Tất Cả Khối</button>
+          {Object.keys(EXAM_BLOCKS_INFO).map((block) => (
+            <button class="block-btn" data-block={block}>{block}</button>
+          ))}
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <div class="filter-item">
+          <label for="career-select" class="filter-label">Chọn Nghề Nghiệp Cụ Thể:</label>
+          <select id="career-select" class="custom-select">
+            {careers.map((career) => (
+              <option value={career.id}>{career.icon} {career.title} ({career.majorName})</option>
+            ))}
+          </select>
+        </div>
+
+        <div class="filter-item slider-item">
+          <div class="slider-header">
+            <label for="yoe-slider" class="filter-label">Kinh Nghiệm Làm Việc:</label>
+            <span id="yoe-display" class="yoe-badge">3 Năm (Mid-Level)</span>
+          </div>
+          <input type="range" id="yoe-slider" min="0" max="15" step="1" value="3" class="custom-slider" />
+          <div class="slider-labels">
+            <span>Mới ra trường (0-2y)</span>
+            <span>Kinh nghiệm (3-5y)</span>
+            <span>Chuyên gia (6-10y)</span>
+            <span>Quản lý (10+y)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Career Detail Showcase -->
+    <div class="showcase-grid">
+      <!-- Left Card: Career Overview & Salary Card -->
+      <div class="glass-card career-overview">
+        <div class="career-header">
+          <span id="career-icon" class="large-icon">💻</span>
+          <div>
+            <span id="career-category" class="badge badge-purple">Công nghệ Thông tin</span>
+            <h3 id="career-title" class="career-main-title">Kỹ Sư Lập Trình Phần Mềm</h3>
+            <p id="career-desc" class="career-description">Xây dựng ứng dụng di động, trang web và hệ thống phần mềm...</p>
+          </div>
+        </div>
+
+        <!-- Calculated Live Salary Banner -->
+        <div class="salary-banner">
+          <div class="salary-calc-box">
+            <span class="calc-label">Mức Lương Ước Tính Tại Việt Nam</span>
+            <div id="calculated-salary" class="salary-amount">28.000.000 VNĐ <span class="per-month">/ tháng</span></div>
+            <span id="salary-tier-name" class="salary-tier">Kinh nghiệm 3 - 5 năm (Mid-Level)</span>
+          </div>
+        </div>
+
+        <!-- Salary Progression Stats -->
+        <div class="salary-tiers-grid">
+          <div class="tier-card" data-tier="entry">
+            <span class="tier-title">Mới ra trường (0-2y)</span>
+            <span id="salary-entry" class="tier-val">12M VNĐ</span>
+          </div>
+          <div class="tier-card active" data-tier="mid">
+            <span class="tier-title">Kinh nghiệm (3-5y)</span>
+            <span id="salary-mid" class="tier-val">28M VNĐ</span>
+          </div>
+          <div class="tier-card" data-tier="senior">
+            <span class="tier-title">Chuyên gia (6-10y)</span>
+            <span id="salary-senior" class="tier-val">55M VNĐ</span>
+          </div>
+          <div class="tier-card" data-tier="lead">
+            <span class="tier-title">Quản lý (10+y)</span>
+            <span id="salary-lead" class="tier-val">95M VNĐ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card: Chart & Exam Block Requirements -->
+      <div class="glass-card career-requirements">
+        <h3>📈 Biểu Đồ Tăng Trưởng Lương VNĐ</h3>
+        <div class="chart-wrapper">
+          <canvas id="salaryChart"></canvas>
+        </div>
+
+        <div class="education-requirements">
+          <div class="req-box">
+            <span class="req-title">📚 Khối Thi THPT Xét Tuyển:</span>
+            <div id="career-blocks" class="block-tags">
+              <span class="badge badge-primary">Khối A00</span>
+              <span class="badge badge-primary">Khối A01</span>
+            </div>
+          </div>
+          <div class="req-box">
+            <span class="req-title">🎓 Trình Độ & Thời Gian Học:</span>
+            <div id="career-degree" class="req-text">Đại học — 4 Năm (Học phí ~ 35.000.000 VNĐ / năm)</div>
+          </div>
+          <div class="req-box">
+            <span class="req-title">🏫 Trường Đào Tạo Hàng Đầu Tại VN:</span>
+            <div id="career-schools" class="school-tags">
+              <span class="school-tag">Bách Khoa Hà Nội</span>
+              <span class="school-tag">Bách Khoa TP.HCM</span>
+              <span class="school-tag">UIT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- High School Grade Roadmap for this Career -->
+    <div class="glass-card roadmap-card">
+      <h3 class="roadmap-header">🎯 Lộ Trình Ôn Tập Dành Cho Học Sinh Cấp 3 (Lớp 10 - 11 - 12)</h3>
+      <div class="roadmap-grid">
+        <div class="roadmap-step">
+          <div class="step-num">Lớp 10</div>
+          <h4 class="step-title">Xây Nền Tảng Môn Trọng Tâm</h4>
+          <p id="roadmap-g10" class="step-desc">Tập trung giải bài tập Toán đại số & Hình học. Bắt đầu làm quen Tiếng Anh căn bản.</p>
+        </div>
+        <div class="roadmap-step">
+          <div class="step-num">Lớp 11</div>
+          <h4 class="step-title">Nâng Cao Năng Lực & Kỹ Năng</h4>
+          <p id="roadmap-g11" class="step-desc">Ôn tập Vật lý chương Điện học. Học tư duy thuật toán lập trình Scratch/Python cơ bản.</p>
+        </div>
+        <div class="roadmap-step">
+          <div class="step-num">Lớp 12</div>
+          <h4 class="step-title">Luyện Thi THPT Quốc Gia</h4>
+          <p id="roadmap-g12" class="step-desc">Luyện thi khối A00/A01 (Toán 8.5+, Lý 8+, Anh 8+). Thi chứng chỉ IELTS 6.0+ nếu có thể.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline define:vars={{ careersData: careers, examBlocks: EXAM_BLOCKS_INFO }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const careerSelect = document.getElementById('career-select');
+    const yoeSlider = document.getElementById('yoe-slider');
+    const yoeDisplay = document.getElementById('yoe-display');
+    const blockButtons = document.querySelectorAll('#exam-block-filters .block-btn');
+
+    let currentCareerId = careersData[0].id;
+    let currentYOE = parseInt(yoeSlider.value, 10);
+    let activeBlockFilter = 'ALL';
+    let chartInstance = null;
+
+    // Helper format VNĐ
+    function formatVND(amount) {
+      return new Intl.NumberFormat('vi-VN').format(amount) + ' VNĐ';
+    }
+
+    // Initialize Chart.js
+    function initChart(career) {
+      const ctx = document.getElementById('salaryChart').getContext('2d');
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Mới ra trường (0-2y)', 'Kinh nghiệm (3-5y)', 'Chuyên gia (6-10y)', 'Quản lý (10+y)'],
+          datasets: [{
+            label: 'Mức lương trung bình (VNĐ/tháng)',
+            data: [
+              career.salariesVND.entry,
+              career.salariesVND.mid,
+              career.salariesVND.senior,
+              career.salariesVND.lead
+            ],
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59, 130, 246, 0.15)',
+            fill: true,
+            tension: 0.35,
+            pointRadius: 6,
+            pointBackgroundColor: '#60a5fa',
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return ' Lương: ' + formatVND(context.raw) + ' / tháng';
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              ticks: {
+                color: '#9ca3af',
+                callback: function(value) {
+                  return (value / 1000000) + ' Tr';
+                }
+              },
+              grid: { color: 'rgba(255, 255, 255, 0.05)' }
+            },
+            x: {
+              ticks: { color: '#9ca3af' },
+              grid: { color: 'rgba(255, 255, 255, 0.05)' }
+            }
+          }
+        }
+      });
+    }
+
+    // Update Career Display
+    function updateCareerUI() {
+      const career = careersData.find(c => c.id === currentCareerId) || careersData[0];
+
+      // Titles & Text
+      document.getElementById('career-icon').innerText = career.icon;
+      document.getElementById('career-category').innerText = career.category;
+      document.getElementById('career-title').innerText = career.title;
+      document.getElementById('career-desc').innerText = career.description;
+
+      // Tier Values
+      document.getElementById('salary-entry').innerText = (career.salariesVND.entry / 1000000) + 'M VNĐ';
+      document.getElementById('salary-mid').innerText = (career.salariesVND.mid / 1000000) + 'M VNĐ';
+      document.getElementById('salary-senior').innerText = (career.salariesVND.senior / 1000000) + 'M VNĐ';
+      document.getElementById('salary-lead').innerText = (career.salariesVND.lead / 1000000) + 'M VNĐ';
+
+      // Dynamic Calculated Salary based on YOE slider
+      let calculated = career.salariesVND.entry;
+      let tierName = 'Mới ra trường (0 - 2 năm)';
+      let activeTier = 'entry';
+
+      if (currentYOE <= 2) {
+        calculated = career.salariesVND.entry;
+        tierName = `Mới ra trường (${currentYOE} năm kinh nghiệm)`;
+        activeTier = 'entry';
+      } else if (currentYOE <= 5) {
+        calculated = career.salariesVND.mid;
+        tierName = `Kinh nghiệm (${currentYOE} năm - Mid-level)`;
+        activeTier = 'mid';
+      } else if (currentYOE <= 10) {
+        calculated = career.salariesVND.senior;
+        tierName = `Chuyên gia (${currentYOE} năm - Senior)`;
+        activeTier = 'senior';
+      } else {
+        calculated = career.salariesVND.lead;
+        tierName = `Quản lý / Chuyên gia cao cấp (${currentYOE}+ năm)`;
+        activeTier = 'lead';
+      }
+
+      document.getElementById('calculated-salary').innerHTML = `${formatVND(calculated)} <span class="per-month">/ tháng</span>`;
+      document.getElementById('salary-tier-name').innerText = tierName;
+      document.getElementById('yoe-display').innerText = `${currentYOE} Năm Kinh Nghiệm`;
+
+      // Highlight active tier box
+      document.querySelectorAll('.tier-card').forEach(card => {
+        card.classList.toggle('active', card.dataset.tier === activeTier);
+      });
+
+      // Exam Blocks & Requirements
+      const blocksContainer = document.getElementById('career-blocks');
+      blocksContainer.innerHTML = career.primaryExamBlocks.map(b => `<span class="badge badge-primary">${b} (${examBlocks[b]?.subjects.join('-') || b})</span>`).join(' ');
+
+      document.getElementById('career-degree').innerText = `${career.degreeType} — ${career.durationYears} Năm (Học phí ~ ${formatVND(career.avgTuitionPerYearVND)} / năm)`;
+
+      const schoolsContainer = document.getElementById('career-schools');
+      schoolsContainer.innerHTML = career.topSchools.map(s => `<span class="school-tag">${s}</span>`).join(' ');
+
+      // Roadmaps
+      document.getElementById('roadmap-g10').innerText = career.highSchoolRoadmap.grade10;
+      document.getElementById('roadmap-g11').innerText = career.highSchoolRoadmap.grade11;
+      document.getElementById('roadmap-g12').innerText = career.highSchoolRoadmap.grade12;
+
+      // Update Chart
+      initChart(career);
+    }
+
+    // Filter Careers Dropdown based on Block Filter
+    function filterCareerDropdown() {
+      careerSelect.innerHTML = '';
+      const filtered = activeBlockFilter === 'ALL' 
+        ? careersData 
+        : careersData.filter(c => c.primaryExamBlocks.includes(activeBlockFilter));
+
+      if (filtered.length === 0) {
+        careerSelect.innerHTML = '<option value="">Không tìm thấy ngành phù hợp với khối thi này</option>';
+        return;
+      }
+
+      filtered.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c.id;
+        opt.textContent = `${c.icon} ${c.title} (${c.majorName})`;
+        careerSelect.appendChild(opt);
+      });
+
+      currentCareerId = filtered[0].id;
+      careerSelect.value = currentCareerId;
+      updateCareerUI();
+    }
+
+    // Event Listeners
+    careerSelect.addEventListener('change', (e) => {
+      currentCareerId = e.target.value;
+      updateCareerUI();
+    });
+
+    yoeSlider.addEventListener('input', (e) => {
+      currentYOE = parseInt(e.target.value, 10);
+      updateCareerUI();
+    });
+
+    blockButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        blockButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeBlockFilter = btn.dataset.block;
+        filterCareerDropdown();
+      });
+    });
+
+    // Initial render
+    updateCareerUI();
+  });
+</script>
+
+<style>
+  .section-container {
+    padding: 4rem 0;
+  }
+  .center-badge {
+    display: table;
+    margin: 0 auto 1rem;
+  }
+
+  /* Filters Panel */
+  .filters-panel {
+    margin-bottom: 2rem;
+  }
+  .filter-group {
+    margin-bottom: 1.25rem;
+  }
+  .filter-label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+  }
+  .block-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .block-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .block-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  .block-btn.active {
+    background: var(--primary);
+    border-color: #60a5fa;
+    color: white;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+  }
+
+  .filter-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .custom-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(10, 13, 20, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+  }
+  .custom-select:focus {
+    border-color: var(--primary);
+  }
+
+  .slider-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .yoe-badge {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #60a5fa;
+    background: rgba(59, 130, 246, 0.15);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+  }
+  .custom-slider {
+    width: 100%;
+    margin: 0.75rem 0 0.35rem;
+    accent-color: var(--primary);
+  }
+  .slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+
+  /* Showcase Grid */
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .career-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .large-icon {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .career-main-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+  }
+  .career-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .salary-banner {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.05) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .calc-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .salary-amount {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #60a5fa;
+    line-height: 1.2;
+    margin: 0.2rem 0;
+  }
+  .per-month {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .salary-tier {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #34d399;
+    font-weight: 600;
+  }
+
+  .salary-tiers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .tier-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 0.85rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+  }
+  .tier-card.active {
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.15);
+  }
+  .tier-title {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  .tier-val {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+  }
+
+  /* Right Side Chart & Req */
+  .chart-wrapper {
+    height: 200px;
+    margin: 1rem 0 1.5rem;
+  }
+  .education-requirements {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .req-box {
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.75rem;
+  }
+  .req-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+  .block-tags, .school-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .school-tag {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: var(--text-main);
+  }
+
+  /* Roadmap Card */
+  .roadmap-card {
+    margin-top: 1.5rem;
+  }
+  .roadmap-header {
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+  }
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .roadmap-step {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
+  }
+  .step-num {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.8rem;
+    background: var(--primary);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  .step-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  .step-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .filter-row, .showcase-grid, .roadmap-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,233 @@
+---
+---
+
+<section id="tuition-calculator" class="section-container">
+  <div class="container">
+    <div class="badge badge-amber center-badge">💰 Đầu Tư Giáo Dục & Hoàn Vốn (ROI)</div>
+    <h2 class="section-title">Bộ Tính Học Phí Toàn Khóa & Thời Gian Hoàn Vốn</h2>
+    <p class="section-subtitle">Ước tính tổng chi phí học tập (Học phí + Sinh hoạt phí) và số tháng đi làm sau ra trường để hoàn lại vốn đầu tư</p>
+
+    <div class="calculator-grid">
+      <!-- Input Controls -->
+      <div class="glass-card calc-inputs-card">
+        <h3>⚙️ Nhập Thông Số Chi Phí</h3>
+
+        <div class="calc-field">
+          <label for="degree-select" class="filter-label">Loại hình Đào tạo:</label>
+          <select id="degree-select" class="custom-select">
+            <option value="4" data-tuition="30000000">Đại học Công lập (4 Năm — ~30Tr/năm)</option>
+            <option value="6" data-tuition="60000000">Đại học Y Khoa (6 Năm — ~60Tr/năm)</option>
+            <option value="4" data-tuition="70000000">Đại học Tư thục / Quốc tế (4 Năm — ~70Tr/năm)</option>
+            <option value="2.5" data-tuition="20000000">Cao đẳng Thực hành (2.5 Năm — ~20Tr/năm)</option>
+            <option value="2" data-tuition="12000000">Trường Đào tạo Nghề (2 Năm — ~12Tr/năm)</option>
+          </select>
+        </div>
+
+        <div class="calc-field">
+          <div class="slider-header">
+            <label for="tuition-slider" class="filter-label">Học phí trung bình mỗi năm:</label>
+            <span id="tuition-val-display" class="highlight-val">30.000.000 VNĐ</span>
+          </div>
+          <input type="range" id="tuition-slider" min="10000000" max="120000000" step="2000000" value="30000000" class="custom-slider" />
+        </div>
+
+        <div class="calc-field">
+          <div class="slider-header">
+            <label for="years-slider" class="filter-label">Số năm học (Thời gian đào tạo):</label>
+            <span id="years-val-display" class="highlight-val">4 Năm</span>
+          </div>
+          <input type="range" id="years-slider" min="1" max="6" step="0.5" value="4" class="custom-slider" />
+        </div>
+
+        <div class="calc-field">
+          <div class="slider-header">
+            <label for="living-slider" class="filter-label">Chi phí trọ & ăn ở ước tính (Mỗi tháng):</label>
+            <span id="living-val-display" class="highlight-val">4.000.000 VNĐ</span>
+          </div>
+          <input type="range" id="living-slider" min="0" max="10000000" step="500000" value="40000000" class="custom-slider" />
+        </div>
+
+        <div class="calc-field">
+          <div class="slider-header">
+            <label for="starting-salary-slider" class="filter-label">Mức lương thử việc / ra trường dự kiến:</label>
+            <span id="salary-val-display" class="highlight-val">12.000.000 VNĐ / tháng</span>
+          </div>
+          <input type="range" id="starting-salary-slider" min="6000000" max="40000000" step="1000000" value="12000000" class="custom-slider" />
+        </div>
+      </div>
+
+      <!-- Result Showcase -->
+      <div class="glass-card calc-results-card">
+        <h3>📊 Kết Quả Phân Tích Tài Chính</h3>
+
+        <div class="results-summary">
+          <div class="res-box">
+            <span class="res-label">Tổng Học Phí Toàn Khóa</span>
+            <span id="total-tuition-res" class="res-amount">120.000.000 VNĐ</span>
+          </div>
+          <div class="res-box">
+            <span class="res-label">Tổng Sinh Hoạt Phí</span>
+            <span id="total-living-res" class="res-amount">192.000.000 VNĐ</span>
+          </div>
+          <div class="res-box main-res-box">
+            <span class="res-label">TỔNG ĐẦU TƯ CHO GIÁO DỤC</span>
+            <span id="total-investment-res" class="res-amount-lg">312.000.000 VNĐ</span>
+          </div>
+        </div>
+
+        <!-- ROI Break Even Banner -->
+        <div class="roi-banner">
+          <div class="roi-icon">⏱️</div>
+          <div>
+            <span class="roi-label">Thời Gian Hòa Vốn Đầu Tư Học Tập</span>
+            <div id="break-even-res" class="roi-time">2.1 Năm đi làm</div>
+            <p id="roi-explanation" class="roi-desc">Với mức lương 12M VNĐ/tháng ra trường, bạn sẽ thu hồi lại toàn bộ 312M VNĐ tiền học và chi phí ăn ở sau khoảng 26 tháng làm việc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const degreeSelect = document.getElementById('degree-select');
+    const tuitionSlider = document.getElementById('tuition-slider');
+    const yearsSlider = document.getElementById('years-slider');
+    const livingSlider = document.getElementById('living-slider');
+    const salarySlider = document.getElementById('starting-salary-slider');
+
+    function formatVND(amount) {
+      return new Intl.NumberFormat('vi-VN').format(amount) + ' VNĐ';
+    }
+
+    function calculateROI() {
+      const tuitionPerYear = parseFloat(tuitionSlider.value);
+      const years = parseFloat(yearsSlider.value);
+      const livingPerMonth = parseFloat(livingSlider.value);
+      const startingSalaryPerMonth = parseFloat(salarySlider.value);
+
+      document.getElementById('tuition-val-display').innerText = formatVND(tuitionPerYear);
+      document.getElementById('years-val-display').innerText = `${years} Năm`;
+      document.getElementById('living-val-display').innerText = `${formatVND(livingPerMonth)} / tháng`;
+      document.getElementById('salary-val-display').innerText = `${formatVND(startingSalaryPerMonth)} / tháng`;
+
+      const totalTuition = tuitionPerYear * years;
+      const totalLiving = livingPerMonth * 12 * years;
+      const totalInvestment = totalTuition + totalLiving;
+
+      document.getElementById('total-tuition-res').innerText = formatVND(totalTuition);
+      document.getElementById('total-living-res').innerText = formatVND(totalLiving);
+      document.getElementById('total-investment-res').innerText = formatVND(totalInvestment);
+
+      // Break-even months (assuming 70% of salary used for payback)
+      const monthlySavingsForPayback = startingSalaryPerMonth * 0.8;
+      const breakEvenMonths = Math.ceil(totalInvestment / monthlySavingsForPayback);
+      const breakEvenYears = (breakEvenMonths / 12).toFixed(1);
+
+      document.getElementById('break-even-res').innerText = `${breakEvenYears} Năm đi làm (${breakEvenMonths} tháng)`;
+      document.getElementById('roi-explanation').innerText = `Với mức lương ra trường ${formatVND(startingSalaryPerMonth)}/tháng, bạn sẽ hoàn toàn thu hồi lại tổng số vốn đầu tư ${formatVND(totalInvestment)} sau khoảng ${breakEvenMonths} tháng làm việc.`;
+    }
+
+    degreeSelect.addEventListener('change', (e) => {
+      const selectedOpt = e.target.options[e.target.selectedIndex];
+      yearsSlider.value = selectedOpt.value;
+      tuitionSlider.value = selectedOpt.dataset.tuition;
+      calculateROI();
+    });
+
+    tuitionSlider.addEventListener('input', calculateROI);
+    yearsSlider.addEventListener('input', calculateROI);
+    livingSlider.addEventListener('input', calculateROI);
+    salarySlider.addEventListener('input', calculateROI);
+
+    calculateROI();
+  });
+</script>
+
+<style>
+  .calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .calc-field {
+    margin-bottom: 1.25rem;
+  }
+  .highlight-val {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #fbbf24;
+    font-size: 0.95rem;
+  }
+
+  .results-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0 1.5rem;
+  }
+  .res-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+  }
+  .main-res-box {
+    grid-column: 1 / -1;
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.3);
+  }
+  .res-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .res-amount {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+  }
+  .res-amount-lg {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #fbbf24;
+  }
+
+  .roi-banner {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.05) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .roi-icon {
+    font-size: 2.2rem;
+  }
+  .roi-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .roi-time {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #34d399;
+  }
+  .roi-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 900px) {
+    .calculator-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

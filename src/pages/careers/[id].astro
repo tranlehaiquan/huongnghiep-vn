@@ -1,0 +1,355 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { VIETNAM_CAREER_DATA, EXAM_BLOCKS_INFO, type CareerField } from '../../data/vietnamCareerData';
+import SalaryChartIsland from '../../components/react/SalaryChartIsland';
+import schoolsData from '../../data/vietnamSchools.json';
+import { slugify } from '../../utils/slugify';
+
+export function getStaticPaths() {
+  return VIETNAM_CAREER_DATA.map(c => ({
+    params: { id: c.id },
+    props: { career: c },
+  }));
+}
+
+const { career } = Astro.props as { career: CareerField };
+
+// Related schools: those whose majors match this career's name
+const relatedSchools = (schoolsData as any[]).filter(school =>
+  school.majors?.some((m: any) =>
+    career.majorName.toLowerCase().split(' ').some(word =>
+      word.length > 3 && m.name?.toLowerCase().includes(word)
+    )
+  )
+).slice(0, 6);
+
+// Salary milestones for roadmap
+const salaryMilestones = [
+  { year: '0–2 năm', label: 'Mới ra trường (Entry)', salary: career.salariesVND.entry, color: '#4f6ef7' },
+  { year: '3–5 năm', label: 'Kinh nghiệm (Mid Level)', salary: career.salariesVND.mid, color: '#8b5cf6' },
+  { year: '6–10 năm', label: 'Chuyên gia (Senior)', salary: career.salariesVND.senior, color: '#10d9a8' },
+  { year: '10+ năm', label: 'Quản lý (Lead/Director)', salary: career.salariesVND.lead, color: '#f5a623' },
+];
+
+const totalCost = career.avgTuitionPerYearVND * career.durationYears;
+const breakEvenMonths = Math.ceil(totalCost / ((career.salariesVND.mid - career.salariesVND.entry)));
+const roiYears = (breakEvenMonths / 12).toFixed(1);
+
+const categoryColors: Record<string, string> = {
+  'Công nghệ Thông tin': 'badge-primary',
+  'Y Dược & Sức Khỏe': 'badge-teal',
+  'Kinh Tế & Quản Lý': 'badge-gold',
+  'Truyền Thông & Marketing': 'badge-violet',
+  'Nghệ Thuật & Thiết Kế': 'badge-rose',
+  'Cơ Khí & Kỹ Thuật': 'badge-gold',
+};
+const badgeClass = categoryColors[career.category] || 'badge-primary';
+
+// Similar careers
+const similar = VIETNAM_CAREER_DATA.filter(c =>
+  c.id !== career.id && (
+    c.category === career.category ||
+    c.primaryExamBlocks.some(b => career.primaryExamBlocks.includes(b))
+  )
+).slice(0, 3);
+
+// JSON-LD Occupation & Breadcrumb schema
+const careerJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Trang Chủ', 'item': 'https://huongnghiep.vn' },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Ngành Nghề', 'item': 'https://huongnghiep.vn/careers' },
+        { '@type': 'ListItem', 'position': 3, 'name': career.title, 'item': `https://huongnghiep.vn/careers/${career.id}` },
+      ]
+    },
+    {
+      '@type': 'Occupation',
+      'name': career.title,
+      'description': career.description,
+      'category': career.category,
+      'estimatedSalary': [
+        {
+          '@type': 'MonetaryAmountDistribution',
+          'currency': 'VND',
+          'duration': 'P1M',
+          'percentile10': career.salariesVND.entry,
+          'percentile50': career.salariesVND.mid,
+          'percentile90': career.salariesVND.lead,
+        }
+      ],
+      'educationRequirements': career.degreeType,
+      'skills': career.focusSubjects.join(', '),
+    }
+  ]
+};
+---
+
+<Layout
+  title={`${career.title} — Lương, Khối Thi & Lộ Trình | HướngNghiệp VN`}
+  description={`Mức lương thực tế từ ${(career.salariesVND.entry/1000000).toFixed(0)}M đến ${(career.salariesVND.lead/1000000).toFixed(0)}M/tháng của ${career.title}. Khối thi ${career.primaryExamBlocks.join(', ')}.`}
+  keywords={`${career.title}, lương ${career.title}, khối thi ${career.primaryExamBlocks.join(' ')}, ${career.majorName}, hướng nghiệp 2026`}
+  jsonLd={careerJsonLd}
+>
+  <Header currentPath="/careers" />
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb mb-6">
+      <a href="/">Trang Chủ</a>
+      <span>/</span>
+      <a href="/careers">Ngành Nghề</a>
+      <span>/</span>
+      <span class="current">{career.title}</span>
+    </div>
+
+    <!-- Hero Card -->
+    <div class="card p-8 mb-8" style="background: linear-gradient(135deg, rgba(13,20,40,0.9), rgba(25,30,60,0.8)); border-color: rgba(79,110,247,0.2);">
+      <div class="flex flex-col lg:flex-row gap-6 items-start">
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span class="text-5xl">{career.icon}</span>
+            <div>
+              <span class={`badge ${badgeClass} mb-1.5`}>{career.category}</span>
+              <h1 class="text-2xl lg:text-3xl font-black text-white leading-tight" style="font-family:'Outfit',sans-serif;">
+                {career.title}
+              </h1>
+            </div>
+          </div>
+          <p class="text-slate-300 leading-relaxed mb-6">{career.description}</p>
+          <div class="flex flex-wrap gap-2">
+            {career.primaryExamBlocks.map(b => (
+              <span class="badge badge-primary text-sm px-3 py-1">
+                Khối {b} — {EXAM_BLOCKS_INFO[b]?.subjects.join(', ')}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 gap-3 shrink-0 lg:w-64">
+          <div class="card-deep p-4 text-center">
+            <div class="stat-number text-2xl text-indigo-400">{career.durationYears}y</div>
+            <div class="text-xs text-slate-500 mt-1">Năm học</div>
+          </div>
+          <div class="card-deep p-4 text-center">
+            <div class="stat-number text-2xl gradient-text-teal">{(totalCost/1000000).toFixed(0)}M</div>
+            <div class="text-xs text-slate-500 mt-1">Tổng học phí</div>
+          </div>
+          <div class="card-deep p-4 text-center">
+            <div class="stat-number text-2xl gradient-text">{(career.salariesVND.entry/1000000).toFixed(0)}M</div>
+            <div class="text-xs text-slate-500 mt-1">Lương entry/tháng</div>
+          </div>
+          <div class="card-deep p-4 text-center">
+            <div class="stat-number text-2xl gradient-text-gold">{roiYears}y</div>
+            <div class="text-xs text-slate-500 mt-1">Hoàn vốn</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Left Column: Chart + Salary Timeline -->
+      <div class="lg:col-span-2 space-y-6">
+
+        <!-- Salary Chart -->
+        <div class="card p-6">
+          <h2 class="text-lg font-black text-white mb-5 flex items-center gap-2" style="font-family:'Outfit',sans-serif;">
+            <span class="text-xl">📈</span> Biểu Đồ Lương Theo Kinh Nghiệm
+          </h2>
+          <SalaryChartIsland
+            client:load
+            salaries={career.salariesVND}
+            title={career.title}
+          />
+        </div>
+
+        <!-- Salary Timeline -->
+        <div class="card p-6">
+          <h2 class="text-lg font-black text-white mb-5" style="font-family:'Outfit',sans-serif;">
+            💰 Mốc Thu Nhập Theo Năm Kinh Nghiệm
+          </h2>
+          <div class="space-y-4">
+            {salaryMilestones.map((m, idx) => {
+              const pct = Math.round((m.salary / career.salariesVND.lead) * 100);
+              return (
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <div>
+                      <span class="text-xs font-bold text-white">{m.year}</span>
+                      <span class="text-xs text-slate-500 ml-2">{m.label}</span>
+                    </div>
+                    <span class="text-sm font-black" style={`color: ${m.color}`}>
+                      {(m.salary/1000000).toFixed(0)}M VNĐ
+                    </span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style={`width: ${pct}%; background: ${m.color};`}></div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <!-- HS Roadmap -->
+        <div class="card p-6">
+          <h2 class="text-lg font-black text-white mb-5" style="font-family:'Outfit',sans-serif;">
+            🗺️ Lộ Trình Ôn Thi THPT
+          </h2>
+          <div class="relative">
+            <!-- Timeline line -->
+            <div class="absolute left-5 top-5 bottom-5 w-0.5" style="background: linear-gradient(180deg, #4f6ef7, #8b5cf6, #10d9a8);"></div>
+
+            <div class="space-y-6">
+              {[
+                { grade: '10', title: 'Xây Nền Tảng', content: career.highSchoolRoadmap.grade10, color: '#4f6ef7' },
+                { grade: '11', title: 'Nâng Cao & Thực Hành', content: career.highSchoolRoadmap.grade11, color: '#8b5cf6' },
+                { grade: '12', title: 'Luyện Thi Quốc Gia', content: career.highSchoolRoadmap.grade12, color: '#10d9a8' },
+              ].map(step => (
+                <div class="flex gap-4 pl-3">
+                  <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black text-white shrink-0 relative z-10" style={`background: ${step.color};`}>
+                    {step.grade}
+                  </div>
+                  <div class="card-deep p-4 flex-1">
+                    <div class="text-sm font-bold text-white mb-1">Lớp {step.grade} — {step.title}</div>
+                    <p class="text-xs text-slate-400 leading-relaxed">{step.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Info Cards -->
+      <div class="space-y-5">
+
+        <!-- Key Info -->
+        <div class="card p-5">
+          <h3 class="text-sm font-bold text-white mb-4 flex items-center gap-2">
+            📋 Thông Tin Ngành
+          </h3>
+          <dl class="space-y-3 text-sm">
+            <div class="flex justify-between items-start gap-2">
+              <dt class="text-slate-500 shrink-0">Bằng cấp</dt>
+              <dd class="text-white font-medium text-right">{career.degreeType}</dd>
+            </div>
+            <div class="divider"></div>
+            <div class="flex justify-between items-start gap-2">
+              <dt class="text-slate-500 shrink-0">Thời gian</dt>
+              <dd class="text-white font-medium">{career.durationYears} năm</dd>
+            </div>
+            <div class="divider"></div>
+            <div class="flex justify-between items-start gap-2">
+              <dt class="text-slate-500 shrink-0">Học phí/năm</dt>
+              <dd class="text-white font-medium">{(career.avgTuitionPerYearVND/1000000).toFixed(0)}M VNĐ</dd>
+            </div>
+            <div class="divider"></div>
+            <div class="flex justify-between items-start gap-2">
+              <dt class="text-slate-500 shrink-0">Tổng học phí</dt>
+              <dd class="text-emerald-400 font-bold">{(totalCost/1000000).toFixed(0)}M VNĐ</dd>
+            </div>
+            <div class="divider"></div>
+            <div class="flex justify-between items-start gap-2">
+              <dt class="text-slate-500 shrink-0">Môn học chính</dt>
+              <dd class="text-white font-medium text-right">{career.focusSubjects.join(', ')}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Exam Blocks Detail -->
+        <div class="card p-5">
+          <h3 class="text-sm font-bold text-white mb-4">📚 Khối Thi Xét Tuyển</h3>
+          <div class="space-y-3">
+            {career.primaryExamBlocks.map(b => (
+              <div class="card-deep p-3">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="badge badge-primary">{b}</span>
+                  <span class="text-xs text-white font-semibold">{EXAM_BLOCKS_INFO[b]?.name}</span>
+                </div>
+                <div class="text-xs text-slate-500">{EXAM_BLOCKS_INFO[b]?.subjects.join(' · ')}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Top Schools -->
+        <div class="card p-5">
+          <h3 class="text-sm font-bold text-white mb-4">🏛️ Trường Đào Tạo Hàng Đầu</h3>
+          <div class="space-y-2">
+            {career.topSchools.map((school, idx) => (
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/3 transition-colors">
+                <span class="text-xs font-black w-5 h-5 rounded flex items-center justify-center text-white shrink-0"
+                      style={`background: ${idx === 0 ? '#f5a623' : idx === 1 ? '#94a3b8' : '#b45309'};`}>
+                  {idx + 1}
+                </span>
+                <span class="text-sm text-slate-300">{school}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Compare CTA -->
+        <div class="card p-5 text-center" style="border-color: rgba(79,110,247,0.25);">
+          <div class="text-2xl mb-2">🔀</div>
+          <div class="text-sm font-bold text-white mb-1">So sánh với ngành khác?</div>
+          <p class="text-xs text-slate-500 mb-3">Xem radar chart và bảng so sánh chi tiết</p>
+          <a href={`/careers/compare?a=${career.id}`} class="btn-primary w-full justify-center text-xs">
+            Thêm vào so sánh
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Schools Section -->
+    {relatedSchools.length > 0 && (
+      <section class="mt-10">
+        <h2 class="text-xl font-black text-white mb-5" style="font-family:'Outfit',sans-serif;">
+          🏫 Trường Đào Tạo Ngành Này ({relatedSchools.length}+)
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {relatedSchools.map((school: any) => (
+            <a
+              href={`/schools/${slugify(school.name)}`}
+              class="card card-hover p-4 flex items-start gap-3 group"
+            >
+              <span class="text-xl shrink-0">🏛️</span>
+              <div class="flex-1 min-w-0">
+                <div class="text-xs badge badge-teal mb-1">{school.typeLabel}</div>
+                <div class="text-sm font-bold text-white truncate group-hover:text-indigo-300 transition-colors">
+                  {school.name}
+                </div>
+                <div class="text-xs text-slate-500 mt-1">{school.province} · {(school.avgTuitionPerYearVND/1000000).toFixed(0)}M/năm</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Similar Careers -->
+    {similar.length > 0 && (
+      <section class="mt-10">
+        <h2 class="text-xl font-black text-white mb-5" style="font-family:'Outfit',sans-serif;">
+          🔗 Ngành Học Liên Quan
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {similar.map(c => (
+            <a href={`/careers/${c.id}`} class="card card-hover p-4 flex items-center gap-3 group">
+              <span class="text-2xl">{c.icon}</span>
+              <div>
+                <div class="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors">{c.title}</div>
+                <div class="text-xs text-slate-500">{(c.salariesVND.senior/1000000).toFixed(0)}M senior</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </main>
+</Layout>

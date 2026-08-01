@@ -1,0 +1,149 @@
+---
+---
+
+<section id="learning-roadmap" class="section-container">
+  <div class="container">
+    <div class="badge badge-purple center-badge">🚀 Hướng Dẫn Tự Học & Thời Gian Thực Hiện</div>
+    <h2 class="section-title">Để Tự Làm Trang Web Này: Cần Học Gì & Bao Lâu?</h2>
+    <p class="section-subtitle">Lộ trình học chi tiết từng bước giúp bạn từ người mới bắt đầu có thể tự xây dựng trang web tra cứu định hướng nghề nghiệp này</p>
+
+    <!-- Timeline Steps Grid -->
+    <div class="roadmap-phases-grid">
+      <!-- Phase 1 -->
+      <div class="glass-card phase-card">
+        <div class="phase-badge phase-1">Giai Đoạn 1: 1 — 2 Tuần</div>
+        <div class="phase-icon">🌐</div>
+        <h3 class="phase-title">HTML5 & Modern CSS3 Layout</h3>
+        <p class="phase-desc">Nắm vững cấu trúc trang web và giao diện responsive hiện đại.</p>
+        <ul class="phase-checklist">
+          <li>✅ Thẻ HTML5 chuẩn SEO (header, section, footer, form, inputs).</li>
+          <li>✅ CSS Flexbox & CSS Grid cho bố cục chia cột mượt mà.</li>
+          <li>✅ CSS Variables, Gradient, hiệu ứng Glassmorphic mờ nền.</li>
+          <li>✅ Responsive layout đẹp mắt trên cả Máy tính & Điện thoại.</li>
+        </ul>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="glass-card phase-card">
+        <div class="phase-badge phase-2">Giai Đoạn 2: 2 Tuần</div>
+        <div class="phase-icon">⚡</div>
+        <h3 class="phase-title">JavaScript ES6+ & Tương Tác DOM</h3>
+        <p class="phase-desc">Viết logic xử lý dữ liệu và tạo tính năng tính toán tương tác.</p>
+        <ul class="phase-checklist">
+          <li>✅ Khai báo Biến, Mảng (Array), Đối tượng (Object) chứa dữ liệu.</li>
+          <li>✅ Bắt sự kiện người dùng (EventListener: `input`, `change`, `click`).</li>
+          <li>✅ Tính toán mức lương VNĐ theo số năm kinh nghiệm & thanh trượt Slider.</li>
+          <li>✅ Bộ lọc linh hoạt theo Khối thi THPT & Ngành học.</li>
+        </ul>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="glass-card phase-card">
+        <div class="phase-badge phase-3">Giai Đoạn 3: 1 — 2 Tuần</div>
+        <div class="phase-icon">🚀</div>
+        <h3 class="phase-title">Astro Framework & Static Site (SSG)</h3>
+        <p class="phase-desc">Học khung làm việc Astro giúp trang web siêu nhanh và chuẩn SEO.</p>
+        <ul class="phase-checklist">
+          <li>✅ Cấu trúc Component Astro (`.astro`) tái sử dụng dễ dàng.</li>
+          <li>✅ Khái niệm Static Site Generation (SSG) biên dịch tĩnh.</li>
+          <li>✅ Islands Architecture: Giữ trang tĩnh 100%, chỉ bật JS cho các phần tương tác.</li>
+          <li>✅ Tích hợp pnpm, quản lý gói dependency và build sản phẩm.</li>
+        </ul>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="glass-card phase-card">
+        <div class="phase-badge phase-4">Giai Đoạn 4: 1 Tuần</div>
+        <div class="phase-icon">📊</div>
+        <h3 class="phase-title">Crawler Data & Chart.js Visualizer</h3>
+        <p class="phase-desc">Cào dữ liệu các trường ĐH Việt Nam và vẽ biểu đồ mức lương.</p>
+        <ul class="phase-checklist">
+          <li>✅ Viết script Crawler Node.js (Axios/Cheerio) cào dữ liệu các trường ĐH.</li>
+          <li>✅ Tích hợp thư viện Chart.js vẽ biểu đồ đường (Line Chart) mức lương VNĐ.</li>
+          <li>✅ Xuất dữ liệu ra file JSON sạch (`vietnamSchools.json`).</li>
+          <li>✅ Triển khai miễn phí lên Vercel / Netlify / GitHub Pages.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Summary Learning Duration Banner -->
+    <div class="glass-card duration-summary-banner">
+      <div class="duration-icon">⏳</div>
+      <div>
+        <h3>Tổng Thời Gian Hoàn Thành Dự Án: 4 đến 8 Tuần</h3>
+        <p>Dành khoảng <strong>5 — 10 giờ / tuần</strong> học tập và làm thực hành. Bạn hoàn toàn có thể vừa học vừa xây dựng từng phần cho trang web định hướng nghề nghiệp này!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .roadmap-phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .phase-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .phase-badge {
+    align-self: flex-start;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    margin-bottom: 0.85rem;
+  }
+  .phase-1 { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); }
+  .phase-2 { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+  .phase-3 { background: rgba(139, 92, 246, 0.2); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.4); }
+  .phase-4 { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+
+  .phase-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .phase-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  .phase-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .phase-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-main);
+  }
+
+  .duration-summary-banner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.08) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+  }
+  .duration-icon {
+    font-size: 3rem;
+  }
+  .duration-summary-banner h3 {
+    font-size: 1.3rem;
+    color: #c084fc;
+    margin-bottom: 0.25rem;
+  }
+  .duration-summary-banner p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+</style>

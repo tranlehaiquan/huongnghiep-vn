@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import SchoolSearchIsland from '../../components/react/SchoolSearchIsland';
+import schoolsData from '../../data/vietnamSchools.json';
+
+const schools = schoolsData as any[];
+const totalSchools = schools.length;
+const byRegion = {
+  North: schools.filter(s => s.region === 'North').length,
+  Central: schools.filter(s => s.region === 'Central').length,
+  South: schools.filter(s => s.region === 'South').length,
+};
+---
+
+<Layout
+  title="Tìm Trường Học — HướngNghiệp VN"
+  description={`Khám phá ${totalSchools}+ trường đại học, cao đẳng và trường nghề tại Việt Nam. Tìm kiếm theo ngành học, khối thi, khu vực.`}
+>
+  <Header currentPath="/schools" />
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Page header -->
+    <div class="mb-8">
+      <div class="breadcrumb mb-4">
+        <a href="/">Trang Chủ</a>
+        <span>/</span>
+        <span class="current">Trường Học</span>
+      </div>
+      <h1 class="text-4xl font-black text-white mb-3" style="font-family:'Outfit',sans-serif;">
+        Khám Phá <span class="gradient-text">Trường Học</span>
+      </h1>
+      <p class="text-slate-400">
+        {totalSchools}+ trường đại học, cao đẳng và trường nghề — dữ liệu thực từ nguồn mở Việt Nam
+      </p>
+    </div>
+
+    <!-- Stats row -->
+    <div class="grid grid-cols-3 gap-4 mb-8">
+      {[
+        { num: byRegion.North, label: 'Miền Bắc', icon: '🔵' },
+        { num: byRegion.Central, label: 'Miền Trung', icon: '🟠' },
+        { num: byRegion.South, label: 'Miền Nam', icon: '🟢' },
+      ].map(s => (
+        <div class="card p-4 text-center">
+          <div class="text-xl mb-1">{s.icon}</div>
+          <div class="stat-number text-2xl gradient-text">{s.num}</div>
+          <div class="text-xs text-slate-500 mt-1">{s.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- School Search Island -->
+    <SchoolSearchIsland
+      client:load
+      schools={schools}
+    />
+  </main>
+</Layout>

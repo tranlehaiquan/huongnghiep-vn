@@ -1,0 +1,422 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { VIETNAM_CAREER_DATA, EXAM_BLOCKS_INFO } from '../../data/vietnamCareerData';
+import schoolsData from '../../data/vietnamSchools.json';
+import { slugify } from '../../utils/slugify';
+
+export function getStaticPaths() {
+  return (schoolsData as any[]).map(school => ({
+    params: { slug: slugify(school.name) },
+    props: { school },
+  }));
+}
+
+const { school } = Astro.props as { school: any };
+
+// Find matching career fields for this school's majors
+const schoolMajorNames = (school.majors || []).map((m: any) => m.name?.toLowerCase() || '');
+const relatedCareers = VIETNAM_CAREER_DATA.filter(career =>
+  schoolMajorNames.some((mn: string) =>
+    career.majorName.toLowerCase().split(' ').some(word =>
+      word.length > 3 && mn.includes(word)
+    )
+  ) ||
+  career.topSchools.some(ts => school.name.includes(ts) || ts.includes(school.shortName || ''))
+).slice(0, 4);
+
+// Similar schools (same region + type)
+const similarSchools = (schoolsData as any[]).filter(s =>
+  s.name !== school.name &&
+  s.region === school.region &&
+  (s.type === school.type || s.typeLabel === school.typeLabel)
+).slice(0, 4);
+
+import benchmarkData from '../../data/tuyensinh247_school_benchmarks.json';
+
+const benchmarkSchools = (benchmarkData as any).schools || [];
+const matchedBenchmark = benchmarkSchools.find((b: any) =>
+  school.name.toLowerCase().includes(b.name.toLowerCase()) ||
+  b.name.toLowerCase().includes(school.name.toLowerCase()) ||
+  (school.shortName && b.name.toLowerCase().includes(school.shortName.toLowerCase()))
+);
+const benchmarkMajors = matchedBenchmark?.majors || [];
+
+const isCollege = school.type === 'college';
+const totalCost = (m: any) => (m.tuitionPerYear || school.avgTuitionPerYearVND) * (m.years || 4);
+
+// JSON-LD EducationalOrganization & Breadcrumb schema
+const schoolSlug = slugify(school.name);
+const schoolJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Trang Chủ', 'item': 'https://huongnghiep.vn' },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Trường Học', 'item': 'https://huongnghiep.vn/schools' },
+        { '@type': 'ListItem', 'position': 3, 'name': school.name, 'item': `https://huongnghiep.vn/schools/${schoolSlug}` },
+      ]
+    },
+    {
+      '@type': 'EducationalOrganization',
+      'name': school.name,
+      'alternateName': school.shortName || school.name,
+      'url': `https://huongnghiep.vn/schools/${schoolSlug}`,
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': school.province,
+        'addressCountry': 'VN'
+      },
+      ...(school.lat && school.lng ? {
+        'geo': {
+          '@type': 'GeoCoordinates',
+          'latitude': school.lat,
+          'longitude': school.lng
+        }
+      } : {}),
+    }
+  ]
+};
+---
+
+<Layout
+  title={`${school.name} — Ngành Học & Học Phí 2026 | HướngNghiệp VN`}
+  description={`Thông tin tuyển sinh, ${school.majors?.length || 0} ngành học, học phí và vị trí địa lý của ${school.name} tại ${school.province}.`}
+  keywords={`${school.name}, tuyển sinh ${school.name}, học phí ${school.name}, ngành học ${school.name}, địa chỉ ${school.name}`}
+  jsonLd={schoolJsonLd}
+>
+  <Header currentPath="/schools" />
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb mb-6">
+      <a href="/">Trang Chủ</a>
+      <span>/</span>
+      <a href="/schools">Trường Học</a>
+      <span>/</span>
+      <span class="current">{school.shortName || school.name}</span>
+    </div>
+
+    <!-- Hero -->
+    <div class="card p-8 mb-8" style="background: linear-gradient(135deg, rgba(13,20,40,0.9), rgba(20,30,55,0.85)); border-color: rgba(79,110,247,0.2);">
+      <div class="flex flex-col lg:flex-row gap-6 items-start">
+        <div class="flex-1">
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class={`badge ${isCollege ? 'badge-teal' : 'badge-primary'}`}>
+              {school.typeLabel || (isCollege ? 'Cao đẳng' : 'Đại học Công lập')}
+            </span>
+            <span class="badge badge-gold">{school.regionLabel || school.region}</span>
+            <span class="badge badge-violet">{school.province}</span>
+            {school.code && (
+              <span class="badge badge-indigo">Mã trường: {school.code}</span>
+            )}
+          </div>
+          <h1 class="text-2xl lg:text-3xl font-black text-white mb-3" style="font-family:'Outfit',sans-serif;">
+            {school.name}
+          </h1>
+          <p class="text-slate-400 text-sm">
+            Trường đào tạo tại {school.province} — {school.majors?.length || 0} ngành học
+            {school.avgTuitionPerYearVND > 0
+              ? ` · Học phí từ ${(school.avgTuitionPerYearVND/1000000).toFixed(0)}M VNĐ/năm`
+              : ' · Học phí: Miễn phí (Sư phạm)'}
+          </p>
+
+          {school.website && (
+            <a
+              href={school.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-ghost mt-3 inline-flex text-indigo-400 hover:text-indigo-300 pl-0"
+            >
+              🔗 Xem trên Wikipedia →
+            </a>
+          )}
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 gap-3 shrink-0 lg:w-56">
+          <div class="card-deep p-4 text-center">
+            <div class="stat-number text-2xl gradient-text">{school.majors?.length || 0}</div>
+            <div class="text-xs text-slate-500 mt-1">Ngành học</div>
+          </div>
+          <div class="card-deep p-4 text-center">
+            <div class="stat-number text-2xl gradient-text-teal">
+              {school.avgTuitionPerYearVND > 0 ? `${(school.avgTuitionPerYearVND/1000000).toFixed(0)}M` : 'Miễn phí'}
+            </div>
+            <div class="text-xs text-slate-500 mt-1">Học phí/năm</div>
+          </div>
+          <a
+            href={school.lat && school.lng
+              ? `https://www.google.com/maps?q=${school.lat},${school.lng}`
+              : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(school.name + ', ' + school.province)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card-deep p-3 text-center col-span-2 hover:border-emerald-500/40 border border-transparent transition-all group flex flex-col items-center justify-center gap-1 cursor-pointer"
+          >
+            <div class="text-xs text-slate-400 font-medium flex items-center gap-1">
+              📍 <span>Địa Chỉ & Bản Đồ</span>
+            </div>
+            <div class="text-xs font-bold text-emerald-400 group-hover:text-emerald-300 flex items-center gap-1">
+              <span>{school.province}</span>
+              <span class="text-[10px] bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded text-emerald-400 font-normal">Google Maps ↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Left: Majors list -->
+      <div class="lg:col-span-2 space-y-6">
+
+        <!-- Majors -->
+        <div class="card p-6">
+          <h2 class="text-lg font-black text-white mb-5 flex items-center gap-2" style="font-family:'Outfit',sans-serif;">
+            <span>📚</span> Ngành Đào Tạo
+          </h2>
+
+          {(!school.majors || school.majors.length === 0) ? (
+            <div class="text-center py-8 text-slate-500">
+              <div class="text-3xl mb-2">📋</div>
+              <p>Chưa có thông tin ngành học chi tiết.</p>
+            </div>
+          ) : (
+            <div class="space-y-3">
+              {school.majors.map((major: any) => {
+                const yearlyCost = major.tuitionPerYear || school.avgTuitionPerYearVND;
+                const years = major.years || 4;
+                const total = yearlyCost * years;
+                // Find matching exam blocks
+                const blocks = major.blocks || [];
+                return (
+                  <div class="card-deep p-4 hover:border-indigo-500/30 transition-colors border border-transparent">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                      <div>
+                        <span class="badge badge-primary text-xs mr-2">{major.code}</span>
+                        <span class="text-sm font-bold text-white">{major.name}</span>
+                      </div>
+                      <div class="text-right shrink-0">
+                        <div class="text-sm font-black gradient-text-teal">
+                          {yearlyCost > 0 ? `${(yearlyCost/1000000).toFixed(0)}M` : 'Miễn phí'}
+                          <span class="text-xs text-slate-500 font-normal">/năm</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-2 text-xs">
+                      <div class="flex gap-1.5">
+                        {blocks.map((b: string) => (
+                          <span class="badge badge-primary">{b}</span>
+                        ))}
+                      </div>
+                      <div class="ml-auto flex gap-2">
+                        <span class="badge badge-teal">{years} năm</span>
+                        {total > 0 && (
+                          <span class="badge badge-gold">Tổng {(total/1000000).toFixed(0)}M</span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Mini progress bar showing cost vs max */}
+                    <div class="mt-3 progress-bar">
+                      <div class="progress-fill" style={`width: ${Math.min(100, (yearlyCost / 70000000) * 100)}%; background: var(--color-accent);`}></div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        <!-- Crawled Benchmark Scores Section -->
+        {benchmarkMajors.length > 0 && (
+          <div class="card p-6" style="border-color: rgba(16,217,168,0.25);">
+            <div class="flex items-center justify-between mb-5">
+              <div>
+                <span class="badge badge-teal text-xs mb-2">🌐 Dữ Liệu TuyểnSinh247</span>
+                <h2 class="text-lg font-black text-white" style="font-family:'Outfit',sans-serif;">
+                  📊 Điểm Chuẩn Xét Tuyển THPT ({benchmarkMajors.length} Ngành)
+                </h2>
+                <p class="text-xs text-slate-400 mt-1">Tra cứu điểm chuẩn trúng tuyển theo ngành và tổ hợp khối thi</p>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="border-b border-white/10 text-slate-400">
+                    <th class="text-left py-3 px-2 font-semibold">Tên Ngành</th>
+                    <th class="text-center py-3 px-2 font-semibold">Tổ Hợp Môn</th>
+                    <th class="text-right py-3 px-2 font-semibold">Điểm Chuẩn</th>
+                    <th class="text-left py-3 px-2 font-semibold">Ghi Chú</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  {benchmarkMajors.map((b: any) => (
+                    <tr class="hover:bg-white/3 transition-colors">
+                      <td class="py-2.5 px-2 font-bold text-white max-w-xs">{b.majorName}</td>
+                      <td class="py-2.5 px-2 text-center">
+                        <div class="flex flex-wrap justify-center gap-1">
+                          {(b.blocks || []).map((blk: string) => (
+                            <span class="badge badge-primary text-[10px]">{blk}</span>
+                          ))}
+                        </div>
+                      </td>
+                      <td class="py-2.5 px-2 text-right">
+                        <span class="text-sm font-black gradient-text-teal">
+                          {b.score && b.score !== '0' ? b.score : 'Đang cập nhật'}
+                        </span>
+                      </td>
+                      <td class="py-2.5 px-2 text-slate-500 text-[11px] max-w-xs truncate">{b.note || '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        <!-- Related Careers -->
+        {relatedCareers.length > 0 && (
+          <div class="card p-6">
+            <h2 class="text-lg font-black text-white mb-4" style="font-family:'Outfit',sans-serif;">
+              💼 Ngành Nghề Phù Hợp
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {relatedCareers.map(career => (
+                <a href={`/careers/${career.id}`} class="card-deep p-4 flex items-center gap-3 hover:border-indigo-500/30 border border-transparent transition-colors group">
+                  <span class="text-2xl">{career.icon}</span>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors truncate">{career.title}</div>
+                    <div class="text-xs text-slate-500">{(career.salariesVND.senior/1000000).toFixed(0)}M senior · {career.durationYears}y</div>
+                  </div>
+                  <svg class="w-4 h-4 text-slate-600 group-hover:text-indigo-400 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <!-- Right: Sidebar -->
+      <div class="space-y-5">
+
+        <!-- School Info -->
+        <div class="card p-5">
+          <h3 class="text-sm font-bold text-white mb-4">📋 Thông Tin Trường</h3>
+          <dl class="space-y-3 text-sm">
+            <div class="flex justify-between gap-2">
+              <dt class="text-slate-500">Loại hình</dt>
+              <dd class="text-white font-medium text-right">{school.typeLabel || 'Đại học'}</dd>
+            </div>
+            <div class="divider"></div>
+            {school.code && (
+              <>
+                <div class="flex justify-between gap-2">
+                  <dt class="text-slate-500">Mã trường</dt>
+                  <dd class="text-white font-bold">{school.code}</dd>
+                </div>
+                <div class="divider"></div>
+              </>
+            )}
+            <div class="flex justify-between gap-2">
+              <dt class="text-slate-500">Khu vực</dt>
+              <dd class="text-white font-medium">{school.regionLabel || school.region}</dd>
+            </div>
+            <div class="divider"></div>
+            <div class="flex justify-between gap-2">
+              <dt class="text-slate-500">Tỉnh/Thành</dt>
+              <dd class="text-white font-medium">{school.province}</dd>
+            </div>
+            <div class="divider"></div>
+            <div class="flex justify-between gap-2">
+              <dt class="text-slate-500">Số ngành</dt>
+              <dd class="text-white font-medium">{school.majors?.length || 0}</dd>
+            </div>
+            <div class="divider"></div>
+            <div class="flex justify-between gap-2">
+              <dt class="text-slate-500">Học phí TB</dt>
+              <dd class="text-emerald-400 font-bold">
+                {school.avgTuitionPerYearVND > 0
+                  ? `${(school.avgTuitionPerYearVND/1000000).toFixed(0)}M VNĐ/năm`
+                  : 'Miễn phí'}
+              </dd>
+            </div>
+            <div class="divider"></div>
+            <div class="flex justify-between gap-2 items-center">
+              <dt class="text-slate-500">Địa chỉ</dt>
+              <dd class="text-right">
+                <a
+                  href={school.lat && school.lng
+                    ? `https://www.google.com/maps?q=${school.lat},${school.lng}`
+                    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(school.name + ', ' + school.province)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold inline-flex items-center gap-1"
+                >
+                  📍 Google Maps ↗
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Exam blocks at this school -->
+        {(() => {
+          const allBlocks = new Set<string>();
+          (school.majors || []).forEach((m: any) =>
+            (m.blocks || []).forEach((b: string) => allBlocks.add(b))
+          );
+          return allBlocks.size > 0 ? (
+            <div class="card p-5">
+              <h3 class="text-sm font-bold text-white mb-4">📚 Khối Thi Xét Tuyển</h3>
+              <div class="flex flex-wrap gap-2">
+                {[...allBlocks].map(b => (
+                  <div class="card-deep px-3 py-2">
+                    <div class="text-xs font-black text-indigo-300">{b}</div>
+                    <div class="text-xs text-slate-500">{EXAM_BLOCKS_INFO[b]?.subjects.join(' · ') || b}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null;
+        })()}
+
+        <!-- Compare CTA -->
+        <div class="card p-5 text-center" style="border-color: rgba(79,110,247,0.25);">
+          <div class="text-2xl mb-2">🔀</div>
+          <div class="text-sm font-bold text-white mb-1">So sánh ngành học?</div>
+          <p class="text-xs text-slate-500 mb-3">Xem bảng so sánh lương và chi phí giữa các ngành</p>
+          <a href="/careers/compare" class="btn-primary w-full justify-center text-xs">
+            Mở công cụ so sánh
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Similar Schools -->
+    {similarSchools.length > 0 && (
+      <section class="mt-10">
+        <h2 class="text-xl font-black text-white mb-5" style="font-family:'Outfit',sans-serif;">
+          🏛️ Trường Tương Tự Tại {school.regionLabel || school.region}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {similarSchools.map((s: any) => (
+            <a
+              href={`/schools/${slugify(s.name)}`}
+              class="card card-hover p-4 group"
+            >
+              <div class="text-xl mb-2">🏛️</div>
+              <div class="text-xs badge badge-teal mb-2">{s.typeLabel || 'Đại học'}</div>
+              <div class="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors line-clamp-2">{s.name}</div>
+              <div class="text-xs text-slate-500 mt-2">{s.province}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </main>
+</Layout>
