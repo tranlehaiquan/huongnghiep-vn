@@ -1,50 +1,31 @@
 # ============================================
-# Dokploy-optimized Dockerfile for Astro static site
-# Security-hardened: minimal attack surface, proper permissions, security headers
+# Dokploy-optimized Dockerfile for Astro SSR (Node.js Standalone)
 # ============================================
 
 # Build stage
 FROM node:22-alpine AS builder
 WORKDIR /app
 
-# Install dependencies first (better caching)
+# Install dependencies
 COPY package*.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN npm install -g pnpm && pnpm install --prefer-offline
 
-# Copy source and build static site
+# Copy source and build SSR bundle
 COPY . .
 RUN pnpm run build
 
-# Production stage — lightweight nginx
-FROM nginx:alpine AS production
+# Production stage — Node.js runner
+FROM node:22-alpine AS runner
+WORKDIR /app
 
-# Install curl for healthchecks
-RUN apk add --no-cache curl
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
+ENV PORT=80
 
-# Remove default nginx config to avoid conflicts
-RUN rm /etc/nginx/conf.d/default.conf /etc/nginx/sites-enabled/default 2>/dev/null || true
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
 
-# Copy custom nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Copy built static files
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Fix permissions: nginx worker processes run as 'nginx' user
-RUN chown -R nginx:nginx /usr/share/nginx/html \
-    && chmod -R 755 /usr/share/nginx/html
-
-# Security: ensure no shell for nginx user (already set in alpine, but belt+suspenders)
-RUN sed -i 's/^nginx:x:/nginx:x:/' /etc/passwd 2>/dev/null || true
-
-# Health check for Dokploy
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:80/ || exit 1
-
-# Dokploy/Traefik will route to this port
 EXPOSE 80
 
-# Run nginx in foreground (required for containers)
-# Note: nginx master starts as root to bind port 80, then worker processes
-# drop to 'nginx' user automatically. This is standard and safe in containers.
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "./dist/server/entry.mjs"]

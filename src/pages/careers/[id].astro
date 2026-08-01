@@ -6,6 +6,8 @@ import SalaryChartIsland from '../../components/react/SalaryChartIsland';
 import schoolsData from '../../data/vietnamSchools.json';
 import { slugify } from '../../utils/slugify';
 
+export const prerender = true;
+
 export function getStaticPaths() {
   return VIETNAM_CAREER_DATA.map(c => ({
     params: { id: c.id },
@@ -93,6 +95,16 @@ const careerJsonLd = {
   description={`Mức lương thực tế từ ${(career.salariesVND.entry/1000000).toFixed(0)}M đến ${(career.salariesVND.lead/1000000).toFixed(0)}M/tháng của ${career.title}. Khối thi ${career.primaryExamBlocks.join(', ')}.`}
   keywords={`${career.title}, lương ${career.title}, khối thi ${career.primaryExamBlocks.join(' ')}, ${career.majorName}, hướng nghiệp 2026`}
   jsonLd={careerJsonLd}
+  pageContext={{
+    type: 'career',
+    title: career.title,
+    id: career.id,
+    majorName: career.majorName,
+    category: career.category,
+    primaryExamBlocks: career.primaryExamBlocks,
+    salariesVND: career.salariesVND,
+    topSchools: career.topSchools,
+  }}
 >
   <Header currentPath="/careers" />
 

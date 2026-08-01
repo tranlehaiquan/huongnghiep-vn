@@ -5,6 +5,8 @@ import { VIETNAM_CAREER_DATA, EXAM_BLOCKS_INFO } from '../../data/vietnamCareerD
 import schoolsData from '../../data/vietnamSchools.json';
 import { slugify } from '../../utils/slugify';
 
+export const prerender = true;
+
 export function getStaticPaths() {
   return (schoolsData as any[]).map(school => ({
     params: { slug: slugify(school.name) },
@@ -87,6 +89,20 @@ const schoolJsonLd = {
   description={`Thông tin tuyển sinh, ${school.majors?.length || 0} ngành học, học phí và vị trí địa lý của ${school.name} tại ${school.province}.`}
   keywords={`${school.name}, tuyển sinh ${school.name}, học phí ${school.name}, ngành học ${school.name}, địa chỉ ${school.name}`}
   jsonLd={schoolJsonLd}
+  pageContext={{
+    type: 'school',
+    name: school.name,
+    code: school.code || school.shortName || '',
+    shortName: school.shortName || '',
+    region: school.region,
+    province: school.province,
+    typeLabel: school.typeLabel,
+    website: school.website || school.url || '',
+    majorsCount: school.majorsCount || school.majors?.length || 0,
+    avgTuitionPerYearVND: school.avgTuitionPerYearVND,
+    address: school.address,
+    topMajors: (school.majors || []).slice(0, 10).map((m: any) => ({ name: m.name, cutoffScore: m.cutoffScore2024, blocks: m.blocks })),
+  }}
 >
   <Header currentPath="/schools" />
 
