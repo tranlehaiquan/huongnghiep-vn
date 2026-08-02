@@ -169,14 +169,12 @@ const careerJsonLd = {
 
         <!-- Salary Chart -->
         <div class="card p-6">
-          <h2 class="text-lg font-black text-white mb-5 flex items-center gap-2" >
+          <h2 class="text-lg font-black text-white mb-5 flex items-center gap-2">
             <span class="text-xl">📈</span> Biểu Đồ Lương Theo Kinh Nghiệm
           </h2>
-          <SalaryChartIsland
-            client:load
-            salaries={career.salariesVND}
-            title={career.title}
-          />
+          <div style="position: relative; width: 100%; height: 260px;">
+            <canvas id="salaryChartCanvas"></canvas>
+          </div>
         </div>
 
         <!-- Salary Timeline -->
@@ -365,3 +363,72 @@ const careerJsonLd = {
     )}
   </main>
 </Layout>
+
+<script define:vars={{
+  salaryData: [career.salariesVND.entry, career.salariesVND.mid, career.salariesVND.senior, career.salariesVND.lead]
+}}>
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js';
+  script.onload = () => {
+    const canvas = document.getElementById('salaryChartCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+    gradient.addColorStop(0, 'rgba(79, 110, 247, 0.4)');
+    gradient.addColorStop(1, 'rgba(79, 110, 247, 0.02)');
+
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['0–2 năm (Entry)', '3–5 năm (Mid)', '6–10 năm (Senior)', '10+ năm (Lead)'],
+        datasets: [{
+          label: 'Lương (VNĐ / tháng)',
+          data: salaryData,
+          borderColor: '#4f6ef7',
+          backgroundColor: gradient,
+          fill: true,
+          tension: 0.4,
+          pointRadius: 6,
+          pointHoverRadius: 8,
+          pointBackgroundColor: '#4f6ef7',
+          pointBorderColor: '#ffffff',
+          pointBorderWidth: 2,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: 'rgba(15, 23, 42, 0.95)',
+            borderColor: 'rgba(255, 255, 255, 0.1)',
+            borderWidth: 1,
+            padding: 12,
+            titleColor: '#94a3b8',
+            bodyColor: '#10d9a8',
+            bodyFont: { weight: 'bold', size: 13 },
+            callbacks: {
+              label: (ctx) => ` ${(ctx.raw / 1000000).toFixed(1)} triệu VNĐ / tháng`,
+            },
+          },
+        },
+        scales: {
+          y: {
+            ticks: {
+              color: '#64748b',
+              callback: (v) => `${(Number(v) / 1000000).toFixed(0)}M`,
+              font: { size: 11 },
+            },
+            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+          },
+          x: {
+            ticks: { color: '#94a3b8', font: { size: 11 } },
+            grid: { display: false },
+          },
+        },
+      },
+    });
+  };
+  document.head.appendChild(script);
+</script>
