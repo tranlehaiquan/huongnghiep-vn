@@ -33,6 +33,14 @@
 
         <div class="calc-field">
           <div class="slider-header">
+            <label for="scholarship-slider" class="filter-label">🎓 Học bổng / Hỗ trợ học phí dự kiến:</label>
+            <span id="scholarship-val-display" class="highlight-val">0% (0 VNĐ)</span>
+          </div>
+          <input type="range" id="scholarship-slider" min="0" max="100" step="5" value="0" class="custom-slider" />
+        </div>
+
+        <div class="calc-field">
+          <div class="slider-header">
             <label for="years-slider" class="filter-label">Số năm học (Thời gian đào tạo):</label>
             <span id="years-val-display" class="highlight-val">4 Năm</span>
           </div>
@@ -44,7 +52,7 @@
             <label for="living-slider" class="filter-label">Chi phí trọ & ăn ở ước tính (Mỗi tháng):</label>
             <span id="living-val-display" class="highlight-val">4.000.000 VNĐ</span>
           </div>
-          <input type="range" id="living-slider" min="0" max="10000000" step="500000" value="40000000" class="custom-slider" />
+          <input type="range" id="living-slider" min="0" max="10000000" step="500000" value="4000000" class="custom-slider" />
         </div>
 
         <div class="calc-field">
@@ -62,7 +70,7 @@
 
         <div class="results-summary">
           <div class="res-box">
-            <span class="res-label">Tổng Học Phí Toàn Khóa</span>
+            <span id="tuition-res-title" class="res-label">Tổng Học Phí Toàn Khóa</span>
             <span id="total-tuition-res" class="res-amount">120.000.000 VNĐ</span>
           </div>
           <div class="res-box">
@@ -70,7 +78,7 @@
             <span id="total-living-res" class="res-amount">192.000.000 VNĐ</span>
           </div>
           <div class="res-box main-res-box">
-            <span class="res-label">TỔNG ĐẦU TƯ CHO GIÁO DỤC</span>
+            <span class="res-label">TỔNG ĐẦU TƯ THỰC TẾ</span>
             <span id="total-investment-res" class="res-amount-lg">312.000.000 VNĐ</span>
           </div>
         </div>
@@ -93,6 +101,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     const degreeSelect = document.getElementById('degree-select');
     const tuitionSlider = document.getElementById('tuition-slider');
+    const scholarshipSlider = document.getElementById('scholarship-slider');
     const yearsSlider = document.getElementById('years-slider');
     const livingSlider = document.getElementById('living-slider');
     const salarySlider = document.getElementById('starting-salary-slider');
@@ -103,30 +112,36 @@
 
     function calculateROI() {
       const tuitionPerYear = parseFloat(tuitionSlider.value);
+      const scholarshipPct = parseFloat(scholarshipSlider.value);
       const years = parseFloat(yearsSlider.value);
       const livingPerMonth = parseFloat(livingSlider.value);
       const startingSalaryPerMonth = parseFloat(salarySlider.value);
 
+      const rawTuition = tuitionPerYear * years;
+      const scholarshipSavings = rawTuition * (scholarshipPct / 100);
+      const netTuition = rawTuition - scholarshipSavings;
+
       document.getElementById('tuition-val-display').innerText = formatVND(tuitionPerYear);
+      document.getElementById('scholarship-val-display').innerText = `${scholarshipPct}% (${scholarshipSavings > 0 ? '-' + formatVND(scholarshipSavings) : '0 VNĐ'})`;
       document.getElementById('years-val-display').innerText = `${years} Năm`;
       document.getElementById('living-val-display').innerText = `${formatVND(livingPerMonth)} / tháng`;
       document.getElementById('salary-val-display').innerText = `${formatVND(startingSalaryPerMonth)} / tháng`;
 
-      const totalTuition = tuitionPerYear * years;
       const totalLiving = livingPerMonth * 12 * years;
-      const totalInvestment = totalTuition + totalLiving;
+      const totalInvestment = netTuition + totalLiving;
 
-      document.getElementById('total-tuition-res').innerText = formatVND(totalTuition);
+      document.getElementById('tuition-res-title').innerText = scholarshipPct > 0 ? `Học Phí Thực Trả (Đã trừ ${scholarshipPct}% HB)` : 'Tổng Học Phí Toàn Khóa';
+      document.getElementById('total-tuition-res').innerText = formatVND(netTuition);
       document.getElementById('total-living-res').innerText = formatVND(totalLiving);
       document.getElementById('total-investment-res').innerText = formatVND(totalInvestment);
 
-      // Break-even months (assuming 70% of salary used for payback)
+      // Break-even months (assuming 80% of salary used for payback)
       const monthlySavingsForPayback = startingSalaryPerMonth * 0.8;
       const breakEvenMonths = Math.ceil(totalInvestment / monthlySavingsForPayback);
       const breakEvenYears = (breakEvenMonths / 12).toFixed(1);
 
       document.getElementById('break-even-res').innerText = `${breakEvenYears} Năm đi làm (${breakEvenMonths} tháng)`;
-      document.getElementById('roi-explanation').innerText = `Với mức lương ra trường ${formatVND(startingSalaryPerMonth)}/tháng, bạn sẽ hoàn toàn thu hồi lại tổng số vốn đầu tư ${formatVND(totalInvestment)} sau khoảng ${breakEvenMonths} tháng làm việc.`;
+      document.getElementById('roi-explanation').innerText = `Với mức lương ra trường ${formatVND(startingSalaryPerMonth)}/tháng, bạn sẽ hoàn toàn thu hồi lại tổng số vốn đầu tư thực tế ${formatVND(totalInvestment)} sau khoảng ${breakEvenMonths} tháng làm việc${scholarshipPct > 0 ? ` (đã giảm nhờ học bổng ${scholarshipPct}%)` : ''}.`;
     }
 
     degreeSelect.addEventListener('change', (e) => {
@@ -137,6 +152,7 @@
     });
 
     tuitionSlider.addEventListener('input', calculateROI);
+    scholarshipSlider.addEventListener('input', calculateROI);
     yearsSlider.addEventListener('input', calculateROI);
     livingSlider.addEventListener('input', calculateROI);
     salarySlider.addEventListener('input', calculateROI);

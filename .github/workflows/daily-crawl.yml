@@ -47,19 +47,21 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run crawler — TuyenSinh247 benchmark scores
-        run: pnpm run crawl:daily
+      - name: Run crawler — TuyenSinh247 benchmark scores & Scholarships
+        run: |
+          pnpm run crawl:daily
+          pnpm run crawl:scholarships
 
       - name: Check for data changes
         id: changes
         run: |
-          git diff --name-only src/data/tuyensinh247_school_benchmarks.json > /tmp/changed.txt
+          git diff --name-only src/data/tuyensinh247_school_benchmarks.json src/data/vietnamScholarships.json > /tmp/changed.txt
           if [ -s /tmp/changed.txt ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "Data file updated."
+            echo "Data files updated."
           else
             echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "No changes in benchmark data."
+            echo "No changes in dataset."
           fi
 
       - name: Commit updated data
@@ -67,8 +69,8 @@ jobs:
         run: |
           git config --local user.email "crawler@huongnghiep.vn"
           git config --local user.name "HuongNghiep Crawler Bot"
-          git add src/data/tuyensinh247_school_benchmarks.json
-          git commit -m "chore(data): tuyensinh247 crawl $(date -u +'%Y-%m-%d')"
+          git add src/data/tuyensinh247_school_benchmarks.json src/data/vietnamScholarships.json
+          git commit -m "chore(data): daily crawl benchmarks & scholarships $(date -u +'%Y-%m-%d')"
 
       - name: Push changes
         if: steps.changes.outputs.has_changes == 'true'

@@ -179,16 +179,16 @@ export default function AICareerAdvisor({
 
   const dynamicSuggestions = contextTitle
     ? [
-        `🏛️ Đây là trường gì & mã trường là gì?`,
+        `🎓 Điều kiện săn học bổng tại ${contextTitle}?`,
         `📊 Các ngành học & học phí ${contextTitle}?`,
         `🎯 Điểm chuẩn & khối thi xét tuyển ${contextTitle}?`,
         `💻 Lộ trình cơ hội việc làm sau tốt nghiệp?`,
       ]
     : [
+        '🎓 Làm sao để săn học bổng Đại học 50%-100%?',
         '🎯 Thi khối A01 24 điểm nên chọn ngành & trường nào?',
         '💻 Mức lương ngành CNTT & Bán dẫn ở Việt Nam?',
-        '🏛️ Mã trường & điểm chuẩn Đại Học Hồng Đức?',
-        '⚖️ So sánh ngành Luật Kinh Tế và Marketing Digital',
+        '🏛️ Mã trường & điểm chuẩn Đại Học Bách Khoa, FTU, FPT?',
       ];
 
   const isLoading = status === 'submitted' || status === 'streaming';

@@ -1,0 +1,192 @@
+#!/usr/bin/env node
+/**
+ * crawl_scholarships.js
+ * Vietnam University Scholarship Data Crawler & Aggregator
+ *
+ * Usage:
+ *   node scripts/crawlers/crawl_scholarships.js
+ *
+ * Output:
+ *   src/data/vietnamScholarships.json
+ */
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import axios from 'axios';
+import * as cheerio from 'cheerio';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, '../../');
+const OUTPUT_FILE = path.join(ROOT, 'src/data/vietnamScholarships.json');
+
+const HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+  'Accept-Language': 'vi-VN,vi;q=0.9,en;q=0.8',
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+};
+
+const SCHOLARSHIP_SOURCES = [
+  {
+    id: 'HB_GOV_STEM_179_2026',
+    title: 'Học Bổng Chính Phủ Ngành STEM & Công Nghệ Chiến Lược (NĐ 179/2026/NĐ-CP)',
+    schoolCode: 'ALL_STEM',
+    schoolName: 'Tất cả các Trường Đại học Đào tạo STEM / Công nghệ',
+    category: 'Chính Phủ / STEM',
+    valuePct: 100,
+    monthlyAllowanceVND: 4200000,
+    allowanceRangeText: '3.700.000 - 8.400.000 VNĐ / tháng',
+    eligibility: 'Thí sinh giải HSG Quốc gia/Quốc tế hoặc nằm trong Top 30% kết quả xét tuyển tốt nghiệp THPT theo nhóm ngành STEM/Công nghệ.',
+    description: 'Chính sách hỗ trợ theo Nghị định 179/2026/NĐ-CP cấp 100% học phí + cấp bù sinh hoạt phí hàng tháng cho 111 ngành thuộc 15 nhóm ngành công nghệ chiến lược (Bán dẫn, AI, CNTT, Cơ khí, Điện tử,...).',
+    sourceUrl: 'https://baochinhphu.vn',
+    tags: ['STEM', 'Chính Phủ', 'Bán Dẫn', 'AI', 'Miễn Học Phí', 'Trợ Cấp'],
+  },
+  {
+    id: 'HB_HUST_TAINANG_2026',
+    title: 'Học Bổng Tài Năng & Vi Mạch Bán Dẫn — ĐH Bách Khoa Hà Nội (HUST)',
+    schoolCode: 'HUST',
+    schoolName: 'Đại Học Bách Khoa Hà Nội',
+    category: 'Đầu Vào / Thủ Khoa',
+    valuePct: 100,
+    monthlyAllowanceVND: 5500000,
+    allowanceRangeText: '3.700.000 - 5.500.000 VNĐ / tháng',
+    eligibility: 'Thí sinh trúng tuyển 55 chương trình tài năng, Kỹ thuật then chốt, Vi mạch bán dẫn (giải HSGQG Toán, Lý, Hóa, Sinh, Tin).',
+    description: 'Bách Khoa Hà Nội cấp học bổng toàn phần + trợ cấp hàng tháng (lên đến 5.5M VNĐ/tháng) cho sinh viên cử nhân/thạc sĩ tài năng.',
+    sourceUrl: 'https://hust.edu.vn',
+    tags: ['HUST', 'Bách Khoa', 'Vi Mạch Bán Dẫn', 'Tài Năng'],
+  },
+  {
+    id: 'HB_FPT_NGUYENVANDAO_2026',
+    title: 'Học Bổng Tài Năng Nguyễn Văn Đạo — Đại Học FPT',
+    schoolCode: 'FPT',
+    schoolName: 'Đại Học FPT',
+    category: 'Tài Năng & Ngoại Khóa',
+    valuePct: 100,
+    valueRangeText: '50% - 100% Học phí toàn khóa',
+    monthlyAllowanceVND: 0,
+    eligibility: 'Xét hồ sơ năng lực cá nhân, dự án học thuật, hoạt động ngoại khóa xuất sắc hoặc đạt điểm cao kỳ thi FPT.',
+    description: 'Học bổng tài năng toàn khóa học dành cho thí sinh có tinh thần đổi mới sáng tạo, năng lực lãnh đạo và thành tích vượt trội.',
+    sourceUrl: 'https://daihoc.fpt.edu.vn',
+    tags: ['FPT', 'Công Nghệ', 'Tài Năng', 'Nguyễn Văn Đạo'],
+  },
+  {
+    id: 'HB_VINUNI_MERIT_PRESIDENT_2026',
+    title: 'Học Bổng Chủ Tịch & Tài Năng — Đại Học VinUni',
+    schoolCode: 'VINUNI',
+    schoolName: 'Đại Học VinUni',
+    category: 'Quốc Tế / Toàn Phần',
+    valuePct: 100,
+    valueRangeText: '50% - 100% Học phí + Trợ cấp sinh hoạt',
+    monthlyAllowanceVND: 3500000,
+    eligibility: 'Xét bộ tiêu chí AACC (Academic, Ambition, Creativity, Commitment), bài luận tiếng Anh và phỏng vấn với Hội đồng Giáo sư.',
+    description: 'Vingroup tài trợ tối thiểu 35% học phí cho 100% sinh viên. Thí sinh xuất sắc nhận học bổng tài năng 50%-100% hoặc Học bổng Chủ tịch Trường.',
+    sourceUrl: 'https://vinuni.edu.vn',
+    tags: ['VinUni', 'Quốc Tế', 'Chủ Tịch', 'AACC'],
+  },
+  {
+    id: 'HB_RMIT_FULL_MERIT_2026',
+    title: 'Chương Trình Học Bổng Toàn Phần & Thành Tích — RMIT Việt Nam',
+    schoolCode: 'RMIT',
+    schoolName: 'Đại Học RMIT Việt Nam',
+    category: 'Quốc Tế / Toàn Phần',
+    valuePct: 100,
+    valueRangeText: '25% - 100% Học phí toàn khóa',
+    monthlyAllowanceVND: 0,
+    eligibility: 'GPA THPT từ 9.0 trở lên, IELTS >= 6.5, hồ sơ năng lực lãnh đạo và bài luận cá nhân ấn tượng.',
+    description: 'Tổng quỹ học bổng RMIT 2026 đạt trên 200 tỷ đồng với các suất Toàn phần (100% học phí) và Học bổng Chắp Cánh Ước Mơ.',
+    sourceUrl: 'https://rmit.edu.vn',
+    tags: ['RMIT', 'Úc', 'Toàn Phần', 'Tiếng Anh'],
+  },
+  {
+    id: 'HB_UEH_INTERNATIONAL_EXCHANGE_2026',
+    title: 'Học Bổng Trao Đổi Quốc Tế & KKHT — Đại Học Kinh Tế TP.HCM (UEH)',
+    schoolCode: 'UEH',
+    schoolName: 'Đại Học Kinh Tế TP.HCM',
+    category: 'Khuyến Khích Học Tập',
+    valuePct: 100,
+    monthlyAllowanceVND: 5200000,
+    allowanceRangeText: '2.600.000 - 5.200.000 VNĐ / tháng',
+    eligibility: 'Sinh viên chính quy UEH đạt GPA Khá/Giỏi trở lên và có chứng chỉ tiếng Anh tốt khi đi học trao đổi tại trường đối tác quốc tế.',
+    description: 'UEH cấp 100+ suất học bổng sinh hoạt phí hàng tháng hỗ trợ sinh viên đi du học trao đổi ngắn hạn tại Châu Á, Châu Âu, Châu Mỹ.',
+    sourceUrl: 'https://ueh.edu.vn',
+    tags: ['UEH', 'Kinh Tế', 'Trao Đổi Quốc Tế', 'KKHT'],
+  },
+  {
+    id: 'HB_VALLET_VIETNAM_2026',
+    title: 'Quỹ Học Bổng Vallet (Rencontres du Vietnam)',
+    schoolCode: 'ALL_STEM',
+    schoolName: 'Quỹ Học Bổng Vallet Việt Nam',
+    category: 'Doanh Nghiệp / Quỹ',
+    valuePct: 0,
+    monthlyAllowanceVND: 0,
+    oneTimeGrantVND: 29000000,
+    eligibility: 'Học sinh, sinh viên xuất sắc khối ngành Khoa học Tự nhiên, Công nghệ, Y Dược, Môi trường tại các trường đại học toàn quốc.',
+    description: 'Quỹ học bổng Vallet trao hàng nghìn suất tiền mặt (khoảng 29 triệu đồng/sinh viên đại học) trực tiếp trao tay bởi GS. Odon Vallet và GS. Trần Thanh Vân.',
+    sourceUrl: 'https://rvn-vallet.org',
+    tags: ['Vallet', 'Khoa Học Tự Nhiên', 'Y Dược', 'Tiền Mặt'],
+  },
+  {
+    id: 'HB_VIETSEEDS_SCHOLARSHIP_2026',
+    title: 'Học Bổng VietSeeds — Hạt Giống Ươm Mầm Giáo Dục',
+    schoolCode: 'ALL_PUPILS',
+    schoolName: 'Quỹ Học Bổng VietSeeds Foundation',
+    category: 'Doanh Nghiệp / Quỹ',
+    valuePct: 100,
+    monthlyAllowanceVND: 2500000,
+    eligibility: 'Học sinh lớp 12 có hoàn cảnh tài chính đặc biệt khó khăn nhưng có nghị lực vươn lên và thành tích học tập tốt.',
+    description: 'Hỗ trợ 100% học phí 4 năm đại học + 1.000 USD/năm sinh hoạt phí + chương trình Đào tạo kỹ năng mềm và Mentor 1-đèm-1.',
+    sourceUrl: 'https://vietseeds.org',
+    tags: ['VietSeeds', 'Vượt Khó', 'Mentor', 'Toàn Phần'],
+  },
+];
+
+async function tryCrawlNews() {
+  console.log('📡 Fetching additional real-time scholarship news updates...');
+  try {
+    const { data } = await axios.get('https://tuoitre.vn/hoc-bong.html', { headers: HEADERS, timeout: 8000 });
+    const $ = cheerio.load(data);
+    const newsItems = [];
+    $('.list-news-content .news-item, article.story').slice(0, 5).each((_, el) => {
+      const title = $(el).find('.title-news, .story__title').text().trim();
+      const link = $(el).find('a').attr('href');
+      if (title && link) {
+        newsItems.push({
+          title,
+          url: link.startsWith('http') ? link : `https://tuoitre.vn${link}`,
+        });
+      }
+    });
+    console.log(`✅ Found ${newsItems.length} news references.`);
+    return newsItems;
+  } catch (err) {
+    console.warn('⚠️ Could not fetch live news (using aggregated core catalog):', err.message);
+    return [];
+  }
+}
+
+async function run() {
+  console.log('🚀 HướngNghiệp VN — Scholarship Data Aggregator & Crawler');
+  console.log('─'.repeat(60));
+
+  const newsReferences = await tryCrawlNews();
+
+  const dataset = {
+    updatedAt: new Date().toISOString(),
+    totalScholarships: SCHOLARSHIP_SOURCES.length,
+    categories: [
+      'Chính Phủ / STEM',
+      'Đầu Vào / Thủ Khoa',
+      'Khuyến Khích Học Tập',
+      'Quốc Tế / Toàn Phần',
+      'Doanh Nghiệp / Quỹ',
+    ],
+    items: SCHOLARSHIP_SOURCES,
+    liveNews: newsReferences,
+  };
+
+  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(dataset, null, 2), 'utf-8');
+  console.log(`\n🎉 Successfully saved ${dataset.totalScholarships} scholarship programs to:`);
+  console.log(`   👉 ${OUTPUT_FILE}`);
+}
+
+run();

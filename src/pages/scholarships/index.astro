@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import ScholarshipBrowser from '../../components/react/ScholarshipBrowser';
+import scholarshipData from '../../data/vietnamScholarships.json';
+
+const totalScholarships = (scholarshipData as any).totalScholarships || 8;
+
+const scholarshipJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Trang Chủ', 'item': 'https://huongnghiep.jtran.site' },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Tra Cứu Học Bổng', 'item': 'https://huongnghiep.jtran.site/scholarships' },
+      ]
+    },
+    {
+      '@type': 'FinancialAid',
+      'name': 'Hệ Thống Tra Cứu Học Bổng Đại Học Việt Nam 2026',
+      'description': 'Danh sách học bổng chính phủ NĐ 179/2026, học bổng STEM, học bổng thủ khoa, tài năng và hỗ trợ học phí toàn quốc.',
+      'url': 'https://huongnghiep.jtran.site/scholarships',
+    }
+  ]
+};
+---
+
+<Layout
+  title="Tra Cứu Học Bổng Đại Học 2026 — Học Phí & Hỗ Trợ Tài Chính | HướngNghiệp VN"
+  description="Tra cứu hàng nghìn suất học bổng đại học 2026: Học bổng Chính phủ STEM (NĐ 179/2026), Bách Khoa, FPT, VinUni, RMIT, UEH, Vallet & VietSeeds."
+  keywords="học bổng đại học 2026, học bổng STEM, học bổng chính phủ 179/2026, học bổng bách khoa, học bổng FPT, học bổng RMIT, miễn giảm học phí"
+  jsonLd={scholarshipJsonLd}
+>
+  <Header currentPath="/scholarships" />
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="/">Trang Chủ</a>
+      <span>/</span>
+      <span class="current">Tra Cứu Học Bổng 2026</span>
+    </div>
+
+    <!-- Page Hero Banner -->
+    <div
+      class="relative overflow-hidden rounded-2xl p-6 lg:p-8"
+      style="background: linear-gradient(135deg, rgba(10,15,35,0.98) 0%, rgba(30,27,75,0.95) 50%, rgba(13,22,48,0.98) 100%); border: 1px solid rgba(129,140,248,0.3); box-shadow: 0 0 60px rgba(99,102,241,0.12);"
+    >
+      <div class="relative z-10 space-y-3 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+          <span>🎓 Cổng Thông Tin Học Bổng 2026</span>
+        </div>
+        <h1 class="text-2xl sm:text-4xl font-black text-white leading-tight">
+          Tra Cứu Học Bổng & Quỹ Hỗ Trợ Tài Chính Đại Học
+        </h1>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Tổng hợp thông tin học bổng chính chủ: Học bổng Chính phủ STEM theo Nghị định 179/2026/NĐ-CP, Học bổng Đầu vào/Thủ khoa, Học bổng Khuyến khích Học tập và các Quỹ Doanh nghiệp lớn tại Việt Nam.
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-2 text-xs">
+          <div class="flex items-center gap-1.5 text-slate-300">
+            <span class="text-emerald-400 font-extrabold text-sm">100%</span> Miễn học phí STEM & Vi mạch
+          </div>
+          <div class="flex items-center gap-1.5 text-slate-300">
+            <span class="text-amber-400 font-extrabold text-sm">3.7M – 8.4M</span> VNĐ/tháng sinh hoạt phí
+          </div>
+          <div class="flex items-center gap-1.5 text-slate-300">
+            <span class="text-indigo-400 font-extrabold text-sm">{totalScholarships}</span> Chương trình đã được tổng hợp
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scholarship Interactive React Component Island -->
+    <ScholarshipBrowser client:load />
+  </main>
+</Layout>

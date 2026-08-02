@@ -35,6 +35,7 @@ const similarSchools = (schoolsData as any[]).filter(s =>
 ).slice(0, 4);
 
 import benchmarkData from '../../data/tuyensinh247_school_benchmarks.json';
+import scholarshipData from '../../data/vietnamScholarships.json';
 
 const benchmarkSchools = (benchmarkData as any).schools || [];
 const matchedBenchmark = benchmarkSchools.find((b: any) =>
@@ -43,6 +44,16 @@ const matchedBenchmark = benchmarkSchools.find((b: any) =>
   (school.shortName && b.name.toLowerCase().includes(school.shortName.toLowerCase()))
 );
 const benchmarkMajors = matchedBenchmark?.majors || [];
+
+// Match scholarships for this school
+const schoolCodeUpper = (school.code || school.shortName || '').toUpperCase();
+const allScholarships = (scholarshipData as any).items || [];
+const matchedScholarships = allScholarships.filter((s: any) =>
+  (schoolCodeUpper && s.schoolCode.toUpperCase() === schoolCodeUpper) ||
+  s.schoolName.toLowerCase().includes(school.name.toLowerCase()) ||
+  school.name.toLowerCase().includes(s.schoolName.toLowerCase()) ||
+  (school.shortName && s.schoolName.toLowerCase().includes(school.shortName.toLowerCase()))
+);
 
 const isCollege = school.type === 'college';
 const schoolExamBlocks = Array.from(
@@ -375,10 +386,92 @@ const schoolJsonLd = {
           </div>
         )}
 
+        <!-- Scholarship & Financial Aid Card -->
+        <div class="card p-6 border border-indigo-500/20" style="background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(30, 27, 75, 0.4) 100%);">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-black text-white flex items-center gap-2">
+              <span>🎓 Chính Sách Học Bổng & Hỗ Trợ Tài Chính</span>
+            </h2>
+            <span class="badge badge-primary text-xs">Cập nhật 2026</span>
+          </div>
+
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            {school.name} áp dụng nhiều gói học bổng hấp dẫn dành cho tân sinh viên xuất sắc, học sinh giỏi quốc gia, thí sinh điểm cao THPT/ĐGNL và sinh viên có thành tích học tập xuất sắc theo từng kỳ.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
+            <!-- Card 1: KKHT -->
+            <div class="card-deep p-3.5 space-y-1.5 border border-indigo-500/10 hover:border-indigo-500/30 transition-colors">
+              <div class="flex items-center gap-1.5 text-xs font-bold text-indigo-300">
+                <span>⭐ Học Bổng KKHT (NĐ 84/2019)</span>
+              </div>
+              <p class="text-[11px] text-slate-400 leading-normal">
+                Xét theo GPA & Điểm rèn luyện mỗi học kỳ (loại Khá, Giỏi, Xuất Sắc). Mức cấp từ <strong class="text-emerald-400">100% đến 150%</strong> học phí cơ sở.
+              </p>
+            </div>
+
+            <!-- Card 2: Dau Vao -->
+            <div class="card-deep p-3.5 space-y-1.5 border border-indigo-500/10 hover:border-indigo-500/30 transition-colors">
+              <div class="flex items-center gap-1.5 text-xs font-bold text-amber-300">
+                <span>🏆 Học Bổng Đầu Vào / Thủ Khoa</span>
+              </div>
+              <p class="text-[11px] text-slate-400 leading-normal">
+                Dành cho thí sinh điểm thi THPT/ĐGNL top đầu, giải HSGQG/KHKT hoặc IELTS High Score (>=6.5). Giá trị <strong class="text-amber-400">50% - 100% học phí</strong>.
+              </p>
+            </div>
+
+            <!-- Card 3: Doanh nghiep -->
+            <div class="card-deep p-3.5 space-y-1.5 border border-indigo-500/10 hover:border-indigo-500/30 transition-colors">
+              <div class="flex items-center gap-1.5 text-xs font-bold text-teal-300">
+                <span>🤝 Quỹ Tài Trợ Doanh Nghiệp</span>
+              </div>
+              <p class="text-[11px] text-slate-400 leading-normal">
+                Các gói tài trợ từ tập đoàn đối tác (Viettel, FPT, Samsung, Vietcombank...) dành cho sinh viên xuất sắc hoặc vượt khó hiếu học.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tuition discount estimator for this specific school -->
+          {school.avgTuitionPerYearVND > 0 && (
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-xs font-bold text-slate-200 mb-2.5 flex items-center justify-between">
+                <span>💡 Học Phí {school.shortName || school.name} Sau Khi Trừ Học Bổng:</span>
+                <span class="text-slate-400 text-[11px]">Học phí gốc: {((school.avgTuitionPerYearVND)/1000000).toFixed(0)}M VNĐ/năm</span>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {[
+                  { label: 'HB 25%', pct: 0.25 },
+                  { label: 'HB 50%', pct: 0.50 },
+                  { label: 'HB 75%', pct: 0.75 },
+                  { label: 'HB 100%', pct: 1.00 },
+                ].map(item => {
+                  const savedPerYear = school.avgTuitionPerYearVND * item.pct;
+                  const netPerYear = school.avgTuitionPerYearVND - savedPerYear;
+                  const totalSaved4Years = savedPerYear * 4;
+
+                  return (
+                    <div class="p-2.5 rounded-lg bg-indigo-950/30 border border-indigo-500/20 text-center">
+                      <div class="text-xs font-black text-indigo-400">{item.label}</div>
+                      <div class="text-sm font-extrabold text-white mt-1">
+                        {netPerYear > 0 ? `${(netPerYear/1000000).toFixed(1)}M` : '0 VNĐ'}
+                        <span class="text-[10px] font-normal text-slate-400">/năm</span>
+                      </div>
+                      <div class="text-[10px] font-semibold text-emerald-400 mt-0.5">
+                        Tiết kiệm {(totalSaved4Years/1000000).toFixed(0)}M / 4năm
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+
         <!-- Related Careers -->
         {relatedCareers.length > 0 && (
           <div class="card p-6">
-            <h2 class="text-lg font-black text-white mb-4" >
+            <h2 class="text-lg font-black text-white mb-4">
               💼 Ngành Nghề Phù Hợp
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">

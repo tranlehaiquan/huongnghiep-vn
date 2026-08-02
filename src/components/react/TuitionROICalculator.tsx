@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-import { Calculator, DollarSign, Clock, Coins, ShieldCheck, Sparkles, ChevronDown } from 'lucide-react';
+import { Calculator, DollarSign, Clock, Coins, ShieldCheck, Sparkles, ChevronDown, GraduationCap, TrendingDown } from 'lucide-react';
 
 export default function TuitionROICalculator() {
   const [degreeYears, setDegreeYears] = useState<number>(4);
   const [tuitionPerYear, setTuitionPerYear] = useState<number>(30000000);
   const [livingPerMonth, setLivingPerMonth] = useState<number>(4000000);
   const [startingSalaryPerMonth, setStartingSalaryPerMonth] = useState<number>(12000000);
+  const [scholarshipPct, setScholarshipPct] = useState<number>(0);
 
   const formatVND = (val: number) => {
     return new Intl.NumberFormat('vi-VN').format(val) + ' VNĐ';
   };
 
-  const totalTuition = tuitionPerYear * degreeYears;
+  const rawTuition = tuitionPerYear * degreeYears;
+  const scholarshipSavings = rawTuition * (scholarshipPct / 100);
+  const netTuition = rawTuition - scholarshipSavings;
+
   const totalLiving = livingPerMonth * 12 * degreeYears;
-  const totalInvestment = totalTuition + totalLiving;
+  const totalInvestment = netTuition + totalLiving;
 
   // Monthly savings dedicated for payback (assuming ~75% of starting salary)
   const monthlyPaybackAmount = startingSalaryPerMonth * 0.75;
@@ -69,6 +73,52 @@ export default function TuitionROICalculator() {
             onChange={(e) => setTuitionPerYear(parseInt(e.target.value, 10))}
             className="w-full accent-amber-500 cursor-pointer"
           />
+        </div>
+
+        {/* Scholarship Input Section */}
+        <div className="p-3.5 bg-indigo-950/40 border border-indigo-500/30 rounded-xl space-y-2.5">
+          <div className="flex justify-between items-center text-xs">
+            <label htmlFor="scholarship-slider-react" className="font-semibold text-indigo-200 flex items-center gap-1.5">
+              <GraduationCap className="w-4 h-4 text-indigo-400" />
+              <span>Học Bổng / Hỗ Trợ Học Phí Dự Kiến:</span>
+            </label>
+            <span className="font-extrabold text-indigo-400 text-sm">{scholarshipPct}% Học phí</span>
+          </div>
+
+          <div className="flex gap-1.5">
+            {[0, 25, 50, 75, 100].map((pct) => (
+              <button
+                key={pct}
+                type="button"
+                onClick={() => setScholarshipPct(pct)}
+                className={`flex-1 py-1 px-2 rounded-lg text-xs font-semibold transition-all border ${
+                  scholarshipPct === pct
+                    ? 'bg-indigo-600 border-indigo-400 text-white shadow-md shadow-indigo-600/30'
+                    : 'bg-gray-900/60 border-gray-700/60 text-gray-300 hover:border-indigo-500/50'
+                }`}
+              >
+                {pct}%
+              </button>
+            ))}
+          </div>
+
+          <input
+            id="scholarship-slider-react"
+            type="range"
+            min="0"
+            max="100"
+            step="5"
+            value={scholarshipPct}
+            onChange={(e) => setScholarshipPct(parseInt(e.target.value, 10))}
+            className="w-full accent-indigo-500 cursor-pointer"
+          />
+
+          {scholarshipSavings > 0 && (
+            <div className="text-xs text-indigo-300 font-medium flex items-center justify-between pt-1">
+              <span>Tiết kiệm nhờ Học bổng:</span>
+              <span className="font-bold text-emerald-400">-{formatVND(scholarshipSavings)}</span>
+            </div>
+          )}
         </div>
 
         <div>
@@ -133,8 +183,15 @@ export default function TuitionROICalculator() {
 
           <div className="grid grid-cols-2 gap-3 mb-4">
             <div className="bg-gray-900/60 p-3.5 rounded-xl border border-gray-800">
-              <span className="text-xs text-gray-400 block">Tổng Học Phí Toàn Khóa</span>
-              <span className="text-base font-bold text-white">{formatVND(totalTuition)}</span>
+              <span className="text-xs text-gray-400 block">
+                {scholarshipPct > 0 ? 'Học Phí Thực Trả (Đã trừ HB)' : 'Tổng Học Phí Toàn Khóa'}
+              </span>
+              <span className="text-base font-bold text-white">{formatVND(netTuition)}</span>
+              {scholarshipPct > 0 && (
+                <span className="text-[11px] text-indigo-400 block mt-0.5 line-through">
+                  {formatVND(rawTuition)}
+                </span>
+              )}
             </div>
 
             <div className="bg-gray-900/60 p-3.5 rounded-xl border border-gray-800">
@@ -143,9 +200,21 @@ export default function TuitionROICalculator() {
             </div>
           </div>
 
+          {scholarshipSavings > 0 && (
+            <div className="bg-indigo-900/30 border border-indigo-500/40 p-3 rounded-xl mb-4 flex items-center justify-between text-xs">
+              <span className="text-indigo-200 font-medium flex items-center gap-1.5">
+                <GraduationCap className="w-4 h-4 text-indigo-400 shrink-0" />
+                Tiết kiệm từ Học bổng ({scholarshipPct}%):
+              </span>
+              <span className="font-extrabold text-emerald-400 text-sm">
+                -{formatVND(scholarshipSavings)}
+              </span>
+            </div>
+          )}
+
           <div className="bg-gradient-to-r from-amber-950/40 to-yellow-900/30 border border-amber-500/30 p-4 rounded-xl mb-4">
             <span className="text-xs uppercase tracking-wider text-amber-300 font-semibold block">
-              TỔNG VỐN ĐẦU TƯ CHO GIÁO DỤC
+              TỔNG VỐN ĐẦU TƯ THỰC TẾ
             </span>
             <div className="text-2xl font-black text-amber-400 mt-1">
               {formatVND(totalInvestment)}
@@ -164,7 +233,7 @@ export default function TuitionROICalculator() {
               {breakEvenYears} Năm làm việc ({breakEvenMonths} tháng)
             </div>
             <p className="text-xs text-gray-300 leading-relaxed">
-              Với mức lương ra trường {formatVND(startingSalaryPerMonth)}/tháng, bạn sẽ hoàn toàn thu hồi lại tổng số vốn đầu tư {formatVND(totalInvestment)} sau khoảng {breakEvenMonths} tháng làm việc.
+              Với mức lương ra trường {formatVND(startingSalaryPerMonth)}/tháng, bạn sẽ hoàn toàn thu hồi lại tổng số vốn đầu tư thực tế {formatVND(totalInvestment)} sau khoảng {breakEvenMonths} tháng làm việc{scholarshipPct > 0 ? ` (đã giảm thời gian nhờ học bổng ${scholarshipPct}%)` : ''}.
             </p>
           </div>
         </div>
@@ -172,3 +241,4 @@ export default function TuitionROICalculator() {
     </div>
   );
 }
+
