@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-02T17:25:13.369Z",
-  "totalScholarships": 8,
+  "updatedAt": "2026-08-02T17:29:14.087Z",
+  "totalScholarships": 16,
   "categories": [
     "Chính Phủ / STEM",
     "Đầu Vào / Thủ Khoa",
@@ -160,6 +160,158 @@
         "Vượt Khó",
         "Mentor",
         "Toàn Phần"
+      ]
+    },
+    {
+      "id": "HB_VNU_TAINANG_2026",
+      "title": "Học Bổng Khoa Học Cơ Bản & Tài Năng — ĐH Quốc Gia Hà Nội (VNU)",
+      "schoolCode": "QGH",
+      "schoolName": "Đại Học Quốc Gia Hà Nội",
+      "category": "Chính Phủ / STEM",
+      "valuePct": 100,
+      "monthlyAllowanceVND": 4200000,
+      "allowanceRangeText": "3.700.000 - 5.500.000 VNĐ / tháng",
+      "eligibility": "Sinh viên trúng tuyển các ngành Khoa học Cơ bản (Toán, Lý, Hóa, Sinh, Sử, Địa) qua kết quả thi THPT, HSA (ĐGNL) hoặc giải HSGQG.",
+      "description": "ĐHQGHN miễn 100% học phí toàn khóa + cấp tiền trợ cấp sinh hoạt hàng tháng cho sinh viên ngành Khoa học Cơ bản & Tài năng.",
+      "sourceUrl": "https://vnu.edu.vn",
+      "tags": [
+        "VNU",
+        "ĐHQGHN",
+        "Khoa Học Cơ Bản",
+        "Miễn Học Phí"
+      ]
+    },
+    {
+      "id": "HB_FTU_KHUYENHOC_2026",
+      "title": "Học Bổng Khuyến Học & Tài Trợ Doanh Nghiệp — ĐH Ngoại Thương (FTU)",
+      "schoolCode": "NTH",
+      "schoolName": "Đại Học Ngoại Thương",
+      "category": "Đầu Vào / Thủ Khoa",
+      "valuePct": 100,
+      "valueRangeText": "50% - 100% Học phí + Quỹ Doanh Nghiệp",
+      "monthlyAllowanceVND": 0,
+      "eligibility": "Thí sinh điểm xét tuyển THPT top 1% trúng tuyển FTU hoặc sinh viên đạt GPA xuất sắc hàng học kỳ.",
+      "description": "Ngoại Thương trao các gói học bổng Khuyến học loại A/B/C cùng tài trợ từ Mitsubishi, Vietcombank, Sumitomo (30M - 50M VNĐ/năm).",
+      "sourceUrl": "https://ftu.edu.vn",
+      "tags": [
+        "FTU",
+        "Ngoại Thương",
+        "Kinh Tế",
+        "Doanh Nghiệp"
+      ]
+    },
+    {
+      "id": "HB_NEU_STARS_2026",
+      "title": "Học Bổng Thủ Khoa & Ngôi Sao NEU — ĐH Kinh Tế Quốc Dân",
+      "schoolCode": "KHA",
+      "schoolName": "Đại Học Kinh Tế Quốc Dân",
+      "category": "Đầu Vào / Thủ Khoa",
+      "valuePct": 100,
+      "valueRangeText": "100% Học phí + Thưởng Thủ khoa",
+      "monthlyAllowanceVND": 0,
+      "eligibility": "Thủ khoa, Á khoa các khối thi THPT (A00, A01, D01, D07) hoặc học sinh giải Nhất/Nhì HSGQG trúng tuyển NEU.",
+      "description": "Học bổng toàn phần dành cho sinh viên xuất sắc nhất kỳ tuyển sinh cùng cơ hội nhận các suất học bổng doanh nghiệp hàng năm.",
+      "sourceUrl": "https://neu.edu.vn",
+      "tags": [
+        "NEU",
+        "Kinh Tế Quốc Dân",
+        "Thủ Khoa",
+        "Miễn Học Phí"
+      ]
+    },
+    {
+      "id": "HB_MEDICAL_FUTURE_2026",
+      "title": "Học Bổng Bác Sĩ Tương Lai & Khuyến Học Y Dược (HMU & UMP)",
+      "schoolCode": "YDS",
+      "schoolName": "Đại Học Y Hà Nội & ĐH Y Dược TP.HCM",
+      "category": "Khuyến Khích Học Tập",
+      "valuePct": 100,
+      "monthlyAllowanceVND": 2000000,
+      "eligibility": "Sinh viên các ngành Y Khoa, Dược Học, Răng Hàm Mặt có kết quả học tập xuất sắc hoặc hoàn cảnh gia đình khó khăn.",
+      "description": "Hỗ trợ 50% - 100% học phí + quỹ tài trợ từ các tập đoàn Dược phẩm quốc tế (Roche, Sanofi, Odon Vallet) đồng hành cùng tân Bác sĩ.",
+      "sourceUrl": "https://ump.edu.vn",
+      "tags": [
+        "Y Dược",
+        "HMU",
+        "UMP",
+        "Bác Sĩ",
+        "Vượt Khó"
+      ]
+    },
+    {
+      "id": "HB_TDTU_TALENT_2026",
+      "title": "Học Bổng 100% Thu Hút Nhân Tài — ĐH Tôn Đức Thắng (TDTU)",
+      "schoolCode": "DTT",
+      "schoolName": "Đại Học Tôn Đức Thắng",
+      "category": "Đầu Vào / Thủ Khoa",
+      "valuePct": 100,
+      "valueRangeText": "100% Học Phí toàn khóa + Ký túc xá",
+      "monthlyAllowanceVND": 0,
+      "eligibility": "Học sinh tốt nghiệp loại Giỏi/Xuất sắc từ các trường THPT chuyên toàn quốc hoặc điểm thi THPT top 2%.",
+      "description": "TDTU cấp học bổng 100% học phí toàn khóa + miễn phí chỗ ở Ký túc xá hiện đại cho học sinh xuất sắc trúng tuyển.",
+      "sourceUrl": "https://tdtu.edu.vn",
+      "tags": [
+        "TDTU",
+        "Tôn Đức Thắng",
+        "Nhân Tài",
+        "Ký Túc Xá"
+      ]
+    },
+    {
+      "id": "HB_PANASONIC_VIETNAM_2026",
+      "title": "Chương Trình Học Bổng Panasonic Việt Nam \"Nâng Bước Nhân Tài\"",
+      "schoolCode": "ALL_UNIS",
+      "schoolName": "Tập Đoàn Panasonic Việt Nam",
+      "category": "Doanh Nghiệp / Quỹ",
+      "valuePct": 0,
+      "monthlyAllowanceVND": 0,
+      "oneTimeGrantVND": 30000000,
+      "eligibility": "Sinh viên đại học năm 2, 3, 4 thuộc ngành Công nghệ, Kỹ thuật, Kinh tế có GPA >= 8.0/10 (hoặc 3.2/4.0).",
+      "description": "Panasonic trao 30.000.000 VNĐ tiền mặt/năm cho sinh viên xuất sắc + khóa đào tạo kỹ năng mềm và ưu tiên tuyển dụng.",
+      "sourceUrl": "https://panasonic.com/vn",
+      "tags": [
+        "Panasonic",
+        "Kỹ Thuật",
+        "Công Nghệ",
+        "30 Triệu"
+      ]
+    },
+    {
+      "id": "HB_HESSEN_GERMANY_2026",
+      "title": "Học Bổng Bang Hessen (CHLB Đức) Dành Cho Sinh Viên Việt Nam",
+      "schoolCode": "ALL_UNIS",
+      "schoolName": "Bộ Khoa Học & Nghệ Thuật Bang Hessen (Đức)",
+      "category": "Quốc Tế / Toàn Phần",
+      "valuePct": 0,
+      "monthlyAllowanceVND": 5800000,
+      "allowanceRangeText": "216 EUR / tháng (~5.800.000 VNĐ)",
+      "eligibility": "Sinh viên đại học chính quy có điểm trung bình từ 7.5/10 trở lên, ưu tiên sinh viên vùng sâu vùng xa hoặc hoàn cảnh khó khăn.",
+      "description": "Chính phủ bang Hessen (Đức) trao học bổng tiền mặt hàng tháng (216 EUR/tháng) cho sinh viên Việt Nam xuất sắc.",
+      "sourceUrl": "https://vietnam-hessen.de",
+      "tags": [
+        "Hessen",
+        "Đức",
+        "Châu Âu",
+        "Hàng Tháng"
+      ]
+    },
+    {
+      "id": "HB_AMCHAM_VIETNAM_2026",
+      "title": "Chương Trình Học Bổng AmCham Women in Engineering & Leadership",
+      "schoolCode": "ALL_UNIS",
+      "schoolName": "AmCham Vietnam (Hiệp Hội Thương Mại Hoa Kỳ)",
+      "category": "Doanh Nghiệp / Quỹ",
+      "valuePct": 0,
+      "monthlyAllowanceVND": 0,
+      "oneTimeGrantVND": 15000000,
+      "eligibility": "Sinh viên nữ năm cuối các ngành Kỹ thuật, Công nghệ, CNTT, Kinh tế tại các đại học lớn.",
+      "description": "Trao 15.000.000 VNĐ tiền mặt + khóa huấn luyện kỹ năng phỏng vấn tuyển dụng trực tiếp với các tập đoàn Hoa Kỳ (Intel, Coca-Cola, Nike, P&G).",
+      "sourceUrl": "https://amchamvietnam.com",
+      "tags": [
+        "AmCham",
+        "Mỹ",
+        "Lãnh Đạo Nữ",
+        "Tuyển Dụng"
       ]
     }
   ],
