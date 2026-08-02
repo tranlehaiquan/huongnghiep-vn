@@ -130,6 +130,11 @@ export default function SchoolSearchIsland({ schools }: Props) {
                   <div className="flex items-start justify-between mb-3">
                     <span className="text-2xl">🏛️</span>
                     <div className="flex flex-wrap gap-1.5 justify-end">
+                      {school.vnurRank2025 && (
+                        <span className="badge text-xs" style={{ background: 'rgba(251,191,36,0.18)', color: '#fbbf24', border: '1px solid rgba(251,191,36,0.3)' }}>
+                          🏆 #{school.vnurRank2025} VNUR
+                        </span>
+                      )}
                       <span className={`badge ${badgeClass} text-xs`}>
                         {isCollege ? 'Cao đẳng' : isAcademy ? 'Học viện' : 'Đại học'}
                       </span>

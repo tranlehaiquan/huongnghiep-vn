@@ -154,6 +154,11 @@ const schoolJsonLd = {
                 </span>
                 <span class="badge badge-gold text-[11px]">{school.regionLabel || school.region}</span>
                 <span class="badge badge-violet text-[11px]">{school.province}</span>
+                {school.vnurRank2025 && (
+                  <span class="text-[11px] px-2.5 py-0.5 rounded-full font-bold" style="background:rgba(251,191,36,0.2);color:#fbbf24;border:1px solid rgba(251,191,36,0.4);">
+                    🏆 Top #{school.vnurRank2025} VNUR 2025
+                  </span>
+                )}
                 {isRealAbbrev && (
                   <span class="text-[11px] px-2 py-0.5 rounded-full font-mono font-bold" style="background:rgba(99,102,241,0.15);color:#a5b4fc;border:1px solid rgba(99,102,241,0.3);">
                     {school.shortName}
@@ -214,12 +219,21 @@ const schoolJsonLd = {
               <div class="text-3xl lg:text-4xl font-black gradient-text leading-none">{school.majors?.length || 0}</div>
               <div class="text-xs text-slate-500 mt-1">Ngành học</div>
             </div>
+            {school.admissionQuotaTotal > 0 && (
+              <>
+                <div class="w-px lg:w-auto lg:h-px bg-white/10 self-stretch lg:self-auto"></div>
+                <div class="text-center lg:text-right">
+                  <div class="text-2xl lg:text-3xl font-black text-amber-400 leading-none">~{school.admissionQuotaTotal.toLocaleString()}</div>
+                  <div class="text-xs text-slate-500 mt-1">Chỉ tiêu ước tính</div>
+                </div>
+              </>
+            )}
             <div class="w-px lg:w-auto lg:h-px bg-white/10 self-stretch lg:self-auto"></div>
             <div class="text-center lg:text-right">
               <div class="text-2xl lg:text-3xl font-black gradient-text-teal leading-none">
                 {school.avgTuitionPerYearVND > 0 ? `${(school.avgTuitionPerYearVND/1000000).toFixed(0)}M` : 'Miễn phí'}
               </div>
-              <div class="text-xs text-slate-500 mt-1">Học phí/năm</div>
+              <div class="text-xs text-slate-500 mt-1">Học phí / năm</div>
             </div>
           </div>
         </div>
@@ -269,6 +283,14 @@ const schoolJsonLd = {
                     </div>
 
                     <div class="flex flex-wrap items-center gap-2 text-xs">
+                      {major.competitionLevel && (
+                        <span class="badge" style="background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3)">
+                          {major.competitionLevel}
+                        </span>
+                      )}
+                      {major.quota > 0 && (
+                        <span class="badge badge-gold">🎯 ~{major.quota} chỉ tiêu</span>
+                      )}
                       <div class="flex flex-wrap gap-1.5 items-center">
                         {blocks.slice(0, 5).map((b: string) => (
                           <span class="badge badge-primary">{b}</span>
