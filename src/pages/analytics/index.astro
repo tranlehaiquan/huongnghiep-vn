@@ -1,0 +1,384 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import benchmarkRaw from '../../data/tuyensinh247_school_benchmarks.json';
+
+const benchmarkData = benchmarkRaw as any;
+const schools: any[] = benchmarkData.schools || [];
+
+// ─── Compute all analytics at build time ──────────────────────────────────────
+
+// 1. All standard THPT-scale majors (score 10–30)
+const allMajors: { schoolName: string; schoolCode: string; majorName: string; blocks: string[]; score: number }[] = [];
+for (const school of schools) {
+  for (const major of (school.majors || [])) {
+    const score = parseFloat(major.score);
+    if (score >= 10 && score <= 30) {
+      allMajors.push({
+        schoolName: school.name,
+        schoolCode: school.code,
+        majorName: major.majorName,
+        blocks: major.blocks || [],
+        score,
+      });
+    }
+  }
+}
+
+const totalSchoolsWithData = schools.length;
+const totalScoredMajors = allMajors.length;
+
+// 2. Score histogram (10–30 in 1-point buckets)
+const histogramBuckets = 20;
+const histogram = Array.from({ length: histogramBuckets }, (_, i) => ({
+  label: `${10 + i}–${11 + i}`,
+  count: 0,
+}));
+for (const m of allMajors) {
+  const idx = Math.min(histogramBuckets - 1, Math.floor(m.score) - 10);
+  if (idx >= 0) histogram[idx].count++;
+}
+
+// 3. Top schools by avg cutoff score (min 5 scored majors)
+interface SchoolStat {
+  name: string; code: string; slug: string;
+  avgScore: number; maxScore: number; scoredMajors: number;
+}
+const schoolStats: SchoolStat[] = schools.map((school: any) => {
+  const scores = (school.majors || [])
+    .map((m: any) => parseFloat(m.score))
+    .filter((s: number) => s >= 10 && s <= 30);
+  return {
+    name: school.name,
+    code: school.code,
+    slug: school.slug,
+    avgScore: scores.length ? +(scores.reduce((a: number, b: number) => a + b, 0) / scores.length).toFixed(2) : 0,
+    maxScore: scores.length ? Math.max(...scores) : 0,
+    scoredMajors: scores.length,
+  };
+}).filter((s: SchoolStat) => s.scoredMajors >= 5).sort((a: SchoolStat, b: SchoolStat) => b.avgScore - a.avgScore);
+
+const topSchools = schoolStats.slice(0, 20);
+
+// 4. Top major groups by avg score (normalize name — strip sub-program tags)
+interface MajorGroup { name: string; scores: number[]; schools: Set<string> }
+const majorGroupMap = new Map<string, MajorGroup>();
+for (const m of allMajors) {
+  // Normalize: strip parenthetical sub-programs for grouping
+  const baseName = m.majorName.replace(/\s*\([^)]{0,60}\)/g, '').trim();
+  if (!majorGroupMap.has(baseName)) majorGroupMap.set(baseName, { name: baseName, scores: [], schools: new Set() });
+  const g = majorGroupMap.get(baseName)!;
+  g.scores.push(m.score);
+  g.schools.add(m.schoolName);
+}
+const topMajorGroups = Array.from(majorGroupMap.values())
+  .filter(g => g.scores.length >= 5)
+  .map(g => ({
+    name: g.name.length > 50 ? g.name.slice(0, 50) + '…' : g.name,
+    count: g.scores.length,
+    schoolCount: g.schools.size,
+    avg: +(g.scores.reduce((a, b) => a + b, 0) / g.scores.length).toFixed(2),
+    max: +Math.max(...g.scores).toFixed(2),
+    min: +Math.min(...g.scores).toFixed(2),
+  }))
+  .sort((a, b) => b.avg - a.avg)
+  .slice(0, 20);
+
+// 5. Exam block popularity
+const blockCount = new Map<string, number>();
+for (const m of allMajors) {
+  for (const b of m.blocks) {
+    blockCount.set(b, (blockCount.get(b) || 0) + 1);
+  }
+}
+const topBlocks = Array.from(blockCount.entries())
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 12)
+  .map(([block, count]) => ({ block, count }));
+
+// 6. Most competitive (highest avg) vs most accessible (lowest avg) schools
+const accessibleSchools = [...schoolStats].sort((a, b) => a.avgScore - b.avgScore).slice(0, 10);
+
+// Serialize for Chart.js
+const histJson = JSON.stringify(histogram);
+const topMajorJson = JSON.stringify(topMajorGroups.slice(0, 15));
+const topBlockJson = JSON.stringify(topBlocks);
+const topSchoolsJson = JSON.stringify(topSchools.slice(0, 15));
+const accessibleJson = JSON.stringify(accessibleSchools);
+---
+
+<Layout
+  title="Phân Tích Tuyển Sinh | HướngNghiệp VN"
+  description={`Phân tích toàn diện điểm chuẩn ${totalScoredMajors.toLocaleString()} ngành học từ ${totalSchoolsWithData} trường đại học Việt Nam. Xem ngành cạnh tranh nhất, trường có điểm cao nhất, phân phối khối thi.`}
+>
+  <Header currentPath="/analytics" />
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+    <!-- Page Header -->
+    <div class="mb-10">
+      <div class="flex flex-wrap items-center gap-3 mb-3">
+        <span class="badge badge-primary">📊 Dữ liệu TuyenSinh247</span>
+        <span class="badge badge-teal">Cập nhật {benchmarkData.crawledAt?.slice(0, 10) || '2024'}</span>
+      </div>
+      <h1 class="text-3xl lg:text-4xl font-black text-white mb-3">Phân Tích Điểm Chuẩn Tuyển Sinh</h1>
+      <p class="text-slate-400 max-w-2xl">
+        Tổng hợp và trực quan hóa điểm chuẩn THPT từ <strong class="text-white">{totalSchoolsWithData} trường</strong> với <strong class="text-white">{totalScoredMajors.toLocaleString()} ngành</strong> — so sánh mức độ cạnh tranh, xu hướng ngành hot, và phân phối khối thi.
+      </p>
+    </div>
+
+    <!-- Overview Stats -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+      {[
+        { value: totalSchoolsWithData, label: 'Trường có dữ liệu', icon: '🏛️', color: 'gradient-text' },
+        { value: totalScoredMajors.toLocaleString(), label: 'Ngành có điểm chuẩn', icon: '📚', color: 'gradient-text-teal' },
+        { value: topBlocks[0]?.block || 'D01', label: 'Khối thi phổ biến nhất', icon: '📝', color: 'gradient-text' },
+        { value: topSchools[0]?.avgScore.toFixed(1), label: 'Điểm TB cao nhất', icon: '🏆', color: 'gradient-text-teal' },
+      ].map(stat => (
+        <div class="card p-5 text-center">
+          <div class="text-2xl mb-1">{stat.icon}</div>
+          <div class={`text-2xl lg:text-3xl font-black ${stat.color}`}>{stat.value}</div>
+          <div class="text-xs text-slate-500 mt-1">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Charts Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+
+      <!-- Score Distribution Histogram -->
+      <div class="card p-6">
+        <h2 class="text-base font-black text-white mb-1">📈 Phân Phối Điểm Chuẩn</h2>
+        <p class="text-xs text-slate-500 mb-5">Số lượng ngành theo mức điểm (thang 10–30)</p>
+        <div style="position:relative;height:240px">
+          <canvas id="histogramChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Exam Block Popularity -->
+      <div class="card p-6">
+        <h2 class="text-base font-black text-white mb-1">🎯 Khối Thi Phổ Biến Nhất</h2>
+        <p class="text-xs text-slate-500 mb-5">Số lượng ngành xét tuyển theo từng khối thi</p>
+        <div style="position:relative;height:240px">
+          <canvas id="blockChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Competitive Majors -->
+    <div class="card p-6 mb-6">
+      <h2 class="text-base font-black text-white mb-1">🔥 Ngành Cạnh Tranh Nhất (Điểm Trung Bình Cao)</h2>
+      <p class="text-xs text-slate-500 mb-5">Top ngành theo điểm chuẩn trung bình — ít nhất 5 trường</p>
+      <div style="position:relative;height:420px">
+        <canvas id="topMajorsChart"></canvas>
+      </div>
+    </div>
+
+    <!-- School Comparison: Competitive vs Accessible -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+
+      <!-- Most Competitive Schools -->
+      <div class="card p-6">
+        <h2 class="text-base font-black text-white mb-1">🏆 Trường Cạnh Tranh Nhất</h2>
+        <p class="text-xs text-slate-500 mb-4">Xếp hạng theo điểm chuẩn trung bình (≥5 ngành)</p>
+        <div class="space-y-2">
+          {topSchools.slice(0, 10).map((school, i) => (
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0"
+                style={`background:${i < 3 ? 'rgba(251,191,36,0.2)' : 'rgba(99,102,241,0.15)'}; color:${i < 3 ? '#fbbf24' : '#818cf8'}; border:1px solid ${i < 3 ? 'rgba(251,191,36,0.3)' : 'rgba(99,102,241,0.25)'}`}>
+                {i + 1}
+              </span>
+              <div class="flex-1 min-w-0">
+                <div class="text-xs font-semibold text-white truncate">{school.name}</div>
+                <div class="text-[10px] text-slate-500">{school.scoredMajors} ngành</div>
+              </div>
+              <div class="text-sm font-black gradient-text-teal flex-shrink-0">{school.avgScore}</div>
+              <div class="w-20 h-1.5 rounded-full bg-slate-800 flex-shrink-0">
+                <div class="h-full rounded-full" style={`width:${((school.avgScore - 20) / 10) * 100}%; background:linear-gradient(90deg,#4f6ef7,#10d9a8)`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Most Accessible Schools -->
+      <div class="card p-6">
+        <h2 class="text-base font-black text-white mb-1">✅ Trường Dễ Vào Nhất</h2>
+        <p class="text-xs text-slate-500 mb-4">Điểm chuẩn trung bình thấp — cơ hội đầu vào cao</p>
+        <div class="space-y-2">
+          {accessibleSchools.map((school, i) => (
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
+                style="background:rgba(16,217,168,0.12);color:#10d9a8;border:1px solid rgba(16,217,168,0.25)">
+                {i + 1}
+              </span>
+              <div class="flex-1 min-w-0">
+                <div class="text-xs font-semibold text-white truncate">{school.name}</div>
+                <div class="text-[10px] text-slate-500">{school.scoredMajors} ngành</div>
+              </div>
+              <div class="text-sm font-black text-emerald-400 flex-shrink-0">{school.avgScore}</div>
+              <div class="w-20 h-1.5 rounded-full bg-slate-800 flex-shrink-0">
+                <div class="h-full rounded-full" style={`width:${((school.avgScore - 10) / 20) * 100}%; background:#10d9a8`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Top Schools Chart -->
+    <div class="card p-6 mb-6">
+      <h2 class="text-base font-black text-white mb-1">🏛️ Top 15 Trường — Điểm TB Cao Nhất</h2>
+      <p class="text-xs text-slate-500 mb-5">So sánh điểm chuẩn trung bình của các trường (từ dữ liệu crawl TuyenSinh247)</p>
+      <div style="position:relative;height:380px">
+        <canvas id="topSchoolsChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Data Source Note -->
+    <div class="card p-4 text-center" style="border-color:rgba(16,217,168,0.2)">
+      <p class="text-xs text-slate-500">
+        📡 Dữ liệu crawl từ <a href="https://diemthi.tuyensinh247.com" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">TuyenSinh247.com</a>
+        · Cập nhật {benchmarkData.crawledAt?.slice(0, 10) || '2024'}
+        · {totalSchoolsWithData} trường · {totalScoredMajors.toLocaleString()} ngành điểm chuẩn thang THPT (10–30)
+      </p>
+    </div>
+  </main>
+</Layout>
+
+<script define:vars={{ histJson, topMajorJson, topBlockJson, topSchoolsJson }}>
+  // Load Chart.js dynamically
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js';
+  script.onload = () => {
+    const hist = JSON.parse(histJson);
+    const topMajors = JSON.parse(topMajorJson);
+    const topBlocks = JSON.parse(topBlockJson);
+    const topSchools = JSON.parse(topSchoolsJson);
+
+    // Shared defaults
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.borderColor = 'rgba(255,255,255,0.06)';
+    Chart.defaults.font.family = "'Inter', sans-serif";
+
+    // 1. Score Histogram
+    new Chart(document.getElementById('histogramChart'), {
+      type: 'bar',
+      data: {
+        labels: hist.map(h => h.label),
+        datasets: [{
+          label: 'Số ngành',
+          data: hist.map(h => h.count),
+          backgroundColor: hist.map((_, i) => {
+            const t = i / hist.length;
+            const r = Math.round(79 + t * (16 - 79));
+            const g = Math.round(110 + t * (217 - 110));
+            const b = Math.round(247 + t * (168 - 247));
+            return `rgba(${r},${g},${b},0.7)`;
+          }),
+          borderRadius: 4,
+          borderSkipped: false,
+        }],
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y.toLocaleString()} ngành` } } },
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.04)' } },
+          y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { precision: 0 } },
+        },
+      },
+    });
+
+    // 2. Block Popularity Bar
+    new Chart(document.getElementById('blockChart'), {
+      type: 'bar',
+      data: {
+        labels: topBlocks.map(b => b.block),
+        datasets: [{
+          label: 'Số ngành',
+          data: topBlocks.map(b => b.count),
+          backgroundColor: 'rgba(79,110,247,0.6)',
+          borderColor: 'rgba(79,110,247,0.9)',
+          borderWidth: 1,
+          borderRadius: 5,
+          borderSkipped: false,
+        }],
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.04)' } },
+          y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { precision: 0 } },
+        },
+      },
+    });
+
+    // 3. Top Majors Horizontal Bar
+    new Chart(document.getElementById('topMajorsChart'), {
+      type: 'bar',
+      data: {
+        labels: topMajors.map(m => m.name),
+        datasets: [
+          {
+            label: 'Điểm TB',
+            data: topMajors.map(m => m.avg),
+            backgroundColor: 'rgba(79,110,247,0.7)',
+            borderRadius: 4,
+            borderSkipped: false,
+          },
+          {
+            label: 'Điểm cao nhất',
+            data: topMajors.map(m => m.max),
+            backgroundColor: 'rgba(16,217,168,0.35)',
+            borderColor: 'rgba(16,217,168,0.7)',
+            borderWidth: 1,
+            borderRadius: 4,
+            borderSkipped: false,
+          },
+        ],
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 12, padding: 16 } },
+          tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.x}` } },
+        },
+        scales: {
+          x: { min: 20, max: 30.5, grid: { color: 'rgba(255,255,255,0.04)' } },
+          y: { grid: { display: false }, ticks: { font: { size: 11 } } },
+        },
+      },
+    });
+
+    // 4. Top Schools Bar
+    new Chart(document.getElementById('topSchoolsChart'), {
+      type: 'bar',
+      data: {
+        labels: topSchools.map(s => s.name.length > 30 ? s.name.slice(0, 30) + '…' : s.name),
+        datasets: [{
+          label: 'Điểm chuẩn TB',
+          data: topSchools.map(s => s.avgScore),
+          backgroundColor: topSchools.map((_, i) => `hsla(${240 - i * 8}, 70%, 60%, 0.65)`),
+          borderRadius: 5,
+          borderSkipped: false,
+        }],
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => ` Điểm TB: ${ctx.parsed.x} · ${topSchools[ctx.dataIndex].scoredMajors} ngành` } },
+        },
+        scales: {
+          x: { min: 24, max: 30, grid: { color: 'rgba(255,255,255,0.04)' } },
+          y: { grid: { display: false }, ticks: { font: { size: 11 } } },
+        },
+      },
+    });
+  };
+  document.head.appendChild(script);
+</script>

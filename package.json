@@ -13,6 +13,7 @@
     "astro": "astro",
     "crawl:schools": "node scripts/crawl-vietnam-schools.js",
     "crawl:benchmarks": "node scripts/crawlers/crawl_all_school_benchmarks.js",
+    "crawl:daily": "node scripts/crawlers/crawl-daily.mjs",
     "enrich:schools": "node scripts/utils/enrich_smart_school_majors.js",
     "crawl:all": "node scripts/crawl-vietnam-schools.js && node scripts/crawlers/crawl_all_school_benchmarks.js && node scripts/utils/enrich_smart_school_majors.js"
   },
