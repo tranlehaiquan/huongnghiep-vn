@@ -176,11 +176,15 @@
         "code": "M19",
         "name": "Sư phạm Tiếng Anh",
         "blocks": [
-          "A01"
+          "D01",
+          "D09",
+          "D10",
+          "D84",
+          "X25"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.57",
+        "cutoffScore2024": "25.32",
         "note": ""
       },
       {
@@ -355,15 +359,11 @@
         "code": "M39",
         "name": "Kiểm toán",
         "blocks": [
-          "C03",
-          "C04",
-          "C14",
-          "D01",
-          "X01"
+          "C01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "16",
+        "cutoffScore2024": "14.25",
         "note": ""
       },
       {
@@ -608,8 +608,8 @@
         "note": ""
       },
       {
-        "code": "M128",
-        "name": "Quản lý đ���t đai",
+        "code": "M186",
+        "name": "Chính tr��� học",
         "blocks": [
           "A00",
           "A01",
@@ -618,7 +618,7 @@
         "years": 4,
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "16",
-        "note": "54"
+        "note": "12"
       }
     ],
     "source": "github-ads-final",
@@ -684,11 +684,13 @@
         "code": "M4",
         "name": "CT TC Kinh doanh quốc tế",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "28.75",
+        "cutoffScore2024": "27.75",
         "note": ""
       },
       {
@@ -728,11 +730,13 @@
         "code": "M12",
         "name": "CT ĐHNNQT Quản lý công nghiệp thông minh",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "25",
+        "cutoffScore2024": "24",
         "note": ""
       },
       {
@@ -761,13 +765,11 @@
         "code": "M18",
         "name": "CT ĐHNNQT Kiểm toán tích hợp công nghệ",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "26.1",
+        "cutoffScore2024": "27.1",
         "note": ""
       },
       {
@@ -835,24 +837,24 @@
         "code": "M28",
         "name": "CT ĐHNNQT Kinh tế số và Phân tích dữ liệu",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "27",
+        "cutoffScore2024": "28",
         "note": ""
       },
       {
         "code": "M30",
         "name": "CT TC Luật thương mại quốc tế",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "25",
+        "cutoffScore2024": "24",
         "note": ""
       },
       {
@@ -961,13 +963,11 @@
         "code": "M46",
         "name": "CT TC Quản trị kinh doanh",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "25.6",
+        "cutoffScore2024": "26.6",
         "note": ""
       },
       {
@@ -1020,6 +1020,17 @@
         "code": "M54",
         "name": "CT ĐHNNQT Thương mại số thông minh và đổi mới kinh doanh",
         "blocks": [
+          "A00"
+        ],
+        "years": 4,
+        "tuitionPerYear": 28000000,
+        "cutoffScore2024": "27.2",
+        "note": ""
+      },
+      {
+        "code": "M55",
+        "name": "CT ĐHNNQT Thương m���i số thông minh và đổi mới kinh doanh",
+        "blocks": [
           "A01",
           "D01",
           "D07"
@@ -1044,11 +1055,13 @@
         "code": "M58",
         "name": "CT TC Kế toán - Kiểm toán (Cơ sở HCM)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "26.85",
+        "cutoffScore2024": "25.85",
         "note": ""
       },
       {
@@ -1077,24 +1090,24 @@
         "code": "M64",
         "name": "CT ĐHNNQT Truyền thông Marketing tích hợp (Cơ sở HCM)",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "26.65",
+        "cutoffScore2024": "27.65",
         "note": ""
       },
       {
         "code": "M66",
         "name": "CT TC Quản trị kinh doanh (Cơ sở HCM)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "26.8",
+        "cutoffScore2024": "25.8",
         "note": ""
       },
       {
@@ -1125,9 +1138,9 @@
         "code": "M189",
         "name": "CT TT i-Hons Kinh doanh quốc tế và Phân tích dữ liệu kinh doanh (hợp tác với University of Queensland, Australia)",
         "blocks": [
-          "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -1138,9 +1151,9 @@
         "code": "M205",
         "name": "CT TT Kinh tế đối ngoại",
         "blocks": [
+          "A00",
           "A01",
-          "D01",
-          "D07"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -1190,9 +1203,9 @@
         "code": "M235",
         "name": "CT CLC Quản trị kinh doanh",
         "blocks": [
-          "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -1203,9 +1216,9 @@
         "code": "M239",
         "name": "CT TT Tài chính - Ngân hàng",
         "blocks": [
-          "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -1216,9 +1229,9 @@
         "code": "M241",
         "name": "CT CLC Tài chính - Ngân hàng",
         "blocks": [
+          "A00",
           "A01",
-          "D01",
-          "D07"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -1229,9 +1242,9 @@
         "code": "M249",
         "name": "CT CLC Kinh tế đối ngoại (Cơ sở HCM)",
         "blocks": [
+          "A00",
           "A01",
-          "D01",
-          "D07"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -1242,9 +1255,9 @@
         "code": "M255",
         "name": "CT CLC Quản trị kinh doanh (Cơ sở HCM)",
         "blocks": [
-          "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -1255,9 +1268,9 @@
         "code": "M257",
         "name": "CT CLC Tài chính - Ngân hàng (Cơ sở HCM)",
         "blocks": [
-          "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -1266,7 +1279,7 @@
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 52
+    "majorsCount": 53
   },
   {
     "id": "GH_3_ĐAI_HOC_SU_PHAM_HA_N",
@@ -3607,8 +3620,8 @@
         "note": ""
       },
       {
-        "code": "M701",
-        "name": "Quản trị giải tr�� và sự kiện",
+        "code": "M628",
+        "name": "Kinh tế và quản lý nguồn nhân l���c",
         "blocks": [
           "A00",
           "A01",
@@ -3616,8 +3629,8 @@
         ],
         "years": 4,
         "tuitionPerYear": 26000000,
-        "cutoffScore2024": "25.89",
-        "note": "1490"
+        "cutoffScore2024": "27.07",
+        "note": "1550"
       }
     ],
     "source": "github-ads-final",
@@ -6242,8 +6255,8 @@
         "note": ""
       },
       {
-        "code": "M701",
-        "name": "Quản trị giải tr�� và sự kiện",
+        "code": "M628",
+        "name": "Kinh tế và quản lý nguồn nhân l���c",
         "blocks": [
           "A00",
           "A01",
@@ -6251,8 +6264,8 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.89",
-        "note": "1490"
+        "cutoffScore2024": "27.07",
+        "note": "1550"
       }
     ],
     "source": "github-ads-final",
@@ -8714,15 +8727,14 @@
         "code": "M1",
         "name": "Luật Kiểm Sát (GT: Nam, miền Bắc)",
         "blocks": [
-          "D01",
-          "A01",
-          "D07",
-          "D09",
-          "D14"
+          "C01",
+          "C02",
+          "C03",
+          "C04"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.65",
+        "cutoffScore2024": "26.45",
         "note": ""
       },
       {
@@ -8759,11 +8771,14 @@
         "code": "M13",
         "name": "Luật Kinh Tế",
         "blocks": [
-          "A00"
+          "C01",
+          "C02",
+          "C03",
+          "C04"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.35",
+        "cutoffScore2024": "24.7",
         "note": ""
       },
       {
@@ -8785,14 +8800,15 @@
         "code": "M19",
         "name": "Luật Kiểm Sát (GT: Nam, miền Nam)",
         "blocks": [
-          "C01",
-          "C02",
-          "C03",
-          "C04"
+          "D01",
+          "A01",
+          "D07",
+          "D09",
+          "D14"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.52",
+        "cutoffScore2024": "23.72",
         "note": ""
       },
       {
@@ -9078,12 +9094,11 @@
         "code": "M10",
         "name": "Xây dựng Đảng và chính quyền nhà nước",
         "blocks": [
-          "C19",
-          "C20"
+          "D14"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "18.5",
+        "cutoffScore2024": "15.5",
         "note": ""
       },
       {
@@ -9114,11 +9129,11 @@
         "code": "M22",
         "name": "Lưu trữ học (Chuyên ngành Văn thư - Lưu trữ)",
         "blocks": [
-          "D01"
+          "C00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "15",
+        "cutoffScore2024": "17",
         "note": ""
       },
       {
@@ -11088,6 +11103,17 @@
         "note": ""
       },
       {
+        "code": "M88",
+        "name": "To��n ứng dụng",
+        "blocks": [
+          "C01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "72.05",
+        "note": ""
+      },
+      {
         "code": "M90",
         "name": "Thống kê",
         "blocks": [
@@ -11628,7 +11654,7 @@
       },
       {
         "code": "M205",
-        "name": "Ngôn ngữ Trung Quốc - Chương tr��nh tiên tiến",
+        "name": "Ngôn ngữ Trung Quốc - Chương trình tiên tiến",
         "blocks": [
           "D01",
           "D04",
@@ -11639,17 +11665,6 @@
         "years": 4,
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "58",
-        "note": ""
-      },
-      {
-        "code": "M206",
-        "name": "Ngôn ngữ Trung Quốc - Chương trình tiên tiến",
-        "blocks": [
-          "D12"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "58.75",
         "note": ""
       },
       {
@@ -11932,7 +11947,7 @@
       },
       {
         "code": "M287",
-        "name": "Tài chính ngân hàng - Chương trình đại học bằng tiếng Anh",
+        "name": "Tài chính ngân hàng - Chư��ng trình đại học bằng tiếng Anh",
         "blocks": [
           "D01",
           "D07",
@@ -12609,6 +12624,45 @@
         "note": ""
       },
       {
+        "code": "M421",
+        "name": "Tài chính ngân hàng - Chương trình đại học bằng tiếng Anh",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "612.9",
+        "note": ""
+      },
+      {
+        "code": "M437",
+        "name": "Kế toán (song bằng 3+1) - Chương trình dự bị liên kết Đại học West of England, Bristol (Vương Quốc Anh); Chương trình dự bị liên kết Đại h���c khoa học ứng dụng Saxion (Hà Lan)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "612.9",
+        "note": ""
+      },
+      {
+        "code": "M445",
+        "name": "Marketing - Chương trình học t���i Phân hiệu Khánh Hòa",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "600",
+        "note": ""
+      },
+      {
         "code": "M778",
         "name": "Khoa học máy tính (đơn bằng 2+2) - Chương trình dự bị liên kết Đại học Kỹ thuật Ostrava (CH S��c)",
         "blocks": [
@@ -12628,7 +12682,7 @@
     "source": "github-ads-final",
     "lat": 10.7325639,
     "lng": 106.6998188,
-    "majorsCount": 128
+    "majorsCount": 131
   },
   {
     "id": "GH_22_HOC_VIEN_NGOAI_GIAO",
@@ -12646,22 +12700,11 @@
         "code": "M1",
         "name": "Quan hệ quốc tế",
         "blocks": [
-          "A00",
-          "A01",
-          "D01",
-          "D03",
-          "D04",
-          "D06",
-          "D07",
-          "D09",
-          "D10",
-          "D14",
-          "D15",
-          "DD2"
+          "C00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "26.25",
+        "cutoffScore2024": "27.75",
         "note": ""
       },
       {
@@ -12727,11 +12770,22 @@
         "code": "M7",
         "name": "Truyền thông quốc tế",
         "blocks": [
-          "C00"
+          "A00",
+          "A01",
+          "D01",
+          "D03",
+          "D04",
+          "D06",
+          "D07",
+          "D09",
+          "D10",
+          "D14",
+          "D15",
+          "DD2"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "27.5",
+        "cutoffScore2024": "26",
         "note": ""
       },
       {
@@ -12817,11 +12871,19 @@
         "code": "M16",
         "name": "Nhật Bản học",
         "blocks": [
-          "C00"
+          "A00",
+          "A01",
+          "D01",
+          "D06",
+          "D07",
+          "D09",
+          "D10",
+          "D14",
+          "D15"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.25",
+        "cutoffScore2024": "23.75",
         "note": ""
       },
       {
@@ -13259,12 +13321,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -13306,12 +13367,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -14579,12 +14639,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -14626,12 +14685,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -14849,7 +14907,7 @@
       },
       {
         "code": "M6",
-        "name": "Kỹ thuật cơ sở hạ t��ng (Chương trình Định hướng Quốc tế)",
+        "name": "Kỹ thuật cơ sở hạ tầng (Chương trình Định hướng Quốc tế)",
         "blocks": [
           "A01",
           "D01",
@@ -14872,19 +14930,6 @@
         "tuitionPerYear": 27000000,
         "cutoffScore2024": "21.35",
         "note": ""
-      },
-      {
-        "code": "M13",
-        "name": "Kỹ thuật cơ sở hạ tầng (Chương trình Định hướng Quốc tế)",
-        "blocks": [
-          "A01",
-          "D01",
-          "D07"
-        ],
-        "years": 4,
-        "tuitionPerYear": 27000000,
-        "cutoffScore2024": "16",
-        "note": "530"
       },
       {
         "code": "M15",
@@ -15040,19 +15085,6 @@
         "note": ""
       },
       {
-        "code": "M28",
-        "name": "Thiết kế nội thất (Chương trình Định hướng Quốc tế)",
-        "blocks": [
-          "V00",
-          "V01",
-          "V02"
-        ],
-        "years": 4,
-        "tuitionPerYear": 27000000,
-        "cutoffScore2024": "22.28",
-        "note": ""
-      },
-      {
         "code": "M29",
         "name": "Thiết kế đô thị (Chương trình tiên tiến)",
         "blocks": [
@@ -15069,7 +15101,7 @@
     "source": "github-ads-final",
     "lat": 20.9810908,
     "lng": 105.7892235,
-    "majorsCount": 22
+    "majorsCount": 20
   },
   {
     "id": "GH_29_ĐAI_HOC_LUAT_TPHCM",
@@ -15297,11 +15329,13 @@
         "code": "M4",
         "name": "CT TC Kinh doanh quốc tế",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "28.75",
+        "cutoffScore2024": "27.75",
         "note": ""
       },
       {
@@ -15341,11 +15375,13 @@
         "code": "M12",
         "name": "CT ĐHNNQT Quản lý công nghiệp thông minh",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "25",
+        "cutoffScore2024": "24",
         "note": ""
       },
       {
@@ -15374,13 +15410,11 @@
         "code": "M18",
         "name": "CT ĐHNNQT Kiểm toán tích hợp công nghệ",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "26.1",
+        "cutoffScore2024": "27.1",
         "note": ""
       },
       {
@@ -15448,24 +15482,24 @@
         "code": "M28",
         "name": "CT ĐHNNQT Kinh tế số và Phân tích dữ liệu",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "27",
+        "cutoffScore2024": "28",
         "note": ""
       },
       {
         "code": "M30",
         "name": "CT TC Luật thương mại quốc tế",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "25",
+        "cutoffScore2024": "24",
         "note": ""
       },
       {
@@ -15574,13 +15608,11 @@
         "code": "M46",
         "name": "CT TC Quản trị kinh doanh",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "25.6",
+        "cutoffScore2024": "26.6",
         "note": ""
       },
       {
@@ -15633,6 +15665,17 @@
         "code": "M54",
         "name": "CT ĐHNNQT Thương mại số thông minh và đổi mới kinh doanh",
         "blocks": [
+          "A00"
+        ],
+        "years": 4,
+        "tuitionPerYear": 28000000,
+        "cutoffScore2024": "27.2",
+        "note": ""
+      },
+      {
+        "code": "M55",
+        "name": "CT ĐHNNQT Thương m���i số thông minh và đổi mới kinh doanh",
+        "blocks": [
           "A01",
           "D01",
           "D07"
@@ -15657,11 +15700,13 @@
         "code": "M58",
         "name": "CT TC Kế toán - Kiểm toán (Cơ sở HCM)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "26.85",
+        "cutoffScore2024": "25.85",
         "note": ""
       },
       {
@@ -15690,24 +15735,24 @@
         "code": "M64",
         "name": "CT ĐHNNQT Truyền thông Marketing tích hợp (Cơ sở HCM)",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "26.65",
+        "cutoffScore2024": "27.65",
         "note": ""
       },
       {
         "code": "M66",
         "name": "CT TC Quản trị kinh doanh (Cơ sở HCM)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
-        "cutoffScore2024": "26.8",
+        "cutoffScore2024": "25.8",
         "note": ""
       },
       {
@@ -15738,9 +15783,9 @@
         "code": "M189",
         "name": "CT TT i-Hons Kinh doanh quốc tế và Phân tích dữ liệu kinh doanh (hợp tác với University of Queensland, Australia)",
         "blocks": [
-          "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -15751,9 +15796,9 @@
         "code": "M205",
         "name": "CT TT Kinh tế đối ngoại",
         "blocks": [
+          "A00",
           "A01",
-          "D01",
-          "D07"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -15803,9 +15848,9 @@
         "code": "M235",
         "name": "CT CLC Quản trị kinh doanh",
         "blocks": [
-          "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -15816,9 +15861,9 @@
         "code": "M239",
         "name": "CT TT Tài chính - Ngân hàng",
         "blocks": [
-          "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -15829,9 +15874,9 @@
         "code": "M241",
         "name": "CT CLC Tài chính - Ngân hàng",
         "blocks": [
+          "A00",
           "A01",
-          "D01",
-          "D07"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -15842,9 +15887,9 @@
         "code": "M249",
         "name": "CT CLC Kinh tế đối ngoại (Cơ sở HCM)",
         "blocks": [
+          "A00",
           "A01",
-          "D01",
-          "D07"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -15855,9 +15900,9 @@
         "code": "M255",
         "name": "CT CLC Quản trị kinh doanh (Cơ sở HCM)",
         "blocks": [
-          "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -15868,9 +15913,9 @@
         "code": "M257",
         "name": "CT CLC Tài chính - Ngân hàng (Cơ sở HCM)",
         "blocks": [
-          "A00",
           "A01",
-          "D01"
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 28000000,
@@ -15879,7 +15924,7 @@
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 52
+    "majorsCount": 53
   },
   {
     "id": "GH_32_ĐAI_HOC_VAN_HOA_NGHE",
@@ -16561,10 +16606,23 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "26.29",
         "note": ""
+      },
+      {
+        "code": "M74",
+        "name": "V���t lý kỹ thuật",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "26.85",
+        "note": ""
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 20
+    "majorsCount": 21
   },
   {
     "id": "GH_34_UEL_ĐAI_HOC_KINH_TE_",
@@ -16883,12 +16941,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -16930,12 +16987,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -18136,22 +18192,6 @@
     "majors": [
       {
         "code": "M1",
-        "name": "Truyền thông đa phương tiện(Thang điểm 30)",
-        "blocks": [
-          "A01",
-          "D01",
-          "X26",
-          "D09",
-          "D10",
-          "X02"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "24.66",
-        "note": ""
-      },
-      {
-        "code": "M2",
         "name": "Truyền thông đa phương tiện(Thang điểm 100)",
         "blocks": [
           "A01",
@@ -18167,23 +18207,23 @@
         "note": ""
       },
       {
-        "code": "M3",
-        "name": "Thương mại điện tử(Thang điểm 30)",
+        "code": "M2",
+        "name": "Truyền thông đa phương tiện(Thang điểm 30)",
         "blocks": [
-          "A00",
           "A01",
           "D01",
-          "D07",
-          "X06",
-          "X26"
+          "X26",
+          "D09",
+          "D10",
+          "X02"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "23.7",
+        "cutoffScore2024": "24.66",
         "note": ""
       },
       {
-        "code": "M4",
+        "code": "M3",
         "name": "Thương mại điện tử(Thang điểm 100)",
         "blocks": [
           "A00",
@@ -18196,6 +18236,22 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "79",
+        "note": ""
+      },
+      {
+        "code": "M4",
+        "name": "Thương mại điện tử(Thang điểm 30)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07",
+          "X06",
+          "X26"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "23.7",
         "note": ""
       },
       {
@@ -18234,20 +18290,6 @@
       },
       {
         "code": "M7",
-        "name": "Khoa học dữ liệu (Chương trình đào tạo bằng Tiếng Anh)(Thang điểm 100)",
-        "blocks": [
-          "A01",
-          "D01",
-          "X26",
-          "D07"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "85.5",
-        "note": ""
-      },
-      {
-        "code": "M8",
         "name": "Khoa học dữ liệu (Chương trình đào tạo bằng Tiếng Anh)(Thang điểm 30)",
         "blocks": [
           "A01",
@@ -18258,6 +18300,20 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "25.65",
+        "note": ""
+      },
+      {
+        "code": "M8",
+        "name": "Khoa học dữ liệu (Chương trình đào tạo bằng Tiếng Anh)(Thang điểm 100)",
+        "blocks": [
+          "A01",
+          "D01",
+          "X26",
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "85.5",
         "note": ""
       },
       {
@@ -18372,7 +18428,7 @@
       },
       {
         "code": "M16",
-        "name": "Kỹ thuật phần mềm(Thang điểm 30)",
+        "name": "Kỹ thuật phần m��m(Thang điểm 30)",
         "blocks": [
           "A00",
           "A01",
@@ -18416,23 +18472,6 @@
       },
       {
         "code": "M19",
-        "name": "Hệ thống thông tin(Thang điểm 30)",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01",
-          "D07",
-          "D08",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "24.24",
-        "note": ""
-      },
-      {
-        "code": "M20",
         "name": "Hệ thống thông tin(Thang điểm 100)",
         "blocks": [
           "A00",
@@ -18446,6 +18485,23 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "80.8",
+        "note": ""
+      },
+      {
+        "code": "M20",
+        "name": "Hệ thống thông tin(Thang điểm 30)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07",
+          "D08",
+          "X06",
+          "X26"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "24.24",
         "note": ""
       },
       {
@@ -18508,22 +18564,6 @@
       },
       {
         "code": "M25",
-        "name": "Trí tuệ nhân tạo(Thang điểm 100)",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01",
-          "D07",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "100",
-        "note": ""
-      },
-      {
-        "code": "M26",
         "name": "Trí tuệ nhân tạo(Thang điểm 30)",
         "blocks": [
           "A00",
@@ -18539,8 +18579,8 @@
         "note": ""
       },
       {
-        "code": "M27",
-        "name": "Công nghệ Thông tin(Thang điểm 100)",
+        "code": "M26",
+        "name": "Trí tuệ nhân tạo(Thang điểm 100)",
         "blocks": [
           "A00",
           "A01",
@@ -18551,11 +18591,11 @@
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "84.2",
+        "cutoffScore2024": "100",
         "note": ""
       },
       {
-        "code": "M28",
+        "code": "M27",
         "name": "Công nghệ Thông tin(Thang điểm 30)",
         "blocks": [
           "A00",
@@ -18568,6 +18608,22 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "25.26",
+        "note": ""
+      },
+      {
+        "code": "M28",
+        "name": "Công nghệ Thông tin(Thang điểm 100)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07",
+          "X06",
+          "X26"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "84.2",
         "note": ""
       },
       {
@@ -18758,12 +18814,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -18805,12 +18860,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -21312,8 +21366,8 @@
         "note": ""
       },
       {
-        "code": "M701",
-        "name": "Quản trị giải tr�� và sự kiện",
+        "code": "M628",
+        "name": "Kinh tế và quản lý nguồn nhân l���c",
         "blocks": [
           "A00",
           "A01",
@@ -21321,8 +21375,8 @@
         ],
         "years": 4,
         "tuitionPerYear": 26000000,
-        "cutoffScore2024": "25.89",
-        "note": "1490"
+        "cutoffScore2024": "27.07",
+        "note": "1550"
       }
     ],
     "source": "github-ads-final",
@@ -21368,12 +21422,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -21415,12 +21468,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -21597,12 +21649,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -21644,12 +21695,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -22464,12 +22514,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -22511,12 +22560,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -22693,12 +22741,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -22740,12 +22787,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -23589,12 +23635,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -23636,12 +23681,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -24537,12 +24581,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -24584,12 +24627,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -25081,7 +25123,7 @@
       },
       {
         "code": "M18",
-        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đạo tạo liên kết với trường ĐH nước ngoài)",
+        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đ��o tạo liên kết với trường ĐH nước ngoài)",
         "blocks": [
           "A00",
           "B00",
@@ -25454,12 +25496,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -25501,12 +25542,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -27182,38 +27222,10 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "23.14",
         "note": ""
-      },
-      {
-        "code": "M215",
-        "name": "Công nghệ thông tin Việt - Nh���t",
-        "blocks": [
-          "A00",
-          "A01",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "23.44",
-        "note": ""
-      },
-      {
-        "code": "M232",
-        "name": "Kỹ thuật Điều khiển và tự động h��a",
-        "blocks": [
-          "A00",
-          "A01",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "29.51",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 41
+    "majorsCount": 39
   },
   {
     "id": "GH_59_ĐAI_HOC_SAI_GON",
@@ -27301,40 +27313,88 @@
         "code": "M8",
         "name": "Sư phạm Toán học",
         "blocks": [
-          "A01"
+          "A00",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "27.21",
+        "cutoffScore2024": "27.9",
         "note": ""
       },
       {
         "code": "M14",
         "name": "Sư phạm Vật lý",
         "blocks": [
-          "A00",
-          "A02",
-          "A03",
-          "A04",
-          "X05",
-          "X06",
-          "X07",
-          "X08"
+          "A01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "28.33",
+        "cutoffScore2024": "27.64",
         "note": ""
       },
       {
         "code": "M17",
         "name": "Sư phạm Hoá học",
         "blocks": [
-          "B00"
+          "A00",
+          "A05",
+          "A06",
+          "C02",
+          "X09",
+          "X10",
+          "X11",
+          "X12"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "27.77",
+        "cutoffScore2024": "28.98",
         "note": ""
       },
       {
@@ -27469,32 +27529,11 @@
         "code": "M30",
         "name": "Sư phạm Khoa học tự nhiên",
         "blocks": [
-          "A02",
-          "A03",
-          "A04",
-          "A05",
-          "A06",
-          "B01",
-          "B02",
-          "B03",
-          "B08",
-          "C02",
-          "X05",
-          "X06",
-          "X07",
-          "X08",
-          "X09",
-          "X10",
-          "X11",
-          "X12",
-          "X13",
-          "X14",
-          "X15",
-          "X16"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.55",
+        "cutoffScore2024": "23.93",
         "note": ""
       },
       {
@@ -27530,11 +27569,27 @@
         "code": "M36",
         "name": "Ngôn ngữ Anh",
         "blocks": [
-          "A01"
+          "B08",
+          "D01",
+          "D09",
+          "D10",
+          "D11",
+          "D12",
+          "D13",
+          "D14",
+          "D15",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X78",
+          "X79",
+          "X80",
+          "X81"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.79",
+        "cutoffScore2024": "24.8",
         "note": ""
       },
       {
@@ -27666,83 +27721,81 @@
         "code": "M49",
         "name": "Thông tin - Thư viện",
         "blocks": [
-          "B03",
-          "C00",
-          "C01",
-          "C02",
-          "C03",
-          "C04",
-          "C05",
-          "C06",
-          "C07",
-          "C08",
-          "C09",
-          "C10",
-          "C11",
-          "C12",
-          "C13",
-          "D01",
-          "D11",
-          "D12",
-          "D13",
-          "D14",
-          "D15",
-          "X01",
-          "X02",
-          "X03",
-          "X04",
-          "X58",
-          "X59",
-          "X60",
-          "X61",
-          "X62",
-          "X63",
-          "X64",
-          "X65",
-          "X66",
-          "X67",
-          "X68",
-          "X69",
-          "X70",
-          "X71",
-          "X72",
-          "X73",
-          "X74",
-          "X75",
-          "X76",
-          "X77",
-          "X78",
-          "X79",
-          "X80",
-          "X81",
-          "Y07",
-          "Y08"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "26.48",
+        "cutoffScore2024": "23.48",
         "note": ""
       },
       {
         "code": "M52",
         "name": "Quản trị kinh doanh",
         "blocks": [
-          "B00"
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.72",
+        "cutoffScore2024": "20.25",
         "note": ""
       },
       {
         "code": "M58",
         "name": "Quản trị kinh doanh (Chương trình đào tạo chất lượng cao)",
         "blocks": [
-          "D07"
+          "B00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "18.06",
+        "cutoffScore2024": "18.47",
         "note": ""
       },
       {
@@ -27808,16 +27861,27 @@
         "code": "M70",
         "name": "Tài chính - Ngân hàng",
         "blocks": [
-          "B00"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.48",
+        "cutoffScore2024": "20.69",
         "note": ""
       },
       {
         "code": "M76",
         "name": "Kế toán",
+        "blocks": [
+          "B00"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "19.42",
+        "note": ""
+      },
+      {
+        "code": "M82",
+        "name": "Kế toán (Chương trình đào tạo chất lượng cao)",
         "blocks": [
           "A02",
           "A03",
@@ -27871,29 +27935,66 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.95",
-        "note": ""
-      },
-      {
-        "code": "M82",
-        "name": "Kế toán (Chương trình đào tạo chất lượng cao)",
-        "blocks": [
-          "A00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.93",
+        "cutoffScore2024": "19.25",
         "note": ""
       },
       {
         "code": "M88",
         "name": "Kiểm toán",
         "blocks": [
-          "B00"
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21.18",
+        "cutoffScore2024": "21.71",
         "note": ""
       },
       {
@@ -27919,41 +28020,81 @@
         "code": "M96",
         "name": "Luật",
         "blocks": [
-          "B03",
-          "C02",
-          "C03",
-          "C04",
-          "D01",
-          "X01",
-          "X02",
-          "X03",
-          "X04"
+          "C01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21.58",
+        "cutoffScore2024": "23.2",
         "note": ""
       },
       {
         "code": "M98",
         "name": "Khoa học môi trường",
         "blocks": [
-          "A01"
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B00",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.24",
+        "cutoffScore2024": "18.72",
         "note": ""
       },
       {
         "code": "M104",
         "name": "Khoa học dữ liệu",
         "blocks": [
-          "D07"
+          "C01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.43",
+        "cutoffScore2024": "22.99",
         "note": ""
       },
       {
@@ -28021,77 +28162,6 @@
         "code": "M116",
         "name": "Kỹ thuật phần mềm",
         "blocks": [
-          "B00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.47",
-        "note": ""
-      },
-      {
-        "code": "M122",
-        "name": "Trí tuệ nhân tạo",
-        "blocks": [
-          "A02",
-          "A03",
-          "A04",
-          "A05",
-          "A06",
-          "A07",
-          "B00",
-          "B01",
-          "B02",
-          "B03",
-          "B08",
-          "C02",
-          "C03",
-          "C04",
-          "D01",
-          "D09",
-          "D10",
-          "X01",
-          "X02",
-          "X03",
-          "X04",
-          "X05",
-          "X06",
-          "X07",
-          "X08",
-          "X09",
-          "X10",
-          "X11",
-          "X12",
-          "X13",
-          "X14",
-          "X15",
-          "X16",
-          "X17",
-          "X18",
-          "X19",
-          "X20",
-          "X21",
-          "X22",
-          "X23",
-          "X24",
-          "X25",
-          "X26",
-          "X27",
-          "X28",
-          "X53",
-          "X54",
-          "X55",
-          "X56",
-          "X57"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "22",
-        "note": ""
-      },
-      {
-        "code": "M128",
-        "name": "Công nghệ thông tin",
-        "blocks": [
           "A02",
           "A03",
           "A04",
@@ -28149,25 +28219,96 @@
         "note": ""
       },
       {
-        "code": "M134",
-        "name": "Công nghệ thông tin (Chương trình đào tạo chất lượng cao)",
+        "code": "M122",
+        "name": "Trí tuệ nhân tạo",
         "blocks": [
           "B00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.48",
+        "cutoffScore2024": "21.47",
+        "note": ""
+      },
+      {
+        "code": "M128",
+        "name": "Công nghệ thông tin",
+        "blocks": [
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "20.06",
+        "note": ""
+      },
+      {
+        "code": "M134",
+        "name": "Công nghệ thông tin (Chương trình đào tạo chất lượng cao)",
+        "blocks": [
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B00",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "21.01",
         "note": ""
       },
       {
         "code": "M140",
         "name": "Công nghệ kỹ thuật điện, điện tử",
         "blocks": [
-          "D07"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.61",
+        "cutoffScore2024": "21.55",
         "note": ""
       },
       {
@@ -28233,16 +28374,27 @@
         "code": "M152",
         "name": "Công nghệ kỹ thuật môi trường",
         "blocks": [
-          "D01"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "18.96",
+        "cutoffScore2024": "19.64",
         "note": ""
       },
       {
         "code": "M158",
         "name": "Kỹ thuật điện",
+        "blocks": [
+          "C01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "21.56",
+        "note": ""
+      },
+      {
+        "code": "M164",
+        "name": "Kỹ thuật điện tử - viễn thông",
         "blocks": [
           "A01",
           "A02",
@@ -28298,18 +28450,7 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.93",
-        "note": ""
-      },
-      {
-        "code": "M164",
-        "name": "Kỹ thuật điện tử - viễn thông",
-        "blocks": [
-          "A00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.65",
+        "cutoffScore2024": "19.96",
         "note": ""
       },
       {
@@ -28336,11 +28477,61 @@
         "code": "M172",
         "name": "Quản trị nhà hàng và dịch vụ ăn uống",
         "blocks": [
-          "A00"
+          "A00",
+          "A01",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B00",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D07",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21.51",
+        "cutoffScore2024": "20.83",
         "note": ""
       }
     ],
@@ -28428,7 +28619,7 @@
       },
       {
         "code": "M6",
-        "name": "Kỹ thuật cơ sở hạ t��ng (Chương trình Định hướng Quốc tế)",
+        "name": "Kỹ thuật cơ sở hạ tầng (Chương trình Định hướng Quốc tế)",
         "blocks": [
           "A01",
           "D01",
@@ -28451,19 +28642,6 @@
         "tuitionPerYear": 27000000,
         "cutoffScore2024": "21.35",
         "note": ""
-      },
-      {
-        "code": "M13",
-        "name": "Kỹ thuật cơ sở hạ tầng (Chương trình Định hướng Quốc tế)",
-        "blocks": [
-          "A01",
-          "D01",
-          "D07"
-        ],
-        "years": 4,
-        "tuitionPerYear": 27000000,
-        "cutoffScore2024": "16",
-        "note": "530"
       },
       {
         "code": "M15",
@@ -28619,19 +28797,6 @@
         "note": ""
       },
       {
-        "code": "M28",
-        "name": "Thiết kế nội thất (Chương trình Định hướng Quốc tế)",
-        "blocks": [
-          "V00",
-          "V01",
-          "V02"
-        ],
-        "years": 4,
-        "tuitionPerYear": 27000000,
-        "cutoffScore2024": "22.28",
-        "note": ""
-      },
-      {
         "code": "M29",
         "name": "Thiết kế đô thị (Chương trình tiên tiến)",
         "blocks": [
@@ -28648,7 +28813,7 @@
     "source": "github-ads-final",
     "lat": 10.7816448,
     "lng": 106.6947138,
-    "majorsCount": 22
+    "majorsCount": 20
   },
   {
     "id": "GH_61_ĐAI_HOC_TAY_BAC",
@@ -30084,12 +30249,24 @@
         "tuitionPerYear": 32000000,
         "cutoffScore2024": "23",
         "note": "785"
+      },
+      {
+        "code": "M202",
+        "name": "Kỹ thuật h��ng không",
+        "blocks": [
+          "(Toán",
+          "2 môn bất kì)"
+        ],
+        "years": 4,
+        "tuitionPerYear": 32000000,
+        "cutoffScore2024": "26",
+        "note": "32"
       }
     ],
     "source": "github-ads-final",
     "lat": 10.7998684,
     "lng": 106.654643,
-    "majorsCount": 37
+    "majorsCount": 38
   },
   {
     "id": "GH_64_HOC_VIEN_Y_DUOC_HOC_",
@@ -30129,12 +30306,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -30176,12 +30352,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -31344,7 +31519,7 @@
       },
       {
         "code": "M47",
-        "name": "Thương mại điện tử (Thương mại điện tử - Chương trình định hướng chuyên sâu nghề nghiệp quốc tế - IPOP)",
+        "name": "Thương mại điện tử (Thương mại điện t�� - Chương trình định hướng chuyên sâu nghề nghiệp quốc tế - IPOP)",
         "blocks": [
           "A01",
           "D01",
@@ -31714,21 +31889,51 @@
         "note": ""
       },
       {
-        "code": "M176",
-        "name": "Logistics và Quản lý chu��i cung ứng (Logistics và Quản lý vận tải đa phương thức - Chương trình định hướng chuyên sâu nghề nghiệp quốc tế - IPOP)",
+        "code": "M106",
+        "name": "Thương mại điện tử (Thương mại điện tử - Chương trình định hướng chuyên sâu nghề nghiệp quốc tế - IPOP)",
+        "blocks": [
+          "Q00"
+        ],
+        "years": 4,
+        "tuitionPerYear": 26000000,
+        "cutoffScore2024": "24.25",
+        "note": "92"
+      },
+      {
+        "code": "M155",
+        "name": "Tài chính - Ngân hàng (Công nghệ tài ch��nh ngân hàng)",
         "blocks": [
           "K00"
         ],
         "years": 4,
         "tuitionPerYear": 26000000,
-        "cutoffScore2024": "24",
-        "note": "63"
+        "cutoffScore2024": "23.7",
+        "note": "62.4"
+      },
+      {
+        "code": "M217",
+        "name": "Quản trị nhân lực (Quản trị nhân lực doanh nghiệp - Chương trình định hướng chuyên sâu nghề nghiệp quốc t�� - IPOP)",
+        "blocks": [
+          "A01",
+          "D01",
+          "D07",
+          "D09",
+          "D10",
+          "X25",
+          "X26",
+          "X27",
+          "X28"
+        ],
+        "years": 4,
+        "tuitionPerYear": 26000000,
+        "cutoffScore2024": "21.5",
+        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 21.0374295,
     "lng": 105.7746343,
-    "majorsCount": 52
+    "majorsCount": 54
   },
   {
     "id": "GH_68_ĐAI_HOC_NGOAI_NGU_TI",
@@ -32023,7 +32228,7 @@
       },
       {
         "code": "M17",
-        "name": "Kỹ thuật phần mềm",
+        "name": "Kỹ thu���t phần mềm",
         "blocks": [
           "A01",
           "D07",
@@ -32143,12 +32348,31 @@
         "tuitionPerYear": 28000000,
         "cutoffScore2024": "15",
         "note": "Tiếng anh hệ số 2, quy về thang 30"
+      },
+      {
+        "code": "M40",
+        "name": "Kỹ thuật phần mềm",
+        "blocks": [
+          "A01",
+          "D07",
+          "D01",
+          "X26",
+          "X27",
+          "X28",
+          "A00",
+          "C01",
+          "X06"
+        ],
+        "years": 4,
+        "tuitionPerYear": 28000000,
+        "cutoffScore2024": "18",
+        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 10.7759003,
     "lng": 106.6675108,
-    "majorsCount": 23
+    "majorsCount": 24
   },
   {
     "id": "GH_69_KHOA_GIAO_DUC_THE_CH",
@@ -32378,12 +32602,27 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "100",
         "note": ""
+      },
+      {
+        "code": "M38",
+        "name": "Khoa học gi��o dục và khác",
+        "blocks": [
+          "Q01",
+          "Q04",
+          "Q05",
+          "Q06",
+          "Q07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "66",
+        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 16.4455537,
     "lng": 107.6020872,
-    "majorsCount": 14
+    "majorsCount": 15
   },
   {
     "id": "GH_70_ĐAI_HOC_TAI_CHINH_MA",
@@ -33056,13 +33295,11 @@
         "code": "M2",
         "name": "Kế toán",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.83",
+        "cutoffScore2024": "26.33",
         "note": "Môn chính: Toán"
       },
       {
@@ -33162,11 +33399,13 @@
         "code": "M16",
         "name": "Tài chính-Ngân hàng (Liên kết ĐH Sunderland, Anh Quốc. Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "23.1",
+        "cutoffScore2024": "22.6",
         "note": "Môn chính: Toán"
       },
       {
@@ -33255,11 +33494,13 @@
         "code": "M26",
         "name": "Quản trị kinh doanh (Liên kết với ĐH CityU, Hoa kỳ. Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.7",
+        "cutoffScore2024": "20.2",
         "note": "Môn chính: Toán"
       },
       {
@@ -33334,11 +33575,13 @@
         "code": "M35",
         "name": "Marketing - Đại học West of England (UWE), Anh (Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.7",
+        "cutoffScore2024": "20.2",
         "note": "Môn chính: Toán"
       },
       {
@@ -34981,17 +35224,6 @@
         "note": "Thí sinh có học môn Vật lý với ĐTB 3 năm THPT từ 5.5 trở lên"
       },
       {
-        "code": "M108",
-        "name": "Kỹ thuật cơ điện t���",
-        "blocks": [
-          "K00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "62.61",
-        "note": ""
-      },
-      {
         "code": "M147",
         "name": "Khai thác vận tải (Chuyên ngành: Khai thác và quản lý đường sắt tốc độ cao, Khai thác và quản lý đường sắt đô thị)(D01; D07: Thí sinh có học môn Vật lý với ĐTB 3 năm THPT từ 5.5 trở lên)",
         "blocks": [
@@ -35228,7 +35460,7 @@
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 72
+    "majorsCount": 71
   },
   {
     "id": "GH_76_ĐAI_HOC_FPT",
@@ -36620,25 +36852,12 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "15",
         "note": ""
-      },
-      {
-        "code": "M70",
-        "name": "Nuôi trồng thủy s��n",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "600",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 9.9146409,
     "lng": 105.1431246,
-    "majorsCount": 25
+    "majorsCount": 24
   },
   {
     "id": "GH_79_ĐAI_HOC_THANH_ĐO",
@@ -38357,13 +38576,11 @@
         "code": "M2",
         "name": "Kế toán",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.83",
+        "cutoffScore2024": "26.33",
         "note": "Môn chính: Toán"
       },
       {
@@ -38463,11 +38680,13 @@
         "code": "M16",
         "name": "Tài chính-Ngân hàng (Liên kết ĐH Sunderland, Anh Quốc. Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "23.1",
+        "cutoffScore2024": "22.6",
         "note": "Môn chính: Toán"
       },
       {
@@ -38556,11 +38775,13 @@
         "code": "M26",
         "name": "Quản trị kinh doanh (Liên kết với ĐH CityU, Hoa kỳ. Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.7",
+        "cutoffScore2024": "20.2",
         "note": "Môn chính: Toán"
       },
       {
@@ -38635,11 +38856,13 @@
         "code": "M35",
         "name": "Marketing - Đại học West of England (UWE), Anh (Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.7",
+        "cutoffScore2024": "20.2",
         "note": "Môn chính: Toán"
       },
       {
@@ -40332,7 +40555,7 @@
       },
       {
         "code": "M23",
-        "name": "Sư phạm Địa lý",
+        "name": "Sư ph���m Địa lý",
         "blocks": [
           "C00"
         ],
@@ -40925,17 +41148,6 @@
         "note": ""
       },
       {
-        "code": "M165",
-        "name": "Luật hi��n pháp và luật hành chính",
-        "blocks": [
-          "C00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "23",
-        "note": ""
-      },
-      {
         "code": "M218",
         "name": "Giáo dục Mầm non",
         "blocks": [
@@ -40961,7 +41173,7 @@
     "source": "github-ads-final",
     "lat": 9.9201893,
     "lng": 106.3484141,
-    "majorsCount": 69
+    "majorsCount": 68
   },
   {
     "id": "GH_89_ĐAI_HOC_HANG_HAI",
@@ -41460,17 +41672,6 @@
         "note": ""
       },
       {
-        "code": "M255",
-        "name": "Quản tr��� kinh doanh",
-        "blocks": [
-          "C01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 32000000,
-        "cutoffScore2024": "23.85",
-        "note": ""
-      },
-      {
         "code": "M259",
         "name": "Quản trị tài chính kế toán",
         "blocks": [
@@ -41887,7 +42088,7 @@
       },
       {
         "code": "M548",
-        "name": "Công trình giao thông & cơ sở hạ t���ng(Tổ hợp gốc D01)",
+        "name": "Công trình giao thông & cơ sở hạ tầng(Tổ hợp gốc D01)",
         "blocks": [
           "A00",
           "A01",
@@ -42223,7 +42424,7 @@
       },
       {
         "code": "M569",
-        "name": "Quản lý m��i trường & tài nguyên(Tổ hợp gốc D01)",
+        "name": "Quản lý môi trường & tài nguyên(Tổ hợp gốc D01)",
         "blocks": [
           "A00",
           "A01",
@@ -42513,7 +42714,7 @@
     "source": "github-ads-final",
     "lat": 20.8314544,
     "lng": 106.6971147,
-    "majorsCount": 114
+    "majorsCount": 113
   },
   {
     "id": "GH_90_ĐAI_HOC_CONG_NGHIEP_",
@@ -43663,7 +43864,7 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "17.34",
+        "cutoffScore2024": "20.84",
         "note": ""
       },
       {
@@ -43676,7 +43877,7 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.1",
+        "cutoffScore2024": "23.6",
         "note": ""
       },
       {
@@ -43689,7 +43890,7 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "17.5",
+        "cutoffScore2024": "21",
         "note": ""
       }
     ],
@@ -45518,38 +45719,10 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "23.14",
         "note": ""
-      },
-      {
-        "code": "M215",
-        "name": "Công nghệ thông tin Việt - Nh���t",
-        "blocks": [
-          "A00",
-          "A01",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "23.44",
-        "note": ""
-      },
-      {
-        "code": "M232",
-        "name": "Kỹ thuật Điều khiển và tự động h��a",
-        "blocks": [
-          "A00",
-          "A01",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "29.51",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 41
+    "majorsCount": 39
   },
   {
     "id": "GH_96_UED_ĐAI_HOC_GIAO_DUC",
@@ -45779,10 +45952,25 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "100",
         "note": ""
+      },
+      {
+        "code": "M38",
+        "name": "Khoa học gi��o dục và khác",
+        "blocks": [
+          "Q01",
+          "Q04",
+          "Q05",
+          "Q06",
+          "Q07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "66",
+        "note": ""
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 14
+    "majorsCount": 15
   },
   {
     "id": "GH_97_HOC_VIEN_KY_THUAT_MA",
@@ -46440,40 +46628,12 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "23.14",
         "note": ""
-      },
-      {
-        "code": "M215",
-        "name": "Công nghệ thông tin Việt - Nh���t",
-        "blocks": [
-          "A00",
-          "A01",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "23.44",
-        "note": ""
-      },
-      {
-        "code": "M232",
-        "name": "Kỹ thuật Điều khiển và tự động h��a",
-        "blocks": [
-          "A00",
-          "A01",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "29.51",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 10.7379821,
     "lng": 106.6779264,
-    "majorsCount": 41
+    "majorsCount": 39
   },
   {
     "id": "GH_99_ĐAI_HOC_NONG_LAM_TPH",
@@ -48406,26 +48566,12 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "15",
         "note": ""
-      },
-      {
-        "code": "M86",
-        "name": "Truyền thông đa phương ti���n",
-        "blocks": [
-          "A01",
-          "C00",
-          "D01",
-          "D15"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "18",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 10.7615245,
     "lng": 106.7102061,
-    "majorsCount": 74
+    "majorsCount": 73
   },
   {
     "id": "GH_101_PHAN_HIEU_ĐAI_HOC_ĐA",
@@ -49143,12 +49289,14 @@
         "code": "M1",
         "name": "Kinh tế",
         "blocks": [
-          "A00",
-          "D01"
+          "A01",
+          "C03",
+          "D07",
+          "X26"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "23.25",
+        "cutoffScore2024": "22.75",
         "note": ""
       },
       {
@@ -49253,13 +49401,14 @@
         "code": "M20",
         "name": "Marketing",
         "blocks": [
-          "A00",
-          "C00",
-          "D01"
+          "A01",
+          "C03",
+          "D14",
+          "D15"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.85",
+        "cutoffScore2024": "24.35",
         "note": ""
       },
       {
@@ -49302,14 +49451,12 @@
         "code": "M30",
         "name": "Thiết kế và phát triển game",
         "blocks": [
-          "A01",
-          "D09",
-          "X06",
-          "X26"
+          "A00",
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "17.35",
+        "cutoffScore2024": "17.85",
         "note": ""
       },
       {
@@ -49345,12 +49492,26 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "25.17",
         "note": ""
+      },
+      {
+        "code": "M184",
+        "name": "Quản tr��� dịch vụ du lịch và lữ hành",
+        "blocks": [
+          "A01",
+          "C03",
+          "D14",
+          "D15"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "22.65",
+        "note": "16.87"
       }
     ],
     "source": "github-ads-final",
     "lat": 21.0195344,
     "lng": 105.8074078,
-    "majorsCount": 17
+    "majorsCount": 18
   },
   {
     "id": "GH_104_ĐAI_HOC_SU_PHAM_THE_",
@@ -50085,11 +50246,11 @@
         "code": "M1",
         "name": "Công nghệ Giáo dục",
         "blocks": [
-          "X26"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.17",
+        "cutoffScore2024": "21.06",
         "note": ""
       },
       {
@@ -50104,135 +50265,136 @@
         "note": ""
       },
       {
-        "code": "M8",
+        "code": "M9",
         "name": "Giáo dục Tiểu học",
         "blocks": [
-          "C04"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.16",
+        "cutoffScore2024": "23.91",
         "note": ""
       },
       {
         "code": "M15",
         "name": "Giáo dục Công dân",
         "blocks": [
-          "D01"
+          "C00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "23.75",
+        "cutoffScore2024": "26.74",
         "note": ""
       },
       {
         "code": "M21",
         "name": "Giáo dục Chính trị",
         "blocks": [
-          "C00"
+          "C20",
+          "X74"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "26.8",
+        "cutoffScore2024": "27.97",
         "note": ""
       },
       {
         "code": "M28",
         "name": "Giáo dục Thể chất",
         "blocks": [
-          "T01"
+          "T06"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.1",
+        "cutoffScore2024": "23.73",
         "note": ""
       },
       {
         "code": "M35",
         "name": "Sư phạm Toán học",
         "blocks": [
-          "A02"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "27.71",
+        "cutoffScore2024": "27.99",
         "note": ""
       },
       {
         "code": "M41",
         "name": "Sư phạm Tin học",
         "blocks": [
-          "A00"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.73",
+        "cutoffScore2024": "24.06",
         "note": ""
       },
       {
         "code": "M47",
         "name": "Sư phạm Vật lý",
         "blocks": [
-          "X07"
+          "A01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "27.93",
+        "cutoffScore2024": "27.52",
         "note": ""
       },
       {
         "code": "M53",
         "name": "Sư phạm Hóa học",
         "blocks": [
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "28.4",
+        "cutoffScore2024": "28",
         "note": ""
       },
       {
         "code": "M59",
         "name": "Sư phạm Sinh học",
         "blocks": [
-          "X14"
+          "B00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "28.22",
+        "cutoffScore2024": "27.5",
         "note": ""
       },
       {
         "code": "M65",
         "name": "Sư phạm Ngữ văn",
         "blocks": [
-          "C00"
+          "D14"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "27.21",
+        "cutoffScore2024": "25.96",
         "note": ""
       },
       {
         "code": "M72",
         "name": "Sư phạm Lịch sử",
         "blocks": [
-          "D14"
+          "A07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "26.85",
+        "cutoffScore2024": "25.88",
         "note": ""
       },
       {
         "code": "M78",
         "name": "Sư phạm Địa lý",
         "blocks": [
-          "C00"
+          "A07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "27.58",
+        "cutoffScore2024": "25.36",
         "note": ""
       },
       {
@@ -50261,40 +50423,7 @@
         "code": "M88",
         "name": "Sư phạm Tiếng Anh",
         "blocks": [
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.26",
-        "note": ""
-      },
-      {
-        "code": "M92",
-        "name": "Sư phạm Tiếng Trung Quốc",
-        "blocks": [
-          "D15"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.23",
-        "note": ""
-      },
-      {
-        "code": "M95",
-        "name": "Sư phạm Công nghệ",
-        "blocks": [
-          "X04"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "26.62",
-        "note": ""
-      },
-      {
-        "code": "M104",
-        "name": "Sư phạm Khoa học tự nhiên",
-        "blocks": [
-          "B00"
+          "D13"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
@@ -50302,70 +50431,106 @@
         "note": ""
       },
       {
-        "code": "M110",
-        "name": "Sư phạm Lịch sử và Địa lý",
+        "code": "M92",
+        "name": "Sư phạm Tiếng Trung Quốc",
         "blocks": [
-          "C00"
+          "D01",
+          "D04",
+          "D45",
+          "D65"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "27.1",
+        "cutoffScore2024": "23.38",
+        "note": ""
+      },
+      {
+        "code": "M95",
+        "name": "Sư phạm Công nghệ",
+        "blocks": [
+          "A01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "24.27",
+        "note": ""
+      },
+      {
+        "code": "M104",
+        "name": "Sư phạm Khoa học tự nhiên",
+        "blocks": [
+          "A00"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "26.47",
+        "note": ""
+      },
+      {
+        "code": "M110",
+        "name": "Sư phạm Lịch sử và Địa lý",
+        "blocks": [
+          "D15"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "25.96",
         "note": ""
       },
       {
         "code": "M116",
         "name": "Ngôn ngữ Anh",
         "blocks": [
-          "D01"
+          "D14"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.01",
+        "cutoffScore2024": "21.75",
         "note": ""
       },
       {
         "code": "M120",
         "name": "Ngôn ngữ Trung Quốc",
         "blocks": [
-          "D01"
+          "C00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.94",
+        "cutoffScore2024": "23.93",
         "note": ""
       },
       {
         "code": "M126",
         "name": "Quản lý văn hóa",
         "blocks": [
-          "C00"
+          "D14"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "23.82",
+        "cutoffScore2024": "22.57",
         "note": ""
       },
       {
         "code": "M132",
         "name": "Quản lý kinh tế",
         "blocks": [
-          "D10"
+          "C14",
+          "X01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "15.31",
+        "cutoffScore2024": "17.99",
         "note": ""
       },
       {
         "code": "M137",
         "name": "Tâm lý học giáo dục",
         "blocks": [
-          "C19",
-          "X70"
+          "C00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.79",
+        "cutoffScore2024": "24.73",
         "note": ""
       },
       {
@@ -50383,79 +50548,78 @@
         "code": "M149",
         "name": "Việt Nam học",
         "blocks": [
-          "C19",
-          "X70"
+          "C00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.25",
+        "cutoffScore2024": "24.19",
         "note": ""
       },
       {
         "code": "M155",
         "name": "Truyền thông đa phương tiện",
         "blocks": [
-          "C00"
+          "C19",
+          "X70"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.7",
+        "cutoffScore2024": "25.76",
         "note": ""
       },
       {
         "code": "M161",
         "name": "Quản trị kinh doanh",
         "blocks": [
-          "D01"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "17.45",
+        "cutoffScore2024": "18.12",
         "note": ""
       },
       {
         "code": "M166",
         "name": "Kinh doanh quốc tế",
         "blocks": [
-          "X01"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "18.84",
+        "cutoffScore2024": "17.2",
         "note": ""
       },
       {
         "code": "M172",
         "name": "Tài chính - Ngân hàng",
         "blocks": [
-          "A00"
+          "D10"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.35",
+        "cutoffScore2024": "18.31",
         "note": ""
       },
       {
         "code": "M178",
         "name": "Kế toán",
         "blocks": [
-          "A01"
+          "X01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "17.73",
+        "cutoffScore2024": "20.05",
         "note": ""
       },
       {
         "code": "M184",
         "name": "Quản lý công",
         "blocks": [
-          "C14",
-          "X01"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.5",
+        "cutoffScore2024": "18.86",
         "note": ""
       },
       {
@@ -50473,44 +50637,44 @@
         "code": "M195",
         "name": "Công nghệ sinh học",
         "blocks": [
-          "A02"
+          "D08"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.04",
+        "cutoffScore2024": "17.43",
         "note": ""
       },
       {
         "code": "M201",
         "name": "Khoa học môi trường",
         "blocks": [
-          "B03"
+          "B00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "16.73",
+        "cutoffScore2024": "15.79",
         "note": ""
       },
       {
         "code": "M207",
         "name": "Khoa học Máy tính",
         "blocks": [
-          "A00"
+          "A01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "16.89",
+        "cutoffScore2024": "16.21",
         "note": ""
       },
       {
         "code": "M213",
         "name": "Công nghệ thông tin",
         "blocks": [
-          "X02"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.27",
+        "cutoffScore2024": "18.54",
         "note": ""
       },
       {
@@ -50528,122 +50692,121 @@
         "code": "M224",
         "name": "Logistics và Quản lý chuỗi cung ứng",
         "blocks": [
-          "A01"
+          "X27"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.01",
+        "cutoffScore2024": "17.81",
         "note": ""
       },
       {
         "code": "M230",
         "name": "Công nghệ thực phẩm",
         "blocks": [
-          "B00"
+          "C02"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.72",
+        "cutoffScore2024": "20.94",
         "note": ""
       },
       {
         "code": "M236",
         "name": "Kỹ thuật xây dựng",
         "blocks": [
-          "A00"
+          "C02"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "15.92",
+        "cutoffScore2024": "15.93",
         "note": ""
       },
       {
         "code": "M242",
         "name": "Khoa học đất",
         "blocks": [
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "13.39",
+        "cutoffScore2024": "15",
         "note": ""
       },
       {
         "code": "M248",
         "name": "Nông học",
         "blocks": [
-          "B00"
+          "C02"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "17.9",
+        "cutoffScore2024": "19.12",
         "note": ""
       },
       {
         "code": "M254",
         "name": "Nuôi trồng thủy sản",
         "blocks": [
-          "B00"
+          "D08"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "16.07",
+        "cutoffScore2024": "15.39",
         "note": ""
       },
       {
         "code": "M260",
         "name": "Thú y",
         "blocks": [
-          "B00"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.75",
+        "cutoffScore2024": "20.96",
         "note": ""
       },
       {
         "code": "M266",
         "name": "Công tác xã hội",
         "blocks": [
-          "C14",
-          "X01"
+          "C00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "23.13",
+        "cutoffScore2024": "23.81",
         "note": ""
       },
       {
         "code": "M271",
         "name": "Huấn luyện thể thao",
         "blocks": [
-          "T00"
+          "T02"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21.72",
+        "cutoffScore2024": "23.94",
         "note": ""
       },
       {
         "code": "M277",
         "name": "Quản lý tài nguyên và môi trường",
         "blocks": [
-          "B00"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "16",
+        "cutoffScore2024": "17.21",
         "note": ""
       },
       {
         "code": "M283",
         "name": "Quản lý đất đai",
         "blocks": [
-          "A00"
+          "C01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "16.04",
+        "cutoffScore2024": "16.98",
         "note": ""
       }
     ],
@@ -51501,17 +51664,6 @@
         "note": "Thí sinh có học môn Vật lý với ĐTB 3 năm THPT từ 5.5 trở lên"
       },
       {
-        "code": "M108",
-        "name": "Kỹ thuật cơ điện t���",
-        "blocks": [
-          "K00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "62.61",
-        "note": ""
-      },
-      {
         "code": "M147",
         "name": "Khai thác vận tải (Chuyên ngành: Khai thác và quản lý đường sắt tốc độ cao, Khai thác và quản lý đường sắt đô thị)(D01; D07: Thí sinh có học môn Vật lý với ĐTB 3 năm THPT từ 5.5 trở lên)",
         "blocks": [
@@ -51748,7 +51900,7 @@
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 72
+    "majorsCount": 71
   },
   {
     "id": "GH_108_ĐAI_HOC_THANG_LONG",
@@ -51766,22 +51918,25 @@
         "code": "M1",
         "name": "Ngôn ngữ Anh",
         "blocks": [
-          "D15"
+          "D01",
+          "D14"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21",
+        "cutoffScore2024": "21.5",
         "note": ""
       },
       {
         "code": "M3",
         "name": "Ngôn ngữ Trung Quốc",
         "blocks": [
-          "D15"
+          "D01",
+          "D04",
+          "D14"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21.85",
+        "cutoffScore2024": "22.35",
         "note": ""
       },
       {
@@ -51883,13 +52038,12 @@
         "code": "M21",
         "name": "Marketing",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "X01",
+          "X25"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.1",
+        "cutoffScore2024": "19.6",
         "note": ""
       },
       {
@@ -51992,11 +52146,15 @@
         "code": "M41",
         "name": "Công nghệ thông tin",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07",
+          "X06",
+          "X26"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "16.5",
+        "cutoffScore2024": "16",
         "note": ""
       },
       {
@@ -53929,17 +54087,6 @@
         "note": "Thí sinh có học môn Vật lý với ĐTB 3 năm THPT từ 5.5 trở lên"
       },
       {
-        "code": "M108",
-        "name": "Kỹ thuật cơ điện t���",
-        "blocks": [
-          "K00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "62.61",
-        "note": ""
-      },
-      {
         "code": "M147",
         "name": "Khai thác vận tải (Chuyên ngành: Khai thác và quản lý đường sắt tốc độ cao, Khai thác và quản lý đường sắt đô thị)(D01; D07: Thí sinh có học môn Vật lý với ĐTB 3 năm THPT từ 5.5 trở lên)",
         "blocks": [
@@ -54176,7 +54323,7 @@
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 72
+    "majorsCount": 71
   },
   {
     "id": "GH_111_ĐAI_HOC_DAN_LAP_DUY_",
@@ -57193,21 +57340,10 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "21.9",
         "note": ""
-      },
-      {
-        "code": "M105",
-        "name": "Kỹ thuật điện tử - viễn thông (gồm các chương trình: Kỹ thuật điện tử - viễn thông; Công nghệ bán dẫn và thiết kế vi m���ch)",
-        "blocks": [
-          "K00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "60",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 47
+    "majorsCount": 46
   },
   {
     "id": "GH_115_ĐAI_HOC_MY_THUAT_CON",
@@ -58263,10 +58399,25 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "100",
         "note": ""
+      },
+      {
+        "code": "M38",
+        "name": "Khoa học gi��o dục và khác",
+        "blocks": [
+          "Q01",
+          "Q04",
+          "Q05",
+          "Q06",
+          "Q07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "66",
+        "note": ""
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 14
+    "majorsCount": 15
   },
   {
     "id": "GH_117_ĐAI_HOC_Y_DUOC_BUON_",
@@ -58306,12 +58457,11 @@
         "code": "M5",
         "name": "Y học dự phòng",
         "blocks": [
-          "A00",
-          "B00"
+          "B08"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "20.75",
+        "cutoffScore2024": "20",
         "note": ""
       },
       {
@@ -58353,12 +58503,11 @@
         "code": "M14",
         "name": "Hóa dược",
         "blocks": [
-          "A00",
-          "B00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 50000000,
-        "cutoffScore2024": "24.8",
+        "cutoffScore2024": "23.5",
         "note": ""
       },
       {
@@ -58779,7 +58928,7 @@
       },
       {
         "code": "M18",
-        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đạo tạo liên kết với trường ĐH nước ngoài)",
+        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đ��o tạo liên kết với trường ĐH nước ngoài)",
         "blocks": [
           "A00",
           "B00",
@@ -60945,7 +61094,7 @@
       },
       {
         "code": "M18",
-        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đạo tạo liên kết với trường ĐH nước ngoài)",
+        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đ��o tạo liên kết với trường ĐH nước ngoài)",
         "blocks": [
           "A00",
           "B00",
@@ -61655,7 +61804,7 @@
         "note": ""
       },
       {
-        "code": "M127",
+        "code": "M128",
         "name": "Ngôn ngữ Anh(Xét kết hợp 2 môn thi THPT + 1 môn Học bạ )",
         "blocks": [
           "A01",
@@ -61684,7 +61833,23 @@
       },
       {
         "code": "M132",
-        "name": "Kinh t�� (Phân hiệu Đà Nẵng)(Xét kết hợp 1 môn thi THPT + 2 môn Học bạ)",
+        "name": "Kinh t�� (Phân hiệu Đà Nẵng)",
+        "blocks": [
+          "A01",
+          "D01",
+          "D07",
+          "C14",
+          "X25",
+          "X26"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "17",
+        "note": ""
+      },
+      {
+        "code": "M133",
+        "name": "Kinh tế (Phân hiệu Đà Nẵng)(Xét kết hợp 1 môn thi THPT + 2 môn Học bạ)",
         "blocks": [
           "A01",
           "D01",
@@ -61741,7 +61906,7 @@
         "note": ""
       },
       {
-        "code": "M146",
+        "code": "M145",
         "name": "Kinh tế đối ngoại chất lượng cao(Xét kết hợp 2 môn thi THPT + 1 môn Học bạ )",
         "blocks": [
           "A01",
@@ -61755,7 +61920,7 @@
         "note": ""
       },
       {
-        "code": "M149",
+        "code": "M148",
         "name": "Kinh tế và kinh doanh số(Xét kết hợp 2 môn thi THPT + 1 môn Học bạ )",
         "blocks": [
           "A00",
@@ -61769,7 +61934,7 @@
         "note": ""
       },
       {
-        "code": "M151",
+        "code": "M152",
         "name": "Quản lý nhà nước(Xét kết hợp 2 môn thi THPT + 1 môn Học bạ )",
         "blocks": [
           "C00",
@@ -61783,7 +61948,7 @@
         "note": ""
       },
       {
-        "code": "M155",
+        "code": "M154",
         "name": "Quản trị kinh doanh(Xét kết hợp 2 môn thi THPT + 1 môn Học bạ )",
         "blocks": [
           "A01",
@@ -61825,7 +61990,7 @@
         "note": ""
       },
       {
-        "code": "M164",
+        "code": "M163",
         "name": "Quản trị kinh doanh (Phân hiệu Bắc Ninh)(Xét kết hợp 1 môn thi THPT + 2 môn Học bạ)",
         "blocks": [
           "A01",
@@ -61857,7 +62022,7 @@
         "note": ""
       },
       {
-        "code": "M169",
+        "code": "M168",
         "name": "Kinh tế số (Phân hiệu Bắc Ninh)(Xét kết hợp 1 môn thi THPT + 2 môn Học bạ)",
         "blocks": [
           "A01",
@@ -61873,7 +62038,7 @@
         "note": ""
       },
       {
-        "code": "M173",
+        "code": "M171",
         "name": "Marketing(Xét kết hợp 2 môn thi THPT + 1 môn Học bạ )",
         "blocks": [
           "A01",
@@ -61931,7 +62096,7 @@
         "note": ""
       },
       {
-        "code": "M183",
+        "code": "M184",
         "name": "Kế toán(Xét kết hợp 2 môn thi THPT + 1 môn Học bạ )",
         "blocks": [
           "A00",
@@ -62020,7 +62185,7 @@
     "source": "github-ads-final",
     "lat": 20.9939492,
     "lng": 105.7118227,
-    "majorsCount": 50
+    "majorsCount": 51
   },
   {
     "id": "GH_123_ĐAI_HOC_KINH_DOANH_V",
@@ -62483,25 +62648,12 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "17",
         "note": ""
-      },
-      {
-        "code": "M65",
-        "name": "Công ngh�� kỹ thuật ô tô",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "68.4",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 20.9996966,
     "lng": 105.8780518,
-    "majorsCount": 27
+    "majorsCount": 26
   },
   {
     "id": "GH_124_ĐAI_HOC_NHA_TRANG",
@@ -63163,19 +63315,6 @@
         "note": ""
       },
       {
-        "code": "M270",
-        "name": "Ngôn ngữ Anh (04 chuyên ngành: Biên - phiên dịch; Tiếng Anh du l���ch; Giảng dạy Tiếng Anh; Song ngữ Anh -Trung)",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "88.33",
-        "note": ""
-      },
-      {
         "code": "M285",
         "name": "Công nghệ sinh học",
         "blocks": [
@@ -63199,6 +63338,19 @@
         "years": 4,
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "88.33",
+        "note": ""
+      },
+      {
+        "code": "M345",
+        "name": "Kỹ thuật cơ điện tử (02 chuyên ngành: Kỹ thuật cơ điện tử; Hệ th��ng nhúng và IoT)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "703.11",
         "note": ""
       }
     ],
@@ -63368,21 +63520,6 @@
       },
       {
         "code": "M29",
-        "name": "Điều dưỡng đa khoa(Xét điểm thi kết hợp với học bạ)",
-        "blocks": [
-          "A00",
-          "A01",
-          "B00",
-          "B08",
-          "D07"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.5",
-        "note": ""
-      },
-      {
-        "code": "M30",
         "name": "Điều dưỡng đa khoa(Kết hợp điểm thi THPT và CCQT)",
         "blocks": [
           "A00",
@@ -63397,8 +63534,8 @@
         "note": ""
       },
       {
-        "code": "M31",
-        "name": "Điều dưỡng Nha khoa(Xét điểm thi kết hợp với học bạ)",
+        "code": "M30",
+        "name": "Điều dưỡng đa khoa(Xét điểm thi kết hợp với học bạ)",
         "blocks": [
           "A00",
           "A01",
@@ -63412,7 +63549,7 @@
         "note": ""
       },
       {
-        "code": "M32",
+        "code": "M31",
         "name": "Điều dưỡng Nha khoa(Kết hợp điểm thi THPT và CCQT)",
         "blocks": [
           "A00",
@@ -63427,8 +63564,8 @@
         "note": ""
       },
       {
-        "code": "M33",
-        "name": "Răng - Hàm - Mặt(Xét điểm thi kết hợp với học bạ)",
+        "code": "M32",
+        "name": "Điều dưỡng Nha khoa(Xét điểm thi kết hợp với học bạ)",
         "blocks": [
           "A00",
           "A01",
@@ -63438,11 +63575,11 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.25",
+        "cutoffScore2024": "19.5",
         "note": ""
       },
       {
-        "code": "M34",
+        "code": "M33",
         "name": "Răng - Hàm - Mặt(Kết hợp điểm thi THPT và CCQT)",
         "blocks": [
           "A00",
@@ -63454,6 +63591,21 @@
         "years": 4,
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "21.75",
+        "note": ""
+      },
+      {
+        "code": "M34",
+        "name": "Răng - Hàm - Mặt(Xét điểm thi kết hợp với học bạ)",
+        "blocks": [
+          "A00",
+          "A01",
+          "B00",
+          "B08",
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "24.25",
         "note": ""
       },
       {
@@ -63541,12 +63693,11 @@
         "code": "M12",
         "name": "Sư phạm Vật lý",
         "blocks": [
-          "A02",
-          "D11"
+          "A01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.2",
+        "cutoffScore2024": "24.2",
         "note": ""
       },
       {
@@ -63587,11 +63738,11 @@
         "code": "M23",
         "name": "Sư phạm KHTN",
         "blocks": [
-          "A00"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.05",
+        "cutoffScore2024": "22.3",
         "note": ""
       },
       {
@@ -63678,25 +63829,12 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "14",
         "note": ""
-      },
-      {
-        "code": "M51",
-        "name": "Sư phạm Sinh h���c",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "23.25",
-        "note": "886"
       }
     ],
     "source": "github-ads-final",
     "lat": 15.5666751,
     "lng": 108.4773916,
-    "majorsCount": 15
+    "majorsCount": 14
   },
   {
     "id": "GH_127_ĐAI_HOC_CONG_NGHE_GI",
@@ -64503,17 +64641,6 @@
         "note": "Thí sinh có học môn Vật lý với ĐTB 3 năm THPT từ 5.5 trở lên"
       },
       {
-        "code": "M108",
-        "name": "Kỹ thuật cơ điện t���",
-        "blocks": [
-          "K00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "62.61",
-        "note": ""
-      },
-      {
         "code": "M147",
         "name": "Khai thác vận tải (Chuyên ngành: Khai thác và quản lý đường sắt tốc độ cao, Khai thác và quản lý đường sắt đô thị)(D01; D07: Thí sinh có học môn Vật lý với ĐTB 3 năm THPT từ 5.5 trở lên)",
         "blocks": [
@@ -64752,7 +64879,7 @@
     "source": "github-ads-final",
     "lat": 20.9841021,
     "lng": 105.7982674,
-    "majorsCount": 72
+    "majorsCount": 71
   },
   {
     "id": "GH_128_ĐAI_HOC_DAN_LAP_VAN_",
@@ -66233,7 +66360,7 @@
       },
       {
         "code": "M22",
-        "name": "Ki���n trúc",
+        "name": "Kiến trúc",
         "blocks": [
           "V00",
           "V01",
@@ -66304,25 +66431,12 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "15.5",
         "note": ""
-      },
-      {
-        "code": "M48",
-        "name": "Kiến trúc",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "18.84",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 16.4597874,
     "lng": 107.5926169,
-    "majorsCount": 27
+    "majorsCount": 26
   },
   {
     "id": "GH_132_ĐAI_HOC_SU_PHAM_KY_T",
@@ -69589,26 +69703,12 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
         "note": ""
-      },
-      {
-        "code": "M235",
-        "name": "Quản l�� xây dựng",
-        "blocks": [
-          "C01",
-          "C03",
-          "C04",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "225",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 10.9844801,
     "lng": 106.8696454,
-    "majorsCount": 62
+    "majorsCount": 61
   },
   {
     "id": "GH_139_ĐAI_HOC_HA_LONG",
@@ -70703,25 +70803,12 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "15",
         "note": ""
-      },
-      {
-        "code": "M56",
-        "name": "Giáo d���c Tiểu học",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "902.73",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 18.3235531,
     "lng": 105.9146084,
-    "majorsCount": 19
+    "majorsCount": 18
   },
   {
     "id": "GH_141_CA_ĐAI_HOC_NGHE_THUA",
@@ -72460,33 +72547,33 @@
         "code": "M3",
         "name": "Giáo dục Tiểu học",
         "blocks": [
-          "C20"
+          "A01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "27.42",
+        "cutoffScore2024": "23.25",
         "note": ""
       },
       {
         "code": "M17",
         "name": "Sư phạm Toán học",
         "blocks": [
-          "A00"
+          "X05"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "22.38",
+        "cutoffScore2024": "25.89",
         "note": ""
       },
       {
         "code": "M25",
         "name": "Sư phạm Ngữ văn",
         "blocks": [
-          "X71"
+          "D14"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.55",
+        "cutoffScore2024": "24.15",
         "note": ""
       },
       {
@@ -72504,44 +72591,45 @@
         "code": "M41",
         "name": "Sư phạm khoa học tự nhiên",
         "blocks": [
-          "B08"
+          "A02"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19",
+        "cutoffScore2024": "20.61",
         "note": ""
       },
       {
         "code": "M51",
         "name": "Sư phạm Lịch sử - Địa lí",
         "blocks": [
-          "D14"
+          "C04"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.65",
+        "cutoffScore2024": "24.06",
         "note": ""
       },
       {
         "code": "M61",
         "name": "Ngôn ngữ Anh",
         "blocks": [
-          "D01"
+          "A01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "15.48",
+        "cutoffScore2024": "15.47",
         "note": ""
       },
       {
         "code": "M67",
         "name": "Ngôn ngữ Trung Quốc",
         "blocks": [
-          "D45"
+          "D66",
+          "X78"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "16.85",
+        "cutoffScore2024": "17.91",
         "note": ""
       },
       {
@@ -72570,22 +72658,22 @@
         "code": "M88",
         "name": "Công nghệ thông tin",
         "blocks": [
-          "X79"
+          "X06"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "18.22",
+        "cutoffScore2024": "17.61",
         "note": ""
       },
       {
         "code": "M98",
         "name": "Nông nghiệp",
         "blocks": [
-          "X04"
+          "X17"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "17.34",
+        "cutoffScore2024": "16.83",
         "note": ""
       },
       {
@@ -72603,11 +72691,11 @@
         "code": "M114",
         "name": "Quản lý tài nguyên và môi trường",
         "blocks": [
-          "X02"
+          "X01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "16.4",
+        "cutoffScore2024": "17.31",
         "note": ""
       }
     ],
@@ -72859,22 +72947,6 @@
     "majors": [
       {
         "code": "M1",
-        "name": "Truyền thông đa phương tiện(Thang điểm 30)",
-        "blocks": [
-          "A01",
-          "D01",
-          "X26",
-          "D09",
-          "D10",
-          "X02"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "24.66",
-        "note": ""
-      },
-      {
-        "code": "M2",
         "name": "Truyền thông đa phương tiện(Thang điểm 100)",
         "blocks": [
           "A01",
@@ -72890,23 +72962,23 @@
         "note": ""
       },
       {
-        "code": "M3",
-        "name": "Thương mại điện tử(Thang điểm 30)",
+        "code": "M2",
+        "name": "Truyền thông đa phương tiện(Thang điểm 30)",
         "blocks": [
-          "A00",
           "A01",
           "D01",
-          "D07",
-          "X06",
-          "X26"
+          "X26",
+          "D09",
+          "D10",
+          "X02"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "23.7",
+        "cutoffScore2024": "24.66",
         "note": ""
       },
       {
-        "code": "M4",
+        "code": "M3",
         "name": "Thương mại điện tử(Thang điểm 100)",
         "blocks": [
           "A00",
@@ -72919,6 +72991,22 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "79",
+        "note": ""
+      },
+      {
+        "code": "M4",
+        "name": "Thương mại điện tử(Thang điểm 30)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07",
+          "X06",
+          "X26"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "23.7",
         "note": ""
       },
       {
@@ -72957,20 +73045,6 @@
       },
       {
         "code": "M7",
-        "name": "Khoa học dữ liệu (Chương trình đào tạo bằng Tiếng Anh)(Thang điểm 100)",
-        "blocks": [
-          "A01",
-          "D01",
-          "X26",
-          "D07"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "85.5",
-        "note": ""
-      },
-      {
-        "code": "M8",
         "name": "Khoa học dữ liệu (Chương trình đào tạo bằng Tiếng Anh)(Thang điểm 30)",
         "blocks": [
           "A01",
@@ -72981,6 +73055,20 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "25.65",
+        "note": ""
+      },
+      {
+        "code": "M8",
+        "name": "Khoa học dữ liệu (Chương trình đào tạo bằng Tiếng Anh)(Thang điểm 100)",
+        "blocks": [
+          "A01",
+          "D01",
+          "X26",
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "85.5",
         "note": ""
       },
       {
@@ -73095,7 +73183,7 @@
       },
       {
         "code": "M16",
-        "name": "Kỹ thuật phần mềm(Thang điểm 30)",
+        "name": "Kỹ thuật phần m��m(Thang điểm 30)",
         "blocks": [
           "A00",
           "A01",
@@ -73139,23 +73227,6 @@
       },
       {
         "code": "M19",
-        "name": "Hệ thống thông tin(Thang điểm 30)",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01",
-          "D07",
-          "D08",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "24.24",
-        "note": ""
-      },
-      {
-        "code": "M20",
         "name": "Hệ thống thông tin(Thang điểm 100)",
         "blocks": [
           "A00",
@@ -73169,6 +73240,23 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "80.8",
+        "note": ""
+      },
+      {
+        "code": "M20",
+        "name": "Hệ thống thông tin(Thang điểm 30)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07",
+          "D08",
+          "X06",
+          "X26"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "24.24",
         "note": ""
       },
       {
@@ -73231,22 +73319,6 @@
       },
       {
         "code": "M25",
-        "name": "Trí tuệ nhân tạo(Thang điểm 100)",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01",
-          "D07",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "100",
-        "note": ""
-      },
-      {
-        "code": "M26",
         "name": "Trí tuệ nhân tạo(Thang điểm 30)",
         "blocks": [
           "A00",
@@ -73262,8 +73334,8 @@
         "note": ""
       },
       {
-        "code": "M27",
-        "name": "Công nghệ Thông tin(Thang điểm 100)",
+        "code": "M26",
+        "name": "Trí tuệ nhân tạo(Thang điểm 100)",
         "blocks": [
           "A00",
           "A01",
@@ -73274,11 +73346,11 @@
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "84.2",
+        "cutoffScore2024": "100",
         "note": ""
       },
       {
-        "code": "M28",
+        "code": "M27",
         "name": "Công nghệ Thông tin(Thang điểm 30)",
         "blocks": [
           "A00",
@@ -73291,6 +73363,22 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "25.26",
+        "note": ""
+      },
+      {
+        "code": "M28",
+        "name": "Công nghệ Thông tin(Thang điểm 100)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07",
+          "X06",
+          "X26"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "84.2",
         "note": ""
       },
       {
@@ -74519,16 +74607,12 @@
         "code": "M5",
         "name": "Công nghệ điện ảnh, truyền hình",
         "blocks": [
-          "A00",
-          "D01",
-          "C16",
-          "X01",
-          "X70",
-          "X74"
+          "V00",
+          "H01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "15",
+        "cutoffScore2024": "17",
         "note": ""
       },
       {
@@ -76978,40 +77062,88 @@
         "code": "M8",
         "name": "Sư phạm Toán học",
         "blocks": [
-          "A01"
+          "A00",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "27.21",
+        "cutoffScore2024": "27.9",
         "note": ""
       },
       {
         "code": "M14",
         "name": "Sư phạm Vật lý",
         "blocks": [
-          "A00",
-          "A02",
-          "A03",
-          "A04",
-          "X05",
-          "X06",
-          "X07",
-          "X08"
+          "A01"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "28.33",
+        "cutoffScore2024": "27.64",
         "note": ""
       },
       {
         "code": "M17",
         "name": "Sư phạm Hoá học",
         "blocks": [
-          "B00"
+          "A00",
+          "A05",
+          "A06",
+          "C02",
+          "X09",
+          "X10",
+          "X11",
+          "X12"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "27.77",
+        "cutoffScore2024": "28.98",
         "note": ""
       },
       {
@@ -77146,32 +77278,11 @@
         "code": "M30",
         "name": "Sư phạm Khoa học tự nhiên",
         "blocks": [
-          "A02",
-          "A03",
-          "A04",
-          "A05",
-          "A06",
-          "B01",
-          "B02",
-          "B03",
-          "B08",
-          "C02",
-          "X05",
-          "X06",
-          "X07",
-          "X08",
-          "X09",
-          "X10",
-          "X11",
-          "X12",
-          "X13",
-          "X14",
-          "X15",
-          "X16"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "25.55",
+        "cutoffScore2024": "23.93",
         "note": ""
       },
       {
@@ -77207,11 +77318,27 @@
         "code": "M36",
         "name": "Ngôn ngữ Anh",
         "blocks": [
-          "A01"
+          "B08",
+          "D01",
+          "D09",
+          "D10",
+          "D11",
+          "D12",
+          "D13",
+          "D14",
+          "D15",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X78",
+          "X79",
+          "X80",
+          "X81"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "24.79",
+        "cutoffScore2024": "24.8",
         "note": ""
       },
       {
@@ -77343,83 +77470,81 @@
         "code": "M49",
         "name": "Thông tin - Thư viện",
         "blocks": [
-          "B03",
-          "C00",
-          "C01",
-          "C02",
-          "C03",
-          "C04",
-          "C05",
-          "C06",
-          "C07",
-          "C08",
-          "C09",
-          "C10",
-          "C11",
-          "C12",
-          "C13",
-          "D01",
-          "D11",
-          "D12",
-          "D13",
-          "D14",
-          "D15",
-          "X01",
-          "X02",
-          "X03",
-          "X04",
-          "X58",
-          "X59",
-          "X60",
-          "X61",
-          "X62",
-          "X63",
-          "X64",
-          "X65",
-          "X66",
-          "X67",
-          "X68",
-          "X69",
-          "X70",
-          "X71",
-          "X72",
-          "X73",
-          "X74",
-          "X75",
-          "X76",
-          "X77",
-          "X78",
-          "X79",
-          "X80",
-          "X81",
-          "Y07",
-          "Y08"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "26.48",
+        "cutoffScore2024": "23.48",
         "note": ""
       },
       {
         "code": "M52",
         "name": "Quản trị kinh doanh",
         "blocks": [
-          "B00"
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "19.72",
+        "cutoffScore2024": "20.25",
         "note": ""
       },
       {
         "code": "M58",
         "name": "Quản trị kinh doanh (Chương trình đào tạo chất lượng cao)",
         "blocks": [
-          "D07"
+          "B00"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "18.06",
+        "cutoffScore2024": "18.47",
         "note": ""
       },
       {
@@ -77485,16 +77610,27 @@
         "code": "M70",
         "name": "Tài chính - Ngân hàng",
         "blocks": [
-          "B00"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "19.48",
+        "cutoffScore2024": "20.69",
         "note": ""
       },
       {
         "code": "M76",
         "name": "Kế toán",
+        "blocks": [
+          "B00"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "19.42",
+        "note": ""
+      },
+      {
+        "code": "M82",
+        "name": "Kế toán (Chương trình đào tạo chất lượng cao)",
         "blocks": [
           "A02",
           "A03",
@@ -77548,29 +77684,66 @@
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "19.95",
-        "note": ""
-      },
-      {
-        "code": "M82",
-        "name": "Kế toán (Chương trình đào tạo chất lượng cao)",
-        "blocks": [
-          "A00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "19.93",
+        "cutoffScore2024": "19.25",
         "note": ""
       },
       {
         "code": "M88",
         "name": "Kiểm toán",
         "blocks": [
-          "B00"
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "21.18",
+        "cutoffScore2024": "21.71",
         "note": ""
       },
       {
@@ -77596,41 +77769,81 @@
         "code": "M96",
         "name": "Luật",
         "blocks": [
-          "B03",
-          "C02",
-          "C03",
-          "C04",
-          "D01",
-          "X01",
-          "X02",
-          "X03",
-          "X04"
+          "C01"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "21.58",
+        "cutoffScore2024": "23.2",
         "note": ""
       },
       {
         "code": "M98",
         "name": "Khoa học môi trường",
         "blocks": [
-          "A01"
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B00",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "19.24",
+        "cutoffScore2024": "18.72",
         "note": ""
       },
       {
         "code": "M104",
         "name": "Khoa học dữ liệu",
         "blocks": [
-          "D07"
+          "C01"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "20.43",
+        "cutoffScore2024": "22.99",
         "note": ""
       },
       {
@@ -77698,77 +77911,6 @@
         "code": "M116",
         "name": "Kỹ thuật phần mềm",
         "blocks": [
-          "B00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "20.47",
-        "note": ""
-      },
-      {
-        "code": "M122",
-        "name": "Trí tuệ nhân tạo",
-        "blocks": [
-          "A02",
-          "A03",
-          "A04",
-          "A05",
-          "A06",
-          "A07",
-          "B00",
-          "B01",
-          "B02",
-          "B03",
-          "B08",
-          "C02",
-          "C03",
-          "C04",
-          "D01",
-          "D09",
-          "D10",
-          "X01",
-          "X02",
-          "X03",
-          "X04",
-          "X05",
-          "X06",
-          "X07",
-          "X08",
-          "X09",
-          "X10",
-          "X11",
-          "X12",
-          "X13",
-          "X14",
-          "X15",
-          "X16",
-          "X17",
-          "X18",
-          "X19",
-          "X20",
-          "X21",
-          "X22",
-          "X23",
-          "X24",
-          "X25",
-          "X26",
-          "X27",
-          "X28",
-          "X53",
-          "X54",
-          "X55",
-          "X56",
-          "X57"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "22",
-        "note": ""
-      },
-      {
-        "code": "M128",
-        "name": "Công nghệ thông tin",
-        "blocks": [
           "A02",
           "A03",
           "A04",
@@ -77826,25 +77968,96 @@
         "note": ""
       },
       {
-        "code": "M134",
-        "name": "Công nghệ thông tin (Chương trình đào tạo chất lượng cao)",
+        "code": "M122",
+        "name": "Trí tuệ nhân tạo",
         "blocks": [
           "B00"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "20.48",
+        "cutoffScore2024": "21.47",
+        "note": ""
+      },
+      {
+        "code": "M128",
+        "name": "Công nghệ thông tin",
+        "blocks": [
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "20.06",
+        "note": ""
+      },
+      {
+        "code": "M134",
+        "name": "Công nghệ thông tin (Chương trình đào tạo chất lượng cao)",
+        "blocks": [
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B00",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "21.01",
         "note": ""
       },
       {
         "code": "M140",
         "name": "Công nghệ kỹ thuật điện, điện tử",
         "blocks": [
-          "D07"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "20.61",
+        "cutoffScore2024": "21.55",
         "note": ""
       },
       {
@@ -77910,16 +78123,27 @@
         "code": "M152",
         "name": "Công nghệ kỹ thuật môi trường",
         "blocks": [
-          "D01"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "18.96",
+        "cutoffScore2024": "19.64",
         "note": ""
       },
       {
         "code": "M158",
         "name": "Kỹ thuật điện",
+        "blocks": [
+          "C01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "21.56",
+        "note": ""
+      },
+      {
+        "code": "M164",
+        "name": "Kỹ thuật điện tử - viễn thông",
         "blocks": [
           "A01",
           "A02",
@@ -77975,18 +78199,7 @@
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "19.93",
-        "note": ""
-      },
-      {
-        "code": "M164",
-        "name": "Kỹ thuật điện tử - viễn thông",
-        "blocks": [
-          "A00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "20.65",
+        "cutoffScore2024": "19.96",
         "note": ""
       },
       {
@@ -78013,11 +78226,61 @@
         "code": "M172",
         "name": "Quản trị nhà hàng và dịch vụ ăn uống",
         "blocks": [
-          "A00"
+          "A00",
+          "A01",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B00",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D07",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "21.51",
+        "cutoffScore2024": "20.83",
         "note": ""
       }
     ],
@@ -78042,11 +78305,13 @@
         "code": "M1",
         "name": "Ngôn ngữ Anh",
         "blocks": [
-          "D14"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21",
+        "cutoffScore2024": "20.5",
         "note": ""
       },
       {
@@ -78066,13 +78331,11 @@
         "code": "M4",
         "name": "Tâm lý học",
         "blocks": [
-          "A00",
-          "A01",
-          "D01"
+          "C00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "22.8",
+        "cutoffScore2024": "24.3",
         "note": ""
       },
       {
@@ -81644,7 +81907,7 @@
       },
       {
         "code": "M95",
-        "name": "Quản trị dịch vụ Du lịch và Lữ hành(Kết hợp học bạ và CCTAQT)",
+        "name": "Quản trị dịch vụ Du lịch và Lữ hành(Kết hợp h���c bạ và CCTAQT)",
         "blocks": [
           "A01",
           "D01",
@@ -84157,10 +84420,21 @@
         "tuitionPerYear": 20000000,
         "cutoffScore2024": "16.1",
         "note": ""
+      },
+      {
+        "code": "M90",
+        "name": "C��ng nghệ sinh học",
+        "blocks": [
+          "K00"
+        ],
+        "years": 4,
+        "tuitionPerYear": 20000000,
+        "cutoffScore2024": "35",
+        "note": ""
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 28
+    "majorsCount": 29
   },
   {
     "id": "GH_165_HOC_VIEN_THANH_THIEU",
@@ -85953,26 +86227,12 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
         "note": ""
-      },
-      {
-        "code": "M235",
-        "name": "Quản l�� xây dựng",
-        "blocks": [
-          "C01",
-          "C03",
-          "C04",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "225",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 10.9629924,
     "lng": 106.8394452,
-    "majorsCount": 62
+    "majorsCount": 61
   },
   {
     "id": "GH_168_ĐAI_HOC_BAC_LIEU",
@@ -86272,7 +86532,7 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
-        "note": ""
+        "note": "Đào tạo tại Đắk Lắk"
       },
       {
         "code": "M5",
@@ -86426,25 +86686,6 @@
       },
       {
         "code": "M16",
-        "name": "Marketing/ Digital marketing",
-        "blocks": [
-          "A00",
-          "A01",
-          "A07",
-          "D01",
-          "D10",
-          "X01",
-          "X02",
-          "X17",
-          "X21"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "15",
-        "note": "Đào tạo tại Đắk Lắk"
-      },
-      {
-        "code": "M17",
         "name": "Digital Marketing",
         "blocks": [
           "A00",
@@ -86461,6 +86702,25 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
         "note": ""
+      },
+      {
+        "code": "M17",
+        "name": "Marketing/ Digital marketing",
+        "blocks": [
+          "A00",
+          "A01",
+          "A07",
+          "D01",
+          "D10",
+          "X01",
+          "X02",
+          "X17",
+          "X21"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "15",
+        "note": "Đào tạo tại Đắk Lắk"
       },
       {
         "code": "M18",
@@ -86536,7 +86796,7 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
-        "note": ""
+        "note": "Đào tạo tại Đắk Lắk"
       },
       {
         "code": "M23",
@@ -86785,7 +87045,7 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
-        "note": "Đào tạo tại Đắk Lắk"
+        "note": ""
       },
       {
         "code": "M40",
@@ -86823,7 +87083,7 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
-        "note": "Đào tạo tại Đắk Lắk"
+        "note": ""
       },
       {
         "code": "M43",
@@ -86979,25 +87239,6 @@
       },
       {
         "code": "M53",
-        "name": "Quản trị dịch vụ du lịch và lữ hành",
-        "blocks": [
-          "C00",
-          "C04",
-          "D01",
-          "D09",
-          "D15",
-          "D14",
-          "X01",
-          "X02",
-          "X21"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "15",
-        "note": ""
-      },
-      {
-        "code": "M54",
         "name": "Quản trị DV Du lịch và Lữ hành",
         "blocks": [
           "C00",
@@ -87014,6 +87255,25 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
         "note": "Đào tạo tại Đắk Lắk"
+      },
+      {
+        "code": "M54",
+        "name": "Quản trị dịch vụ du lịch và lữ hành",
+        "blocks": [
+          "C00",
+          "C04",
+          "D01",
+          "D09",
+          "D15",
+          "D14",
+          "X01",
+          "X02",
+          "X21"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "15",
+        "note": ""
       },
       {
         "code": "M55",
@@ -87732,20 +87992,15 @@
         "note": ""
       },
       {
-        "code": "M160",
-        "name": "Kinh doanh số và dôi mới sáng t���o (CLC)",
+        "code": "M84",
+        "name": "Quản trị tài chính k�� toán",
         "blocks": [
-          "A00",
-          "A01",
-          "C01",
-          "C03",
-          "C04",
-          "D01"
+          "Q00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "22",
-        "note": ""
+        "cutoffScore2024": "22.75",
+        "note": "98"
       }
     ],
     "source": "github-ads-final",
@@ -89335,21 +89590,16 @@
         "note": ""
       },
       {
-        "code": "M26",
-        "name": "Công nghệ kỹ thuật điện, đi���n tử",
+        "code": "M54",
+        "name": "Công nghệ kỹ thu��t cơ khí",
         "blocks": [
           "A00",
-          "A09",
-          "C01",
-          "C04",
-          "C14",
-          "D01",
-          "X01",
-          "X21"
+          "A01",
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "18",
+        "cutoffScore2024": "50",
         "note": ""
       }
     ],
@@ -89444,40 +89694,88 @@
         "code": "M8",
         "name": "Sư phạm Toán học",
         "blocks": [
-          "A01"
+          "A00",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "27.21",
+        "cutoffScore2024": "27.9",
         "note": ""
       },
       {
         "code": "M14",
         "name": "Sư phạm Vật lý",
         "blocks": [
-          "A00",
-          "A02",
-          "A03",
-          "A04",
-          "X05",
-          "X06",
-          "X07",
-          "X08"
+          "A01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "28.33",
+        "cutoffScore2024": "27.64",
         "note": ""
       },
       {
         "code": "M17",
         "name": "Sư phạm Hoá học",
         "blocks": [
-          "B00"
+          "A00",
+          "A05",
+          "A06",
+          "C02",
+          "X09",
+          "X10",
+          "X11",
+          "X12"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "27.77",
+        "cutoffScore2024": "28.98",
         "note": ""
       },
       {
@@ -89612,32 +89910,11 @@
         "code": "M30",
         "name": "Sư phạm Khoa học tự nhiên",
         "blocks": [
-          "A02",
-          "A03",
-          "A04",
-          "A05",
-          "A06",
-          "B01",
-          "B02",
-          "B03",
-          "B08",
-          "C02",
-          "X05",
-          "X06",
-          "X07",
-          "X08",
-          "X09",
-          "X10",
-          "X11",
-          "X12",
-          "X13",
-          "X14",
-          "X15",
-          "X16"
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.55",
+        "cutoffScore2024": "23.93",
         "note": ""
       },
       {
@@ -89673,11 +89950,27 @@
         "code": "M36",
         "name": "Ngôn ngữ Anh",
         "blocks": [
-          "A01"
+          "B08",
+          "D01",
+          "D09",
+          "D10",
+          "D11",
+          "D12",
+          "D13",
+          "D14",
+          "D15",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X78",
+          "X79",
+          "X80",
+          "X81"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.79",
+        "cutoffScore2024": "24.8",
         "note": ""
       },
       {
@@ -89809,83 +90102,81 @@
         "code": "M49",
         "name": "Thông tin - Thư viện",
         "blocks": [
-          "B03",
-          "C00",
-          "C01",
-          "C02",
-          "C03",
-          "C04",
-          "C05",
-          "C06",
-          "C07",
-          "C08",
-          "C09",
-          "C10",
-          "C11",
-          "C12",
-          "C13",
-          "D01",
-          "D11",
-          "D12",
-          "D13",
-          "D14",
-          "D15",
-          "X01",
-          "X02",
-          "X03",
-          "X04",
-          "X58",
-          "X59",
-          "X60",
-          "X61",
-          "X62",
-          "X63",
-          "X64",
-          "X65",
-          "X66",
-          "X67",
-          "X68",
-          "X69",
-          "X70",
-          "X71",
-          "X72",
-          "X73",
-          "X74",
-          "X75",
-          "X76",
-          "X77",
-          "X78",
-          "X79",
-          "X80",
-          "X81",
-          "Y07",
-          "Y08"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "26.48",
+        "cutoffScore2024": "23.48",
         "note": ""
       },
       {
         "code": "M52",
         "name": "Quản trị kinh doanh",
         "blocks": [
-          "B00"
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.72",
+        "cutoffScore2024": "20.25",
         "note": ""
       },
       {
         "code": "M58",
         "name": "Quản trị kinh doanh (Chương trình đào tạo chất lượng cao)",
         "blocks": [
-          "D07"
+          "B00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "18.06",
+        "cutoffScore2024": "18.47",
         "note": ""
       },
       {
@@ -89951,16 +90242,27 @@
         "code": "M70",
         "name": "Tài chính - Ngân hàng",
         "blocks": [
-          "B00"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.48",
+        "cutoffScore2024": "20.69",
         "note": ""
       },
       {
         "code": "M76",
         "name": "Kế toán",
+        "blocks": [
+          "B00"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "19.42",
+        "note": ""
+      },
+      {
+        "code": "M82",
+        "name": "Kế toán (Chương trình đào tạo chất lượng cao)",
         "blocks": [
           "A02",
           "A03",
@@ -90014,29 +90316,66 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.95",
-        "note": ""
-      },
-      {
-        "code": "M82",
-        "name": "Kế toán (Chương trình đào tạo chất lượng cao)",
-        "blocks": [
-          "A00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.93",
+        "cutoffScore2024": "19.25",
         "note": ""
       },
       {
         "code": "M88",
         "name": "Kiểm toán",
         "blocks": [
-          "B00"
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21.18",
+        "cutoffScore2024": "21.71",
         "note": ""
       },
       {
@@ -90062,41 +90401,81 @@
         "code": "M96",
         "name": "Luật",
         "blocks": [
-          "B03",
-          "C02",
-          "C03",
-          "C04",
-          "D01",
-          "X01",
-          "X02",
-          "X03",
-          "X04"
+          "C01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21.58",
+        "cutoffScore2024": "23.2",
         "note": ""
       },
       {
         "code": "M98",
         "name": "Khoa học môi trường",
         "blocks": [
-          "A01"
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B00",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.24",
+        "cutoffScore2024": "18.72",
         "note": ""
       },
       {
         "code": "M104",
         "name": "Khoa học dữ liệu",
         "blocks": [
-          "D07"
+          "C01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.43",
+        "cutoffScore2024": "22.99",
         "note": ""
       },
       {
@@ -90164,77 +90543,6 @@
         "code": "M116",
         "name": "Kỹ thuật phần mềm",
         "blocks": [
-          "B00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.47",
-        "note": ""
-      },
-      {
-        "code": "M122",
-        "name": "Trí tuệ nhân tạo",
-        "blocks": [
-          "A02",
-          "A03",
-          "A04",
-          "A05",
-          "A06",
-          "A07",
-          "B00",
-          "B01",
-          "B02",
-          "B03",
-          "B08",
-          "C02",
-          "C03",
-          "C04",
-          "D01",
-          "D09",
-          "D10",
-          "X01",
-          "X02",
-          "X03",
-          "X04",
-          "X05",
-          "X06",
-          "X07",
-          "X08",
-          "X09",
-          "X10",
-          "X11",
-          "X12",
-          "X13",
-          "X14",
-          "X15",
-          "X16",
-          "X17",
-          "X18",
-          "X19",
-          "X20",
-          "X21",
-          "X22",
-          "X23",
-          "X24",
-          "X25",
-          "X26",
-          "X27",
-          "X28",
-          "X53",
-          "X54",
-          "X55",
-          "X56",
-          "X57"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "22",
-        "note": ""
-      },
-      {
-        "code": "M128",
-        "name": "Công nghệ thông tin",
-        "blocks": [
           "A02",
           "A03",
           "A04",
@@ -90292,25 +90600,96 @@
         "note": ""
       },
       {
-        "code": "M134",
-        "name": "Công nghệ thông tin (Chương trình đào tạo chất lượng cao)",
+        "code": "M122",
+        "name": "Trí tuệ nhân tạo",
         "blocks": [
           "B00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.48",
+        "cutoffScore2024": "21.47",
+        "note": ""
+      },
+      {
+        "code": "M128",
+        "name": "Công nghệ thông tin",
+        "blocks": [
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "20.06",
+        "note": ""
+      },
+      {
+        "code": "M134",
+        "name": "Công nghệ thông tin (Chương trình đào tạo chất lượng cao)",
+        "blocks": [
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B00",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54",
+          "X55",
+          "X56",
+          "X57"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "21.01",
         "note": ""
       },
       {
         "code": "M140",
         "name": "Công nghệ kỹ thuật điện, điện tử",
         "blocks": [
-          "D07"
+          "D01"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.61",
+        "cutoffScore2024": "21.55",
         "note": ""
       },
       {
@@ -90376,16 +90755,27 @@
         "code": "M152",
         "name": "Công nghệ kỹ thuật môi trường",
         "blocks": [
-          "D01"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "18.96",
+        "cutoffScore2024": "19.64",
         "note": ""
       },
       {
         "code": "M158",
         "name": "Kỹ thuật điện",
+        "blocks": [
+          "C01"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "21.56",
+        "note": ""
+      },
+      {
+        "code": "M164",
+        "name": "Kỹ thuật điện tử - viễn thông",
         "blocks": [
           "A01",
           "A02",
@@ -90441,18 +90831,7 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "19.93",
-        "note": ""
-      },
-      {
-        "code": "M164",
-        "name": "Kỹ thuật điện tử - viễn thông",
-        "blocks": [
-          "A00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.65",
+        "cutoffScore2024": "19.96",
         "note": ""
       },
       {
@@ -90479,11 +90858,61 @@
         "code": "M172",
         "name": "Quản trị nhà hàng và dịch vụ ăn uống",
         "blocks": [
-          "A00"
+          "A00",
+          "A01",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "B00",
+          "B01",
+          "B02",
+          "B03",
+          "B08",
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "D01",
+          "D07",
+          "D09",
+          "D10",
+          "X01",
+          "X02",
+          "X03",
+          "X04",
+          "X05",
+          "X06",
+          "X07",
+          "X08",
+          "X09",
+          "X10",
+          "X11",
+          "X12",
+          "X13",
+          "X14",
+          "X15",
+          "X16",
+          "X17",
+          "X18",
+          "X19",
+          "X20",
+          "X21",
+          "X22",
+          "X23",
+          "X24",
+          "X25",
+          "X26",
+          "X27",
+          "X28",
+          "X53",
+          "X54"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21.51",
+        "cutoffScore2024": "20.83",
         "note": ""
       }
     ],
@@ -90814,11 +91243,13 @@
         "code": "M1",
         "name": "Ngôn ngữ Anh",
         "blocks": [
-          "D14"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21",
+        "cutoffScore2024": "20.5",
         "note": ""
       },
       {
@@ -90838,13 +91269,11 @@
         "code": "M4",
         "name": "Tâm lý học",
         "blocks": [
-          "A00",
-          "A01",
-          "D01"
+          "C00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "22.8",
+        "cutoffScore2024": "24.3",
         "note": ""
       },
       {
@@ -91293,7 +91722,7 @@
       },
       {
         "code": "M18",
-        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đạo tạo liên kết với trường ĐH nước ngoài)",
+        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đ��o tạo liên kết với trường ĐH nước ngoài)",
         "blocks": [
           "A00",
           "B00",
@@ -91646,11 +92075,13 @@
         "code": "M1",
         "name": "Ngôn ngữ Anh",
         "blocks": [
-          "D14"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21",
+        "cutoffScore2024": "20.5",
         "note": ""
       },
       {
@@ -91670,13 +92101,11 @@
         "code": "M4",
         "name": "Tâm lý học",
         "blocks": [
-          "A00",
-          "A01",
-          "D01"
+          "C00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "22.8",
+        "cutoffScore2024": "24.3",
         "note": ""
       },
       {
@@ -92982,22 +93411,6 @@
     "majors": [
       {
         "code": "M1",
-        "name": "Truyền thông đa phương tiện(Thang điểm 30)",
-        "blocks": [
-          "A01",
-          "D01",
-          "X26",
-          "D09",
-          "D10",
-          "X02"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "24.66",
-        "note": ""
-      },
-      {
-        "code": "M2",
         "name": "Truyền thông đa phương tiện(Thang điểm 100)",
         "blocks": [
           "A01",
@@ -93013,23 +93426,23 @@
         "note": ""
       },
       {
-        "code": "M3",
-        "name": "Thương mại điện tử(Thang điểm 30)",
+        "code": "M2",
+        "name": "Truyền thông đa phương tiện(Thang điểm 30)",
         "blocks": [
-          "A00",
           "A01",
           "D01",
-          "D07",
-          "X06",
-          "X26"
+          "X26",
+          "D09",
+          "D10",
+          "X02"
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "23.7",
+        "cutoffScore2024": "24.66",
         "note": ""
       },
       {
-        "code": "M4",
+        "code": "M3",
         "name": "Thương mại điện tử(Thang điểm 100)",
         "blocks": [
           "A00",
@@ -93042,6 +93455,22 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "79",
+        "note": ""
+      },
+      {
+        "code": "M4",
+        "name": "Thương mại điện tử(Thang điểm 30)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07",
+          "X06",
+          "X26"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "23.7",
         "note": ""
       },
       {
@@ -93080,20 +93509,6 @@
       },
       {
         "code": "M7",
-        "name": "Khoa học dữ liệu (Chương trình đào tạo bằng Tiếng Anh)(Thang điểm 100)",
-        "blocks": [
-          "A01",
-          "D01",
-          "X26",
-          "D07"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "85.5",
-        "note": ""
-      },
-      {
-        "code": "M8",
         "name": "Khoa học dữ liệu (Chương trình đào tạo bằng Tiếng Anh)(Thang điểm 30)",
         "blocks": [
           "A01",
@@ -93104,6 +93519,20 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "25.65",
+        "note": ""
+      },
+      {
+        "code": "M8",
+        "name": "Khoa học dữ liệu (Chương trình đào tạo bằng Tiếng Anh)(Thang điểm 100)",
+        "blocks": [
+          "A01",
+          "D01",
+          "X26",
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "85.5",
         "note": ""
       },
       {
@@ -93218,7 +93647,7 @@
       },
       {
         "code": "M16",
-        "name": "Kỹ thuật phần mềm(Thang điểm 30)",
+        "name": "Kỹ thuật phần m��m(Thang điểm 30)",
         "blocks": [
           "A00",
           "A01",
@@ -93262,23 +93691,6 @@
       },
       {
         "code": "M19",
-        "name": "Hệ thống thông tin(Thang điểm 30)",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01",
-          "D07",
-          "D08",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "24.24",
-        "note": ""
-      },
-      {
-        "code": "M20",
         "name": "Hệ thống thông tin(Thang điểm 100)",
         "blocks": [
           "A00",
@@ -93292,6 +93704,23 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "80.8",
+        "note": ""
+      },
+      {
+        "code": "M20",
+        "name": "Hệ thống thông tin(Thang điểm 30)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07",
+          "D08",
+          "X06",
+          "X26"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "24.24",
         "note": ""
       },
       {
@@ -93354,22 +93783,6 @@
       },
       {
         "code": "M25",
-        "name": "Trí tuệ nhân tạo(Thang điểm 100)",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01",
-          "D07",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "100",
-        "note": ""
-      },
-      {
-        "code": "M26",
         "name": "Trí tuệ nhân tạo(Thang điểm 30)",
         "blocks": [
           "A00",
@@ -93385,8 +93798,8 @@
         "note": ""
       },
       {
-        "code": "M27",
-        "name": "Công nghệ Thông tin(Thang điểm 100)",
+        "code": "M26",
+        "name": "Trí tuệ nhân tạo(Thang điểm 100)",
         "blocks": [
           "A00",
           "A01",
@@ -93397,11 +93810,11 @@
         ],
         "years": 4,
         "tuitionPerYear": 29000000,
-        "cutoffScore2024": "84.2",
+        "cutoffScore2024": "100",
         "note": ""
       },
       {
-        "code": "M28",
+        "code": "M27",
         "name": "Công nghệ Thông tin(Thang điểm 30)",
         "blocks": [
           "A00",
@@ -93414,6 +93827,22 @@
         "years": 4,
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "25.26",
+        "note": ""
+      },
+      {
+        "code": "M28",
+        "name": "Công nghệ Thông tin(Thang điểm 100)",
+        "blocks": [
+          "A00",
+          "A01",
+          "D01",
+          "D07",
+          "X06",
+          "X26"
+        ],
+        "years": 4,
+        "tuitionPerYear": 29000000,
+        "cutoffScore2024": "84.2",
         "note": ""
       },
       {
@@ -93850,7 +94279,7 @@
       },
       {
         "code": "M18",
-        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đạo tạo liên kết với trường ĐH nước ngoài)",
+        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đ��o tạo liên kết với trường ĐH nước ngoài)",
         "blocks": [
           "A00",
           "B00",
@@ -95393,23 +95822,6 @@
       },
       {
         "code": "M23",
-        "name": "Thiết kế đồ họa(Điểm thi + điểm NK)",
-        "blocks": [
-          "H00",
-          "H06",
-          "H08",
-          "V00",
-          "V01",
-          "V02",
-          "V05"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "15.6",
-        "note": ""
-      },
-      {
-        "code": "M24",
         "name": "Thiết kế đồ họa(Điểm học bạ + điểm NK)",
         "blocks": [
           "H00",
@@ -95423,6 +95835,23 @@
         "years": 4,
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "18.72",
+        "note": ""
+      },
+      {
+        "code": "M24",
+        "name": "Thiết kế đồ họa(Điểm thi + điểm NK)",
+        "blocks": [
+          "H00",
+          "H06",
+          "H08",
+          "V00",
+          "V01",
+          "V02",
+          "V05"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "15.6",
         "note": ""
       },
       {
@@ -95750,25 +96179,12 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "17",
         "note": ""
-      },
-      {
-        "code": "M34",
-        "name": "Ngôn ngữ Trung Qu��c",
-        "blocks": [
-          "A00",
-          "A01",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "61",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 10.8716254,
     "lng": 106.8067183,
-    "majorsCount": 17
+    "majorsCount": 16
   },
   {
     "id": "GH_190_ĐAI_HOC_TIEN_GIANG",
@@ -105688,26 +106104,12 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
         "note": ""
-      },
-      {
-        "code": "M235",
-        "name": "Quản l�� xây dựng",
-        "blocks": [
-          "C01",
-          "C03",
-          "C04",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "225",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 18.7882595,
     "lng": 105.7181169,
-    "majorsCount": 62
+    "majorsCount": 61
   },
   {
     "id": "GH_207_ĐAI_HOC_BA_RIA_VUNG_",
@@ -108094,26 +108496,12 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
         "note": ""
-      },
-      {
-        "code": "M235",
-        "name": "Quản l�� xây dựng",
-        "blocks": [
-          "C01",
-          "C03",
-          "C04",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "225",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 20.9828441,
     "lng": 105.8653761,
-    "majorsCount": 62
+    "majorsCount": 61
   },
   {
     "id": "GH_209_ĐAI_HOC_CONG_THUONG_",
@@ -108797,12 +109185,26 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "16",
         "note": ""
+      },
+      {
+        "code": "M64",
+        "name": "Công nghệ kỹ thuật cơ điện t���",
+        "blocks": [
+          "D01",
+          "A01",
+          "C01",
+          "A00"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "24.88",
+        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 10.7997357,
     "lng": 106.6268017,
-    "majorsCount": 44
+    "majorsCount": 45
   },
   {
     "id": "GH_210_ĐAI_HOC_DAN_LAP_PHU_",
@@ -109151,7 +109553,7 @@
         "years": 4,
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "15",
-        "note": ""
+        "note": "Đào tạo tại Đắk Lắk"
       },
       {
         "code": "M5",
@@ -109305,25 +109707,6 @@
       },
       {
         "code": "M16",
-        "name": "Marketing/ Digital marketing",
-        "blocks": [
-          "A00",
-          "A01",
-          "A07",
-          "D01",
-          "D10",
-          "X01",
-          "X02",
-          "X17",
-          "X21"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "15",
-        "note": "Đào tạo tại Đắk Lắk"
-      },
-      {
-        "code": "M17",
         "name": "Digital Marketing",
         "blocks": [
           "A00",
@@ -109340,6 +109723,25 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "15",
         "note": ""
+      },
+      {
+        "code": "M17",
+        "name": "Marketing/ Digital marketing",
+        "blocks": [
+          "A00",
+          "A01",
+          "A07",
+          "D01",
+          "D10",
+          "X01",
+          "X02",
+          "X17",
+          "X21"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "15",
+        "note": "Đào tạo tại Đắk Lắk"
       },
       {
         "code": "M18",
@@ -109415,7 +109817,7 @@
         "years": 4,
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "15",
-        "note": ""
+        "note": "Đào tạo tại Đắk Lắk"
       },
       {
         "code": "M23",
@@ -109664,7 +110066,7 @@
         "years": 4,
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "15",
-        "note": "Đào tạo tại Đắk Lắk"
+        "note": ""
       },
       {
         "code": "M40",
@@ -109702,7 +110104,7 @@
         "years": 4,
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "15",
-        "note": "Đào tạo tại Đắk Lắk"
+        "note": ""
       },
       {
         "code": "M43",
@@ -109858,25 +110260,6 @@
       },
       {
         "code": "M53",
-        "name": "Quản trị dịch vụ du lịch và lữ hành",
-        "blocks": [
-          "C00",
-          "C04",
-          "D01",
-          "D09",
-          "D15",
-          "D14",
-          "X01",
-          "X02",
-          "X21"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "15",
-        "note": ""
-      },
-      {
-        "code": "M54",
         "name": "Quản trị DV Du lịch và Lữ hành",
         "blocks": [
           "C00",
@@ -109893,6 +110276,25 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "15",
         "note": "Đào tạo tại Đắk Lắk"
+      },
+      {
+        "code": "M54",
+        "name": "Quản trị dịch vụ du lịch và lữ hành",
+        "blocks": [
+          "C00",
+          "C04",
+          "D01",
+          "D09",
+          "D15",
+          "D14",
+          "X01",
+          "X02",
+          "X21"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "15",
+        "note": ""
       },
       {
         "code": "M55",
@@ -111992,7 +112394,7 @@
       },
       {
         "code": "M6",
-        "name": "Kỹ thuật cơ sở hạ t��ng (Chương trình Định hướng Quốc tế)",
+        "name": "Kỹ thuật cơ sở hạ tầng (Chương trình Định hướng Quốc tế)",
         "blocks": [
           "A01",
           "D01",
@@ -112015,19 +112417,6 @@
         "tuitionPerYear": 27000000,
         "cutoffScore2024": "21.35",
         "note": ""
-      },
-      {
-        "code": "M13",
-        "name": "Kỹ thuật cơ sở hạ tầng (Chương trình Định hướng Quốc tế)",
-        "blocks": [
-          "A01",
-          "D01",
-          "D07"
-        ],
-        "years": 4,
-        "tuitionPerYear": 27000000,
-        "cutoffScore2024": "16",
-        "note": "530"
       },
       {
         "code": "M15",
@@ -112183,19 +112572,6 @@
         "note": ""
       },
       {
-        "code": "M28",
-        "name": "Thiết kế nội thất (Chương trình Định hướng Quốc tế)",
-        "blocks": [
-          "V00",
-          "V01",
-          "V02"
-        ],
-        "years": 4,
-        "tuitionPerYear": 27000000,
-        "cutoffScore2024": "22.28",
-        "note": ""
-      },
-      {
         "code": "M29",
         "name": "Thiết kế đô thị (Chương trình tiên tiến)",
         "blocks": [
@@ -112212,7 +112588,7 @@
     "source": "github-ads-final",
     "lat": 16.0327145,
     "lng": 108.2224383,
-    "majorsCount": 22
+    "majorsCount": 20
   },
   {
     "id": "GH_219_ĐAI_HOC_KINH_BAC",
@@ -114672,10 +115048,21 @@
         "tuitionPerYear": 20000000,
         "cutoffScore2024": "16.1",
         "note": ""
+      },
+      {
+        "code": "M90",
+        "name": "C��ng nghệ sinh học",
+        "blocks": [
+          "K00"
+        ],
+        "years": 4,
+        "tuitionPerYear": 20000000,
+        "cutoffScore2024": "35",
+        "note": ""
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 28
+    "majorsCount": 29
   },
   {
     "id": "GH_224_ĐAI_HOC_MO_TPHCM",
@@ -114955,7 +115342,7 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "17.34",
+        "cutoffScore2024": "20.84",
         "note": ""
       },
       {
@@ -114968,7 +115355,7 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.1",
+        "cutoffScore2024": "23.6",
         "note": ""
       },
       {
@@ -114981,7 +115368,7 @@
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "17.5",
+        "cutoffScore2024": "21",
         "note": ""
       }
     ],
@@ -119715,22 +120102,6 @@
         "note": ""
       },
       {
-        "code": "M96",
-        "name": "K�� Thuật Điện Tử - Viễn Thông (Thiết Kế Vi Mạch Bán Dẫn)",
-        "blocks": [
-          "A00",
-          "A01",
-          "D07",
-          "D08",
-          "X06",
-          "X26"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "24.57",
-        "note": ""
-      },
-      {
         "code": "M149",
         "name": "Kỹ Thuật Phần Mềm (CTĐT Tài Năng Theo Đề Án Của Chính Phủ)",
         "blocks": [
@@ -119761,7 +120132,7 @@
     "source": "github-ads-final",
     "lat": 20.9611686,
     "lng": 105.7476241,
-    "majorsCount": 88
+    "majorsCount": 87
   },
   {
     "id": "GH_228_ĐAI_HOC_SAN_KHAU_ĐIE",
@@ -121857,23 +122228,12 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "21.9",
         "note": ""
-      },
-      {
-        "code": "M105",
-        "name": "Kỹ thuật điện tử - viễn thông (gồm các chương trình: Kỹ thuật điện tử - viễn thông; Công nghệ bán dẫn và thiết kế vi m���ch)",
-        "blocks": [
-          "K00"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "60",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 10.7927634,
     "lng": 106.7065764,
-    "majorsCount": 47
+    "majorsCount": 46
   },
   {
     "id": "GH_234_ĐAI_HOC_VAN_HOA_THE_",
@@ -122448,17 +122808,6 @@
       },
       {
         "code": "M23",
-        "name": "Y khoa(Kết hợp điểm thi TN THPT với chứng chỉ ngoại ngữ)",
-        "blocks": [
-          "D08"
-        ],
-        "years": 4,
-        "tuitionPerYear": 25000000,
-        "cutoffScore2024": "22.5",
-        "note": ""
-      },
-      {
-        "code": "M24",
         "name": "Y khoa(Kết hợp điểm thi TN THPT với học bạ)",
         "blocks": [
           "B00",
@@ -122472,18 +122821,18 @@
         "note": ""
       },
       {
-        "code": "M25",
-        "name": "Dược học(Kết hợp điểm thi TN THPT với chứng chỉ ngoại ngữ)",
+        "code": "M24",
+        "name": "Y khoa(Kết hợp điểm thi TN THPT với chứng chỉ ngoại ngữ)",
         "blocks": [
-          "D07"
+          "D08"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "21",
+        "cutoffScore2024": "22.5",
         "note": ""
       },
       {
-        "code": "M26",
+        "code": "M25",
         "name": "Dược học(Kết hợp điểm thi TN THPT với học bạ)",
         "blocks": [
           "B00",
@@ -122497,9 +122846,23 @@
         "note": ""
       },
       {
-        "code": "M27",
-        "name": "Răng – Hàm – Mặt(Kết hợp điểm thi TN THPT với chứng chỉ ngoại ngữ)",
+        "code": "M26",
+        "name": "Dược học(Kết hợp điểm thi TN THPT với chứng chỉ ngoại ngữ)",
         "blocks": [
+          "D07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "21",
+        "note": ""
+      },
+      {
+        "code": "M27",
+        "name": "Răng – Hàm – Mặt(Kết hợp điểm thi TN THPT với học bạ)",
+        "blocks": [
+          "B00",
+          "A02",
+          "B03",
           "D08"
         ],
         "years": 4,
@@ -122509,11 +122872,8 @@
       },
       {
         "code": "M28",
-        "name": "Răng – Hàm – Mặt(Kết hợp điểm thi TN THPT với học bạ)",
+        "name": "Răng – Hàm – Mặt(Kết hợp điểm thi TN THPT với chứng chỉ ngoại ngữ)",
         "blocks": [
-          "B00",
-          "A02",
-          "B03",
           "D08"
         ],
         "years": 4,
@@ -123278,13 +123638,11 @@
         "code": "M2",
         "name": "Kế toán",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.83",
+        "cutoffScore2024": "26.33",
         "note": "Môn chính: Toán"
       },
       {
@@ -123384,11 +123742,13 @@
         "code": "M16",
         "name": "Tài chính-Ngân hàng (Liên kết ĐH Sunderland, Anh Quốc. Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "23.1",
+        "cutoffScore2024": "22.6",
         "note": "Môn chính: Toán"
       },
       {
@@ -123477,11 +123837,13 @@
         "code": "M26",
         "name": "Quản trị kinh doanh (Liên kết với ĐH CityU, Hoa kỳ. Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.7",
+        "cutoffScore2024": "20.2",
         "note": "Môn chính: Toán"
       },
       {
@@ -123556,11 +123918,13 @@
         "code": "M35",
         "name": "Marketing - Đại học West of England (UWE), Anh (Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.7",
+        "cutoffScore2024": "20.2",
         "note": "Môn chính: Toán"
       },
       {
@@ -123895,13 +124259,11 @@
         "code": "M2",
         "name": "Kế toán",
         "blocks": [
-          "A01",
-          "D01",
-          "D07"
+          "A00"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "25.83",
+        "cutoffScore2024": "26.33",
         "note": "Môn chính: Toán"
       },
       {
@@ -124001,11 +124363,13 @@
         "code": "M16",
         "name": "Tài chính-Ngân hàng (Liên kết ĐH Sunderland, Anh Quốc. Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "23.1",
+        "cutoffScore2024": "22.6",
         "note": "Môn chính: Toán"
       },
       {
@@ -124094,11 +124458,13 @@
         "code": "M26",
         "name": "Quản trị kinh doanh (Liên kết với ĐH CityU, Hoa kỳ. Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.7",
+        "cutoffScore2024": "20.2",
         "note": "Môn chính: Toán"
       },
       {
@@ -124173,11 +124539,13 @@
         "code": "M35",
         "name": "Marketing - Đại học West of England (UWE), Anh (Cấp song bằng)",
         "blocks": [
-          "A00"
+          "A01",
+          "D01",
+          "D07"
         ],
         "years": 4,
         "tuitionPerYear": 25000000,
-        "cutoffScore2024": "20.7",
+        "cutoffScore2024": "20.2",
         "note": "Môn chính: Toán"
       },
       {
@@ -124710,12 +125078,27 @@
         "tuitionPerYear": 25000000,
         "cutoffScore2024": "100",
         "note": ""
+      },
+      {
+        "code": "M38",
+        "name": "Khoa học gi��o dục và khác",
+        "blocks": [
+          "Q01",
+          "Q04",
+          "Q05",
+          "Q06",
+          "Q07"
+        ],
+        "years": 4,
+        "tuitionPerYear": 25000000,
+        "cutoffScore2024": "66",
+        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 20.9904495,
     "lng": 105.8384906,
-    "majorsCount": 14
+    "majorsCount": 15
   },
   {
     "id": "GH_243_PHAN_HIEU_ĐAI_HOC_NO",
@@ -127656,24 +128039,10 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
         "note": ""
-      },
-      {
-        "code": "M235",
-        "name": "Quản l�� xây dựng",
-        "blocks": [
-          "C01",
-          "C03",
-          "C04",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "225",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 62
+    "majorsCount": 61
   },
   {
     "id": "GH_250_ĐAI_HOC_VIET_NHAT_ĐH",
@@ -128535,7 +128904,7 @@
       },
       {
         "code": "M18",
-        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đạo tạo liên kết với trường ĐH nước ngoài)",
+        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đ��o tạo liên kết với trường ĐH nước ngoài)",
         "blocks": [
           "A00",
           "B00",
@@ -129217,7 +129586,7 @@
       },
       {
         "code": "M18",
-        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đạo tạo liên kết với trường ĐH nước ngoài)",
+        "name": "Công nghệ sinh học (CTLK với ĐH West of England) (2+2)(02. Các ngành đ��o tạo liên kết với trường ĐH nước ngoài)",
         "blocks": [
           "A00",
           "B00",
@@ -131004,26 +131373,12 @@
         "tuitionPerYear": 29000000,
         "cutoffScore2024": "15",
         "note": ""
-      },
-      {
-        "code": "M235",
-        "name": "Quản l�� xây dựng",
-        "blocks": [
-          "C01",
-          "C03",
-          "C04",
-          "D01"
-        ],
-        "years": 4,
-        "tuitionPerYear": 29000000,
-        "cutoffScore2024": "225",
-        "note": ""
       }
     ],
     "source": "github-ads-final",
     "lat": 10.7740881,
     "lng": 106.7980152,
-    "majorsCount": 62
+    "majorsCount": 61
   },
   {
     "id": "GH_260_ĐAI_HOC_LAM_NGHIEP_C",
@@ -131585,10 +131940,21 @@
         "tuitionPerYear": 20000000,
         "cutoffScore2024": "16.1",
         "note": ""
+      },
+      {
+        "code": "M90",
+        "name": "C��ng nghệ sinh học",
+        "blocks": [
+          "K00"
+        ],
+        "years": 4,
+        "tuitionPerYear": 20000000,
+        "cutoffScore2024": "35",
+        "note": ""
       }
     ],
     "source": "github-ads-final",
-    "majorsCount": 28
+    "majorsCount": 29
   },
   {
     "id": "GH_261_ĐAI_HOC_CMC",
